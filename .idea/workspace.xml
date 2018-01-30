@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b6a82503-2946-4c35-af18-d5fab86fbab9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/mindmap.html" afterPath="$PROJECT_DIR$/mindmap.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mindmap.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mindmap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mindmap.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="684" lean-forward="false" selection-start-line="8" selection-start-column="684" selection-end-line="8" selection-end-column="684" />
+              <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
               <folding>
                 <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -53,7 +54,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mindmap.png" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mindmap.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mindmap.png">
           <provider selected="true" editor-type-id="images">
             <state />
@@ -88,9 +89,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="21" />
+    <option name="x" value="96" />
     <option name="y" value="23" />
-    <option name="width" value="1378" />
+    <option name="width" value="1182" />
     <option name="height" value="827" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -165,18 +166,18 @@
       <updated>1516832456932</updated>
       <workItem from="1516832458588" duration="401000" />
       <workItem from="1516832878162" duration="2082000" />
-      <workItem from="1517283723314" duration="227000" />
+      <workItem from="1517283723314" duration="508000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2710000" />
+    <option name="totallyTimeSpent" value="2991000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="21" y="23" width="1378" height="827" extended-state="0" />
+    <frame x="96" y="23" width="1182" height="827" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22181283" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25925925" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -277,19 +278,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mindmap.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mindmap.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="684" lean-forward="false" selection-start-line="8" selection-start-column="684" selection-end-line="8" selection-end-column="684" />
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding>
             <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mindmap.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
   </component>
