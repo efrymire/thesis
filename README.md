@@ -1,7 +1,7 @@
 
 ## Idea #1: #metoo
 
-![metoo_1](metoo_1.jpg?raw=true
+![metoo_1](metoo_1.jpg?raw=true)
 
 ![metoo_2](metoo_2.jpg?raw=true)
 
