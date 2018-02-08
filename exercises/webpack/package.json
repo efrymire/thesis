@@ -1,0 +1,25 @@
+{
+  "name": "tutorial",
+  "version": "1.0.0",
+  "description": "webpack tutorial",
+  "main": "index.js",
+  "scripts": {
+    "preview" : "webpack",
+    "start": "webpack-dev-server --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efrymire/thesis.git"
+  },
+  "author": "Ellie Frymire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/efrymire/thesis/issues"
+  },
+  "homepage": "https://github.com/efrymire/thesis#readme",
+  "devDependencies": {
+    "json-loader": "^0.5.7",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
