@@ -1,15 +1,15 @@
 
 ## Idea #1: #metoo
 
-![metoo_1](metoo_1.jpg?raw=true)
+![metoo_1](images/metoo_1.jpg?raw=true)
 
-![metoo_2](metoo_2.jpg?raw=true)
+![metoo_2](images/metoo_2.jpg?raw=true)
 
 ## Idea #2: Federal Budget
 
-![budget_1](budget_1.jpg?raw=true)
+![budget_1](images/budget_1.jpg?raw=true)
 
-![budget_2](budget_2.jpg?raw=true)
+![budget_2](images/budget_2.jpg?raw=true)
 
 ### Literature Review
 
