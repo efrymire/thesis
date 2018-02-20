@@ -1,4 +1,8 @@
 
+## Open Questions:
+
+![metoo_2.3](images/metoo_2.3.jpg?raw=true)
+
 ## Iteration 2:
 
 ![metoo_2.1](images/metoo_2.1.jpg?raw=true)
