@@ -18,48 +18,8 @@ function render(){
         .append('svg')
         .attrs({width: width, height: height})
 
-    var dataset;
-
-    var rect = svg.selectAll('rect')
-
-    // var svg = d3.select('body')
-    //     .append('svg')
-    //     .attr('width', width)
-    //     .attr('height', height);
-
-    d3.csv('test-data.csv', function(data) {
-        dataset = data;
-        viz(data);
-    });
-
-    function viz(dataset) {
-
-        console.log(dataset)
-        console.log(d3.max(dataset, function(d) { return d.tweets; }))
-
-        var x = d3.scaleBand()
-                .range([0, width])
-                .padding(0.1)
-                .domain(dataset.map(function(d) { return d.date; })),
-            y = d3.scaleLinear()
-                .range([0, height])
-                .domain([0, d3.max(dataset, function(d) { return d.tweets; })]);
-
-        rect.data(dataset)
-            .enter()
-            .append('rect')
-            .attr("class", "bar")
-            .attr('x', function(d) {
-                return x(d.date)
-            })
-            .attr('y',function(d) {
-                return height-(y(d.tweets/100))
-            })
-            .attr('width', x.bandwidth())
-            .attr('height', function(d) {
-                return y(d.tweets)/100
-            });
-    }
+    var circle = svg.append('circle')
+        .attrs({cx: 0, cy: 0, r: r})
 
     var colors = ['orange', 'purple', 'steelblue', 'pink', 'black']
     var gs = d3.graphScroll()
@@ -69,13 +29,13 @@ function render(){
         .sections(d3.selectAll('.container-1 #sections > div'))
         // .offset(innerWidth < 900 ? innerHeight - 30 : 200)
         .on('active', function(i){
-            // var pos = [ {cx: width - r, cy: r},
-            //     {cx: r,         cy: r},
-            //     {cx: width - r, cy: height - r},
-            //     {cx: width/2,   cy: height/2} ][i]
+            var pos = [ {cx: width - r, cy: r},
+                {cx: r,         cy: r},
+                {cx: width - r, cy: height - r},
+                {cx: width/2,   cy: height/2} ][i]
 
-            rect.transition().duration(1000)
-                // .attrs(pos)
+            circle.transition().duration(1000)
+                .attrs(pos)
                 .transition()
                 .style('fill', colors[i])
         })
