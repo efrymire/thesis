@@ -7,11 +7,11 @@
 <br> 1.3 Cultural and Historical Background: Brief history and context of the timeline of the hashtag and other related sexual harassment contextual information.
 
 2. Treatment
-<br>2.1 Overview of #metoo: Timeline of events and the (seemingly) flurry of support from all over the world
-<br>2.2 The support breaks down: Seeing a non-supportive response article and wondering about the breadth of response to the movement that I haven't seen
-<br>2.3 Social-media echo chambers:  What they are and how they limited my exposure; including an overview of social media algorithms
-<br>2.4 State my goal: To uncover the true value and impact of the #metoo movement by analyzing the breadth of responses
-<br>2.5 Methodology: Overview of my approach and the technology used to gain access to the tech, including machine learning and sentiment analysis
+<br> 2.1 Overview of #metoo: Timeline of events and the (seemingly) flurry of support from all over the world
+<br> 2.2 The support breaks down: Seeing a non-supportive response article and wondering about the breadth of response to the movement that I haven't seen
+<br> 2.3 Social-media echo chambers:  What they are and how they limited my exposure; including an overview of social media algorithms
+<br> 2.4 State my goal: To uncover the true value and impact of the #metoo movement by analyzing the breadth of responses
+<br> 2.5 Methodology: Overview of my approach and the technology used to gain access to the tech, including machine learning and sentiment analysis
 
 3. Conclusion
 <br>3.1 Results: What the population is actually saying about #metoo
