@@ -1,21 +1,21 @@
 
 ## Thesis Outline:
 
-1. Introduction
-1.1 Presentation: This project is about the #metoo movement. Sparked from a passion and interest in this school of thought, both through my own experiences as a woman and the experiences of my peers.
-1.2 Questions Posed: This project aims to examine the #metoo movement and understand its impact by analyzing the breadth of response to the hashtag. Where does the public stand in this movement? Are we in collective support or is this another divided issue?
-1.3 Cultural and Historical Background: Brief history and context of the timeline of the hashtag and other related sexual harassment contextual information.
+_1. Introduction__
+__1.1 Presentation: This project is about the #metoo movement. Sparked from a passion and interest in this school of thought, both through my own experiences as a woman and the experiences of my peers.
+__1.2 Questions Posed: This project aims to examine the #metoo movement and understand its impact by analyzing the breadth of response to the hashtag. Where does the public stand in this movement? Are we in collective support or is this another divided issue?
+__1.3 Cultural and Historical Background: Brief history and context of the timeline of the hashtag and other related sexual harassment contextual information.
 
-2. Treatment
-2.1 Overview of #metoo: Timeline of events and the (seemingly) flurry of support from all over the world
-2.2 The support breaks down: Seeing a non-supportive response article and wondering about the breadth of response to the movement that I haven't seen
-2.3 Social-media echo chambers:  What they are and how they limited my exposure; including an overview of social media algorithms
-2.4 State my goal: To uncover the true value and impact of the #metoo movement by analyzing the breadth of responses
-2.5 Methodology: Overview of my approach and the technology used to gain access to the tech, including machine learning and sentiment analysis
+_2. Treatment_
+__2.1 Overview of #metoo: Timeline of events and the (seemingly) flurry of support from all over the world
+__2.2 The support breaks down: Seeing a non-supportive response article and wondering about the breadth of response to the movement that I haven't seen
+__2.3 Social-media echo chambers:  What they are and how they limited my exposure; including an overview of social media algorithms
+__2.4 State my goal: To uncover the true value and impact of the #metoo movement by analyzing the breadth of responses
+__2.5 Methodology: Overview of my approach and the technology used to gain access to the tech, including machine learning and sentiment analysis
 
-3. Conclusion
-3.1 Results: What the population is actually saying about #metoo
-3.2 Interpretation: What does this mean for the movement? How have social echo chambers either helped or hurt this movement?
+_3. Conclusion_
+__3.1 Results: What the population is actually saying about #metoo
+__3.2 Interpretation: What does this mean for the movement? How have social echo chambers either helped or hurt this movement?
 
 
 ## Literature Review and Resources
