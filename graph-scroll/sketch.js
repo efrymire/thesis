@@ -38,7 +38,7 @@ function render(){
         console.log(d3.max(dataset, function(d) { return d.tweets; }))
 
         var x = d3.scaleBand()
-                .range([0, width])
+                .range([0, width - 30])
                 .padding(0.1)
                 .domain(dataset.map(function(d) { return d.date; })),
             y = d3.scaleLinear()
@@ -53,11 +53,11 @@ function render(){
                 return x(d.date)
             })
             .attr('y',function(d) {
-                return height-(y(d.tweets/100))
+                return height-(y(d.tweets))
             })
             .attr('width', x.bandwidth())
             .attr('height', function(d) {
-                return y(d.tweets)/100
+                return y(d.tweets)
             });
     }
 
