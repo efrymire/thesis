@@ -12,40 +12,43 @@ function render(){
         height = innerHeight*.7
     }
 
-    // return console.log(width, height)
+    // ------- SVG --------
+
+    // set svg and global var
 
     var svg = d3.select('#graph').html('')
         .append('svg')
         .attrs({width: width, height: height})
 
-    var dataset;
+    // this is only global because of the next graph
+    var colors = ['orange', 'purple', 'steelblue', 'pink'];
 
-    var rect = svg.selectAll('rect')
-
-    // var svg = d3.select('body')
-    //     .append('svg')
-    //     .attr('width', width)
-    //     .attr('height', height);
+    // data function
 
     d3.csv('test-data.csv', function(data) {
-        dataset = data;
-        viz(data);
-    });
+        var dataset = data;
 
-    function viz(dataset) {
-
-        console.log(dataset)
-        console.log(d3.max(dataset, function(d) { return d.tweets; }))
+        dataset.forEach(function(d) {
+            d.date = d.date;
+            d.tweets = parseInt(d.tweets);
+        })
 
         var x = d3.scaleBand()
                 .range([0, width - 30])
                 .padding(0.1)
                 .domain(dataset.map(function(d) { return d.date; })),
             y = d3.scaleLinear()
-                .range([0, height])
+                .range([0, height/2])
                 .domain([0, d3.max(dataset, function(d) { return d.tweets; })]);
+            yp = d3.scaleLinear()
+                .range([0, height/2])
+                .domain([0, d3.max(dataset, function(d) { return d.pos; })]),
+            yn = d3.scaleLinear()
+                .range([0, height/2])
+                .domain([0, d3.max(dataset, function(d) { return d.neg; })]);
 
-        rect.data(dataset)
+        var posrect = svg.selectAll('rect')
+            .data(dataset)
             .enter()
             .append('rect')
             .attr("class", "bar")
@@ -59,33 +62,71 @@ function render(){
             .attr('height', function(d) {
                 return y(d.tweets)
             });
-    }
 
-    var colors = ['orange', 'purple', 'steelblue', 'pink', 'black']
-    var gs = d3.graphScroll()
-        .container(d3.select('.container-1'))
-        .graph(d3.selectAll('container-1 #graph'))
-        .eventId('uniqueId1')  // namespace for scroll and resize events
-        .sections(d3.selectAll('.container-1 #sections > div'))
-        // .offset(innerWidth < 900 ? innerHeight - 30 : 200)
-        .on('active', function(i){
-            // var pos = [ {cx: width - r, cy: r},
-            //     {cx: r,         cy: r},
-            //     {cx: width - r, cy: height - r},
-            //     {cx: width/2,   cy: height/2} ][i]
+        var negrect = svg.selectAll('rect')
+            .data(dataset)
+            .enter()
+            .append('rect')
+            .attr("class", "bar")
+            .attr('x', function(d) {
+                return x(d.date)
+            })
+            .attr('y',function(d) {
+                return height-(yn(d.neg))
+            })
+            .attr('width', x.bandwidth())
+            .attr('height', 0);
 
-            rect.transition().duration(1000)
-                // .attrs(pos)
-                .transition()
-                .style('fill', colors[i])
-        })
+        // scroll activity
 
+        var gs = d3.graphScroll()
+            .container(d3.select('.container-1'))
+            .graph(d3.selectAll('container-1 #graph'))
+            .eventId('uniqueId1')  // namespace for scroll and resize events
+            .sections(d3.selectAll('.container-1 #sections > div'))
+            // .offset(innerWidth < 900 ? innerHeight - 30 : 200)
+            .on('active', function(i){
+                // var pos = [ {cx: width - r, cy: r},
+                //     {cx: r,         cy: r},
+                //     {cx: width - r, cy: height - r},
+                //     {cx: width/2,   cy: height/2} ][i]
+
+                var ypos = [
+                    function(d) { return height/2-(y(d.tweets)) },
+                    function(d) { return height/2-(yp(d.pos)) },
+                    function(d) { return height/2-(yp(d.pos)) },
+                    function(d) { return height/2-(yp(d.pos)) }
+                    ];
+
+                var yneg = [
+                    0,
+                    function(d) { return height/2-(yn(d.neg)) },
+                    function(d) { return height/2-(yn(d.neg)) },
+                    function(d) { return height/2-(yn(d.neg)) }
+                ];
+
+                posrect.transition().duration(1000)
+                    .attr('y', ypos[i] )
+                    .transition()
+                    .style('fill', colors[i])
+
+                negrect.transition().duration(1000)
+                    .attr('y', yneg[i] )
+                    .transition()
+                    .style('fill', colors[i])
+            })
+
+    });
+
+    // ------- SVG 2 --------
 
     var svg2 = d3.select('.container-2 #graph').html('')
         .append('svg')
         .attrs({width: width, height: height})
 
     var path = svg2.append('path')
+
+    // ------- SCROLL 2 --------
 
     var gs2 = d3.graphScroll()
         .container(d3.select('.container-2'))
