@@ -22,6 +22,8 @@ d3.csv('test-data.csv', function(data) {
     dataset.forEach(function(d) {
         d.date = d.date;
         d.tweets = parseInt(d.tweets);
+        d.pos = parseInt(d.pos);
+        d.neg = parseInt(d.neg);
     })
 
     var x = d3.scaleBand()
@@ -32,21 +34,50 @@ d3.csv('test-data.csv', function(data) {
             .range([0, height])
             .domain([0, d3.max(dataset, function(d) { return d.tweets; })]);
 
-    var rect = svg.selectAll('rect')
+    // var rect = svg.selectAll('rect')
+    //     .data(dataset)
+    //     .enter()
+    //     .append('rect')
+    //     .attr("class", "bar")
+    //     .attr('x', function(d) {
+    //         return x(d.date)
+    //     })
+    //     .attr('y',function(d) {
+    //         return height-(y(d.tweets))
+    //     })
+    //     .attr('width', x.bandwidth())
+    //     .attr('height', function(d) {
+    //         return y(d.tweets)
+    //     });
+
+    var posrect = svg.selectAll('rect.pos')
         .data(dataset)
         .enter()
         .append('rect')
-        .attr("class", "bar")
+        .attr("class", "pbar")
         .attr('x', function(d) {
             return x(d.date)
         })
         .attr('y',function(d) {
-            return height-(y(d.tweets))
+            return height/2-(y(d.pos))
         })
         .attr('width', x.bandwidth())
-        .attr('height', function(d) {
-            return y(d.tweets)
-        });
+        .attr('height', function(d) { return y(d.pos)});
+
+    var negrect = svg.selectAll('rect.neg')
+        .data(dataset)
+        .enter()
+        .append('rect')
+        .attr("class", "nbar")
+        .attr('x', function(d) {
+            return x(d.date)
+        })
+        .attr('y',function(d) {
+            return height/2
+        })
+        .attr('width', x.bandwidth())
+        .attr('height', function(d) { return y(d.neg)})
+        .attr('fill', 'red');
 
     // scroll activity
 

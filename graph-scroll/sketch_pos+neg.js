@@ -3,8 +3,8 @@ function render(){
     if (oldWidth == innerWidth) return
     oldWidth = innerWidth
 
-    var width = d3.select('#graph').node().offsetWidth,
-        height = window.innerHeight;
+    var width = height = d3.select('#graph').node().offsetWidth
+    var r = 40
 
 
     if (innerWidth <= 925){
@@ -29,7 +29,7 @@ function render(){
         var dataset = data;
 
         dataset.forEach(function(d) {
-            d.date = Date.parse(d.date);
+            d.date = d.date;
             d.tweets = parseInt(d.tweets);
             d.pos = parseInt(d.pos);
             d.neg = parseInt(d.neg);
@@ -40,41 +40,61 @@ function render(){
                 .padding(0.1)
                 .domain(dataset.map(function(d) { return d.date; })),
             y = d3.scaleLinear()
-                .range([0, height/2])
-                .domain([0, d3.max(dataset, function(d) { return d.tweets; })]);
+                .range([0, height])
+                .domain([0, d3.max(dataset, function(d) { return d.tweets; })]),
+            y2 = d3.scaleLinear()
+                .range([0, height])
+                .domain([0, d3.max(dataset, function(d) { return (d.pos + d.neg); })]);
+            // yp = d3.scaleLinear()
+            //     .range([0, height/2])
+            //     .domain([0, d3.max(dataset, function(d) { return d.pos; })]),
+            // yn = d3.scaleLinear()
+            //     .range([0, height/2])
+            //     .domain([0, d3.max(dataset, function(d) { return d.neg; })]);
 
         var rect = svg.selectAll('rect')
             .data(dataset)
             .enter()
             .append('rect')
             .attr("class", "bar")
-            .attr('x', function(d) { return x(d.date) })
-            .attr('y', function(d) { return height*.75 - (y(d.tweets)) })
+            .attr('x', function(d) {
+                return x(d.date)
+            })
+            .attr('y',function(d) {
+                return height-(y(d.tweets))
+            })
             .attr('width', x.bandwidth())
-            .attr('height', function(d) { return y(d.tweets) })
-            .on("mouseover", mouseover)
-            .on("mousemove", mousemove)
-            .on("mouseout", mouseout);
+            // .attr('height', function(d) {
+            //     return y(d.tweets)
+            // });
 
-        var div = d3.select('body').append('div')
-            .attr('class', 'tooltip')
-            .style('display', 'none');
+        var posrect = svg.selectAll('rect.pos')
+            .data(dataset)
+            .enter()
+            .append('rect')
+            .attr("class", "pbar")
+            .attr('x', function(d) {
+                return x(d.date)
+            })
+            .attr('y',function(d) {
+                return height/2-(y(d.pos))
+            })
+            .attr('width', x.bandwidth())
+            .attr('height', function(d) { return y(d.pos)});
 
-        function mouseover() {
-            div.style('display', 'inline');
-        }
-
-        function mousemove() {
-            div
-                .text("text")
-                .style("left", (d3.event.pageX - 34) + "px")
-                .style("top", (d3.event.pageY - 12) + "px");
-        }
-
-        function mouseout() {
-            div.style("display", "none");
-        }
-
+        var negrect = svg.selectAll('rect.neg')
+            .data(dataset)
+            .enter()
+            .append('rect')
+            .attr("class", "nbar")
+            .attr('x', function(d) {
+                return x(d.date)
+            })
+            .attr('y',function(d) {
+                return height/2
+            })
+            .attr('width', x.bandwidth())
+            .attr('height', function(d) { return y(d.neg)})
 
         // scroll activity
 
@@ -87,17 +107,40 @@ function render(){
             .on('active', function(i){
 
                 var start = [
-                    function(d) { return height*.75 - (y(d.tweets)) },
-                    function(d) { return height/2 - (y(d.pos)) },
-                    function(d) { return height/2 - (y(d.pos)) },
-                    function(d) { return height/2 - (y(d.pos)) }
+                    function(d) { return y(d.tweets) },
+                    0,
+                    0,
+                    0
                 ];
 
-                rect.transition().duration(600)
-                    .attr('y', start[i] )
+                var ypos = [
+                    0,
+                    0,
+                    function(d) { return y(d.pos)},
+                    function(d) { return y(d.pos)}
+                    ];
+
+                var yneg = [
+                    0,
+                    0,
+                    function(d) { return y(d.neg)},
+                    function(d) { return y(d.neg)}
+                ];
+
+                rect.transition().duration(300)
+                    .attr('height', start[i] )
                     .transition()
                     .style('fill', colors[i]);
 
+                posrect.transition().duration(300)
+                    .attr('height', ypos[i] )
+                    .transition()
+                    .style('fill', colors[i]);
+
+                negrect.transition().duration(300)
+                    .attr('height', yneg[i] )
+                    .transition()
+                    .style('fill', colors[i])
             })
 
     });
