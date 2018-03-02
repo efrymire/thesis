@@ -36,7 +36,7 @@ function render(){
         })
 
         var x = d3.scaleBand()
-                .range([0, width - 30])
+                .range([0, width])
                 .padding(0.1)
                 .domain(dataset.map(function(d) { return d.date; })),
             y = d3.scaleLinear()
@@ -55,6 +55,15 @@ function render(){
             .on("mouseover", mouseover)
             .on("mousemove", mousemove)
             .on("mouseout", mouseout);
+
+        var text = svg.selectAll('rect')
+            .append('text')
+            .text(function(d) { return d.tweets; })
+            .style('fill','black')
+            .attr('x', function(d) { return x(d.date) })
+            .attr('y', function(d) { return height*.75 - (y(d.tweets)) })
+            .attr('transform', function(d, i) { return 'translate(10, ' + (window.innerHeight-y(d.tweets)) + ')rotate(-90)'; });
+
 
         var div = d3.select('body').append('div')
             .attr('class', 'tooltip')
@@ -86,15 +95,39 @@ function render(){
             // .offset(innerWidth < 900 ? innerHeight - 30 : 200)
             .on('active', function(i){
 
-                var start = [
+                var ypos = [
                     function(d) { return height*.75 - (y(d.tweets)) },
                     function(d) { return height/2 - (y(d.pos)) },
-                    function(d) { return height/2 - (y(d.pos)) },
-                    function(d) { return height/2 - (y(d.pos)) }
+                    function(d) { return height*0.75 - x(d.date) },
+                    height/2
+                ];
+
+                var xpos = [
+                    function(d) { return x(d.date) },
+                    function(d) { return x(d.date) },
+                    function(d) { return width/2 - (y(d.pos)) },
+                    0
+                ];
+
+                var wid = [
+                    x.bandwidth(),
+                    x.bandwidth(),
+                    function(d) { return y(d.tweets) },
+                    width
+                ];
+
+                var hgt = [
+                    function(d) { return y(d.tweets) },
+                    function(d) { return y(d.tweets) },
+                    x.bandwidth(),
+                    10
                 ];
 
                 rect.transition().duration(600)
-                    .attr('y', start[i] )
+                    .attr('y', ypos[i] )
+                    .attr('x', xpos[i] )
+                    .attr('width', wid[i] )
+                    .attr('height', hgt[i] )
                     .transition()
                     .style('fill', colors[i]);
 
