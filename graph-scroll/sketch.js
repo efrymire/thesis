@@ -4,7 +4,7 @@ function render(){
     oldWidth = innerWidth
 
     var width = d3.select('#graph').node().offsetWidth,
-        height = window.innerHeight;
+        height = d3.select('#graph').node().offsetWidth;
 
 
     if (innerWidth <= 925){
@@ -49,7 +49,7 @@ function render(){
             .append('rect')
             .attr("class", "bar")
             .attr('x', function(d) { return x(d.date) })
-            .attr('y', function(d) { return height*.75 - (y(d.tweets)) })
+            .attr('y', function(d) { return height/2 - (y(d.tweets)) })
             .attr('width', x.bandwidth())
             .attr('height', function(d) { return y(d.tweets) })
             .on("mouseover", mouseover)
@@ -61,7 +61,7 @@ function render(){
             .text(function(d) { return d.tweets; })
             .style('fill','black')
             .attr('x', function(d) { return x(d.date) })
-            .attr('y', function(d) { return height*.75 - (y(d.tweets)) })
+            .attr('y', function(d) { return height - (y(d.tweets)) })
             .attr('transform', function(d, i) { return 'translate(10, ' + (window.innerHeight-y(d.tweets)) + ')rotate(-90)'; });
 
 
@@ -96,9 +96,9 @@ function render(){
             .on('active', function(i){
 
                 var ypos = [
-                    function(d) { return height*.75 - (y(d.tweets)) },
+                    function(d) { return height/2 - (y(d.tweets)) },
                     function(d) { return height/2 - (y(d.pos)) },
-                    function(d) { return height*0.75 - x(d.date) },
+                    function(d) { return height - x(d.date) },
                     height/2
                 ];
 
