@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>React demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+    <!--<script type="text/javascript" src="myjs.js"></script>-->
+</head>
+
+<body>
+
+    <style>
+        #container {
+            color: pink;
+            background-color: #eee;
+            padding: 50px;
+        }
+    </style>
+    
+    <script type="text/babel">
+            
+        class Hero extends React.Component {
+            constructor(props) {
+            super(props);
+            this.state = {peopleSaved: 0};
+                this.handleClick = this.handleClick.bind(this);
+            } 
+            handleClick(){
+                this.setState(function(prevState){
+                    prevState.peopleSaved = prevState.peopleSaved + 1;
+                    return prevState;
+                })
+            }
+            render() {
+                var styles = {fontFamily: 'Arial', color: this.props.color}
+                return <p onClick={this.handleClick} style={styles}><strong><a href={this.props.name != "Mario" ? "http://www.dccomics.com/characters/" + this.props.name.replace(" ", "-") : "http://mario.nintendo.com/"}>{this.props.name}</a>:</strong> {this.props.power}, People Saved: {this.state.peopleSaved}</p>
+            }
+        }
+            
+        var destination = document.querySelector('#container')
+        ReactDOM.render(
+            <div id='heroList'>
+            <Hero name="Superman" power="Super strength and flight" color="red" />
+            <Hero name="Batman" power="Cool gadgets and money" color="black"/>
+            <Hero name="Wonder Woman" power="Magic lasso and invisible jet" color="blue" />
+            <Hero name="Green Lantern" power="Super powerful magic ring" color="green" />
+            <Hero name="Mario" power="Saves Princesses" color="purple" />
+        </div>,
+        destination
+        );
+            
+        
+        
+    </script>
+    
+    <div id='container'>
+        
+    </div>
+    
+</body>
+</html>
