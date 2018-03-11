@@ -62,7 +62,7 @@ This paper will dive into the study of social movement progression, and how oppo
 
 #### Bibliography In Progress
 
-*Me Too Resources:*
+**Me Too Resources:**
 
 Milano, Alyssa (@Alyssa_Milano) "If you’ve been sexually harassed or assaulted write 'me too' as a reply to this tweet” October 15, 2017, 4:15pm ET. Tweet.
 
@@ -78,7 +78,7 @@ Cacciola, Scott, and Victor Mather. "Larry Nassar Sentencing: 'I Just Signed You
 
 Adetiba, Elizabeth. "Tarana Burke Says #MeToo Should Center Marginalized Communities." The Nation. November 17, 2017. Accessed March 11, 2018. https://www.thenation.com/article/tarana-burke-says-metoo-isnt-just-for-white-people/.
 
-*Social Movement Resources:*
+**Social Movement Resources:**
 
 Porta, Donatella Della, and Mario Diani. *Social Movements: An Introduction*. 2nd ed. Malden, MA: Blackwell, 2006.
 
@@ -86,7 +86,7 @@ Zald, Mayer N., and Bert Useem. "Movements and Countermovements: Loosely Coupled
 
 Meyer, David S., and Suzanne Staggenborg. "Movements, Countermovements, and the Structure of Political Opportunity." *American Journal of Sociology* 101, no. 6 (1996): 1628-660. Accessed March 5, 2018. doi:10.1086/230869.
 
-*Social Media Algorithms*
+**Social Media Algorithms**
 
 Dylko, Ivan, Igor Dolgov, William Hoffman, Nicholas Eckhart, Maria Molina, and Omar Aaziz. "The dark side of technology: An experimental investigation of the influence of customizability technology on online political selective exposure." *Computers in Human Behavior* 73 (2017): 181-90. doi:10.1016/j.chb.2017.03.031.
 
