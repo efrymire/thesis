@@ -3,14 +3,14 @@
 
 1. Introduction
 * 1.1 Project Overview
-* 1.2 Cultural and Historical Background of #metoo: timeline and conception
+* 1.2 Cultural and Historical Background of #MeToo: timeline and conception
 * 1.3 Questions Posed:
-    + What are people saying about #metoo?
+    + What are people saying about #MeToo?
     + What are the themes of the dissenting opinions?
-    + How can these themes influence  the success of the #metoo movement?
+    + How can these themes influence  the success of the #MeToo movement?
 
 2. Treatment
-* 2.1 #metoo: goals, influencers, and results
+* 2.1 #MeToo: goals, influencers, and results
 * 2.2 Social Movement Lifecycle
     + Emergence
     + Coalescence
@@ -23,22 +23,86 @@
 * 2.6 Interpretation: how the support and dissent could influence the progression of the movement
 
 3. Conclusion
-* 3.1 Results: What the population is actually saying about #metoo
+* 3.1 Results: What the population is actually saying about #MeToo
 * 3.2 Interpretation: What does this mean for the movement? How have social echo chambers either helped or hurt this movement?
 
 ## Abstract
 
-Since October, 2017, the phrase “#metoo” has been shared millions of times. This simple phrase has become famous because it is just that — a simple phrase. In the wake of several women coming forward against Hollywood producer Harvey Weinstein, this phrase became a symbol of support and a tool to illuminate the vastness of sexual harassment. The idea is this: if anyone who has experienced sexual harassment wrote #metoo as an online status, “we might give people a sense of the magnitude of the problem". This is a simple phrase, without demanding evidence or requiring victims to relive their stories, caught like wildfire.
+Since October, 2017, the phrase “#MeToo” has been shared millions of times. This simple phrase has become famous because it is just that — a simple phrase. In the wake of several women coming forward against Hollywood producer Harvey Weinstein, this phrase became a symbol of support and a tool to illuminate the vastness of sexual harassment. The idea is this: if anyone who has experienced sexual harassment wrote #MeToo as an online status, “we might give people a sense of the magnitude of the problem". This is a simple phrase, without demanding evidence or requiring victims to relive their stories, caught like wildfire.
 
-#metoo quickly became a powerful movement in just a few days. It drew increbile support from all over the world - with #metoo sprouting in other languages, like #BalanceTonPorc and #YoTambien. But despite incredible media coverage and what seems like positive support from all over the world, there are lots of dissenting opinions. Many women feel as though the #metoo movement isn’t supportive of minority groups. Others feel as though it takes away the power of innocent until proven guilty. As is true with most social movements, #metoo has a number of dissenting voices in the crowd.
+#MeToo quickly became a powerful movement in just a few days. It drew increbile support from all over the world - with #MeToo sprouting in other languages, like #BalanceTonPorc and #YoTambien. But despite incredible media coverage and what seems like positive support from all over the world, there are lots of dissenting opinions. Many women feel as though the #MeToo movement isn’t supportive of minority groups. Others feel as though it takes away the power of innocent until proven guilty. As is true with most social movements, #MeToo has a number of dissenting voices in the crowd.
 
-As with almost every social movements, countermovements are born. While a simple tweet dissenting the #metoo movement may not be considered a “countermovement”, the central themes to these responses can be. But as we’ve learned through time, movements and countermovements are critical to each other’s success. By understanding the dissenting voices, one can better articulate their message, goals, and outcomes.
+As with almost every social movements, countermovements are born. While a simple tweet dissenting the #MeToo movement may not be considered a “countermovement”, the central themes to these responses can be. But as we’ve learned through time, movements and countermovements are critical to each other’s success. By understanding the dissenting voices, one can better articulate their message, goals, and outcomes.
 
-This paper will discuss the breadth of response to the #metoo movement, from supportive to against. The movement was born on twitter - so by analyzing tweets from October through 2018, we can understand the sentiment (fully supporting or fully against) of responses. The research method includes machine learning sentiment analysis.
+This paper will discuss the breadth of response to the #MeToo movement, from supportive to against. The movement was born on twitter - so by analyzing tweets from October through 2018, we can understand the sentiment (fully supporting or fully against) of responses. The research method includes machine learning sentiment analysis.
+
+## Introduction
+
+On October 15th, 2017, Alyssa Milano igniting a movement with just one tweet. She posted, “If you’ve been sexually harassed or assaulted write 'me too' as a reply to this tweet” (@Alyssa_Milano)
+
+![tweet](images/tweet.jpg?raw=true)
+
+What followed was a flood of stories, building a community of support. It was written about in almost every major newspaper, covering front pages, and found its way onto the nightly news.  In the first 24 hours, #MeToo was shared in more than 12 million posts and reactions in the first 24 hours (Garcia). Time’s “Person of the Year” for 2017 was “the silence breakers:” the voices that launched the #MeToo movement, including Ashley Judd, Alyssa Milano, Selma Blair, and many more women (Zacharek et al).
+
+While Alyssa Milano started a flurry of twitter activity, this idea of “Me too.” actually comes from activist Tarana Burke (Note: In this paper, the term “Me too.” will refer to Tarana Burke’s campaign, while “#MeToo” will address the online response). In 2006, she started the “Me too.” campaign to encourage women to speak out about sexual violence and harassment. Its aim is to build a community of survivors, finding their path to healing (https://metoomvmt.org/).
+
+This movement has put men behind bars, sparked apology responses, and encouraged many powerful men to be pushed out of their organizations. Harvey Weinstein, the man who sexually harassed dozens of women using his position of power in Hollywood, was sent to rehab and was fired by the board of his own company — a board that includes his own brother (Twohey). Larry Nassar, the former doctor for the women’s USA olympic gymnastics team and faculty of Michigan State, has been sentenced to 40 to 175 years in prison for abusing over 150 young women (Cacciola). Meanwhile, despite this culture of acceptance and community of power, many women and men aren’t supporting the #MeToo movement. These dissenting voices have begun their own campaigns, sprouting from #MeToo, but adding their own objectives and goals. Sometimes closely aligned, and sometimes startlingly different. 
+
+The emergence of these differing, often opposing, views is a natural progression of social movements. In Social Movements, An Introduction, Porta and Diani assert that these opponents and their relationship encourages the progression of the original movement, through “symbiotic dependence”:
+
+> "When looking at the opponents of social movements, we can start observing that they can be either institutional or noninstitutional actors. In fact, the term countermovements has been coined in relation to these latter actors. Countermovements arise in reaction to the successes obtained by social movements, and the two then develop in symbiotic dependence during the course of mobilization. In general, the relationship between movements and countermovements has been defined as one of loosely coupled conflicts, in which the two sides rarely come to together face to face." (Porta and Diani, p.211])
+
+Who are these dissenting voices, and what are their messages? Tarana Burke, in an interview with The Nation, shared that the twitter movement popularized by Alyssa Milano lacks the focus intended for the “Me too.” Campaign:
+
+> "The conversation is largely about Harvey Weinstein or other individual bogeymen. No matter how much I keep talking about power and privilege, they keep bringing it back to individuals. It would be very easy to get swept up and change directions and change the focus of this work, but that’s not going to happen. It defeats the purpose to not have those folks centered—I’m talking black and brown girls, queer folks. There’s no conversation in this whole thing about transgender folks and sexual violence. There’s no conversation in this about people with disabilities and sexual violence. We need to talk about Native Americans, who have the highest rate of sexual violence in this country." (Adetiba)
+
+This paper will dive into the study of social movement progression, and how opposition frames objectives. Specifically, how the opposition of the #MeToo movement is expressed through the online response. It will also discuss the process and analysis conducted in the accompanying visualization, illustrating the breadth of response within posts including #MeToo using sentiment analysis. 
 
 ## Literature Review and Resources
 
+#### Bibliography In Progress
+
+*Me Too Resources:*
+
+Milano, Alyssa (@Alyssa_Milano) "If you’ve been sexually harassed or assaulted write 'me too' as a reply to this tweet” October 15, 2017, 4:15pm ET. Tweet.
+
+Garcia, Sandra E. "The Woman Who Created #MeToo Long Before Hashtags." The New York Times. October 20, 2017. Accessed March 11, 2018. https://www.nytimes.com/2017/10/20/us/me-too-movement-tarana-burke.html.
+
+Zacharek, Stephanie, Eliana Dockterman, and Haley Sweetland Edwards. "TIME Person of the Year 2017: The Silence Breakers." Time.com. December 18, 2017. Accessed March 11, 2018. http://time.com/time-person-of-the-year-2017-silence-breakers/?xid=homepage.
+
+Me too. Accessed March 11, 2018. https://metoomvmt.org/.
+
+Twohey, Megan. "Harvey Weinstein Is Fired After Sexual Harassment Reports." The New York Times. October 08, 2017. Accessed March 11, 2018. https://www.nytimes.com/2017/10/08/business/harvey-weinstein-fired.html.
+
+Cacciola, Scott, and Victor Mather. "Larry Nassar Sentencing: 'I Just Signed Your Death Warrant'." The New York Times. January 24, 2018. Accessed March 11, 2018. https://www.nytimes.com/2018/01/24/sports/larry-nassar-sentencing.html.
+
+Adetiba, Elizabeth. "Tarana Burke Says #MeToo Should Center Marginalized Communities." The Nation. November 17, 2017. Accessed March 11, 2018. https://www.thenation.com/article/tarana-burke-says-metoo-isnt-just-for-white-people/.
+
+*Social Movement Resources:*
+
+Porta, Donatella Della, and Mario Diani. *Social Movements: An Introduction*. 2nd ed. Malden, MA: Blackwell, 2006.
+
+Zald, Mayer N., and Bert Useem. "Movements and Countermovements: Loosely Coupled Conflict." *CRSO Working Paper #302*. Accessed March 5, 2018. https://deepblue.lib.umich.edu/bitstream/handle/2027.42/51070/302.pdf?sequence=1&isAllowed=y.
+
+Meyer, David S., and Suzanne Staggenborg. "Movements, Countermovements, and the Structure of Political Opportunity." *American Journal of Sociology* 101, no. 6 (1996): 1628-660. Accessed March 5, 2018. doi:10.1086/230869.
+
+*Social Media Algorithms*
+
+Dylko, Ivan, Igor Dolgov, William Hoffman, Nicholas Eckhart, Maria Molina, and Omar Aaziz. "The dark side of technology: An experimental investigation of the influence of customizability technology on online political selective exposure." *Computers in Human Behavior* 73 (2017): 181-90. doi:10.1016/j.chb.2017.03.031.
+
+Pariser, Eli. 2011. *The Filter Bubble : How the New Personalized Web Is Changing What We Read and How We Think*. New York: Penguin Books, 2011. eBook Collection (EBSCOhost), EBSCOhost (accessed March 5, 2018).
+
 #### Brainstorming Sources
+
+Me Too Media Sources:
+
+* Alyssa Milano’s Twitter: https://twitter.com/Alyssa_Milano/status/919659438700670976/photo/1?ref_src=twsrc%5Etfw&ref_url=https%3A%2F%2F
+* The Woman Who Created #MeToo Long Before Hashtags: https://www.nytimes.com/2017/10/20/us/me-too-movement-tarana-burke.html
+* Person of the Year 2017: http://time.com/time-person-of-the-year-2017-silence-breakers/?xid=homepage
+* Me Too Movement Official website: https://metoomvmt.org/
+* Harvey Weinstein Is Fired After Sexual Harassment Reports: https://www.nytimes.com/2017/10/08/business/harvey-weinstein-fired.html
+* Larry Nassar Sentencing: ‘I Just Signed Your Death Warrant’: https://www.nytimes.com/2018/01/24/sports/larry-nassar-sentencing.html
+* Tarana Burke Says #MeToo Should Center Marginalized Communities: https://www.thenation.com/article/tarana-burke-says-metoo-isnt-just-for-white-people/
 
 Social Movements and Countermovements:
 
@@ -53,18 +117,6 @@ Social Media Algorithms:
 * The Reason Your Feed Became An Echo Chamber - And What To Do About It: https://www.npr.org/sections/alltechconsidered/2016/07/24/486941582/the-reason-your-feed-became-an-echo-chamber-and-what-to-do-about-it
 * The "Other Side" Is Not Dumb: https://medium.com/@SeanBlanda/the-other-side-is-not-dumb-2670c1294063
 
-
-#### Bibliography In Progress
-
-Porta, Donatella Della, and Mario Diani. *Social Movements: An Introduction*. 2nd ed. Malden, MA: Blackwell, 2006.
-
-Zald, Mayer N., and Bert Useem. "Movements and Countermovements: Loosely Coupled Conflict." *CRSO Working Paper #302*. Accessed March 5, 2018. https://deepblue.lib.umich.edu/bitstream/handle/2027.42/51070/302.pdf?sequence=1&isAllowed=y.
-
-Meyer, David S., and Suzanne Staggenborg. "Movements, Countermovements, and the Structure of Political Opportunity." *American Journal of Sociology* 101, no. 6 (1996): 1628-660. Accessed March 5, 2018. doi:10.1086/230869.
-
-Dylko, Ivan, Igor Dolgov, William Hoffman, Nicholas Eckhart, Maria Molina, and Omar Aaziz. "The dark side of technology: An experimental investigation of the influence of customizability technology on online political selective exposure." *Computers in Human Behavior* 73 (2017): 181-90. doi:10.1016/j.chb.2017.03.031.
-
-Pariser, Eli. 2011. *The Filter Bubble : How the New Personalized Web Is Changing What We Read and How We Think*. New York: Penguin Books, 2011. eBook Collection (EBSCOhost), EBSCOhost (accessed March 5, 2018).
 
 ## Iteration 2:
 
