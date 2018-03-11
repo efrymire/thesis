@@ -40,7 +40,7 @@ This paper will discuss the breadth of response to the #MeToo movement, from sup
 
 On October 15th, 2017, Alyssa Milano igniting a movement with just one tweet. She posted, “If you’ve been sexually harassed or assaulted write 'me too' as a reply to this tweet” (@Alyssa_Milano)
 
-![tweet](images/tweet.png?raw=true =100x)
+![tweet](images/tweet.png?raw=true)
 
 What followed was a flood of stories, building a community of support. It was written about in almost every major newspaper, covering front pages, and found its way onto the nightly news.  In the first 24 hours, #MeToo was shared in more than 12 million posts and reactions in the first 24 hours (Garcia). Time’s “Person of the Year” for 2017 was “the silence breakers:” the voices that launched the #MeToo movement, including Ashley Judd, Alyssa Milano, Selma Blair, and many more women (Zacharek et al).
 
