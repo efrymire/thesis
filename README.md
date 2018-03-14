@@ -26,16 +26,6 @@
 * 3.1 Results: What the population is actually saying about #MeToo
 * 3.2 Interpretation: What does this mean for the movement? How have social echo chambers either helped or hurt this movement?
 
-## Abstract
-
-Since October, 2017, the phrase “#MeToo” has been shared millions of times. This simple phrase has become famous because it is just that — a simple phrase. In the wake of several women coming forward against Hollywood producer Harvey Weinstein, this phrase became a symbol of support and a tool to illuminate the vastness of sexual harassment. The idea is this: if anyone who has experienced sexual harassment wrote #MeToo as an online status, “we might give people a sense of the magnitude of the problem". This is a simple phrase, without demanding evidence or requiring victims to relive their stories, caught like wildfire.
-
-#MeToo quickly became a powerful movement in just a few days. It drew increbile support from all over the world - with #MeToo sprouting in other languages, like #BalanceTonPorc and #YoTambien. But despite incredible media coverage and what seems like positive support from all over the world, there are lots of dissenting opinions. Many women feel as though the #MeToo movement isn’t supportive of minority groups. Others feel as though it takes away the power of innocent until proven guilty. As is true with most social movements, #MeToo has a number of dissenting voices in the crowd.
-
-As with almost every social movements, countermovements are born. While a simple tweet dissenting the #MeToo movement may not be considered a “countermovement”, the central themes to these responses can be. But as we’ve learned through time, movements and countermovements are critical to each other’s success. By understanding the dissenting voices, one can better articulate their message, goals, and outcomes.
-
-This paper will discuss the breadth of response to the #MeToo movement, from supportive to against. The movement was born on twitter - so by analyzing tweets from October through 2018, we can understand the sentiment (fully supporting or fully against) of responses. The research method includes machine learning sentiment analysis.
-
 ## Literature Review and Resources
 
 #### Bibliography In Progress
