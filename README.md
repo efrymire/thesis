@@ -7,24 +7,20 @@
 * 1.3 Questions Posed:
     + What are people saying about #MeToo?
     + What are the themes of the dissenting opinions?
-    + How can these themes influence  the success of the #MeToo movement?
+    + How can these themes influence the success of the #MeToo movement?
 
 2. Treatment
-* 2.1 #MeToo: goals, influencers, and results
-* 2.2 Social Movement Lifecycle
-    + Emergence
-    + Coalescence
-    + Bureaucratization
-    + Decline
-* 2.3 Movements and Countermovements: a loose coupling
-    + “In this conception, opposing movements influence each other both directly and by altering the environment in which each side operates. The opposing movement is a critical component in the structure of political opportunity the other side faces. [Meyer and Staggenborg]”
-* 2.4 Methodology: approach and technology (sentiment analysis)
-* 2.5 Results: support and dissent spectrum
-* 2.6 Interpretation: how the support and dissent could influence the progression of the movement
+* 2.1: Methodology: approach and technology (sentiment analysis)
+* 2.2: #MeToo: goals, influencers, and twitter results
+* 2.3: Cluster results and spectrum
+    + Cluster #1: goals, influencers, inception
+    + Cluster #2: goals, influencers, inception
+    + Cluster #n: goals, influencers, inception
+* 2.4 Interpretation: how the support and dissent could influence the progression of the movement
 
 3. Conclusion
 * 3.1 Results: What the population is actually saying about #MeToo
-* 3.2 Interpretation: What does this mean for the movement? How have social echo chambers either helped or hurt this movement?
+* 3.2 Interpretation: What does this mean for the movement? How can this understanding help or hurt this movement?
 
 ## Literature Review and Resources
 
