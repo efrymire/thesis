@@ -2,6 +2,7 @@
 ## Thesis Outline:
 
 1. Introduction
+
 * 1.1 Project Overview
 * 1.2 Cultural and Historical Background of #MeToo: timeline and conception
 * 1.3 Questions Posed:
@@ -10,6 +11,7 @@
     + How can these themes influence the success of the #MeToo movement?
 
 2. Treatment
+
 * 2.1: Methodology: approach and technology (sentiment analysis)
 * 2.2: #MeToo: goals, influencers, and twitter results
 * 2.3: Cluster results and spectrum
@@ -19,6 +21,7 @@
 * 2.4 Interpretation: how the support and dissent could influence the progression of the movement
 
 3. Conclusion
+
 * 3.1 Results: What the population is actually saying about #MeToo
 * 3.2 Interpretation: What does this mean for the movement? How can this understanding help or hurt this movement?
 
