@@ -32,6 +32,12 @@
 * 3.1 Results: What the population is actually saying about #MeToo
 * 3.2 Interpretation: What does this mean for the movement? How can this understanding help or hurt this movement?
 
+## Visual Mockup
+
+Updated April 3rd
+
+![metoo_3.2](images/metoo_3.2.jpg?raw=true)
+
 ## Literature Review and Resources
 
 #### Bibliography In Progress
