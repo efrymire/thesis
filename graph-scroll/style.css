@@ -1,7 +1,7 @@
 body{
     max-width: 900px;
     margin: 0px auto;
-    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'News Gothic Std', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1{
@@ -35,7 +35,7 @@ h1{
 
 #graph{
     margin-left: 40px;
-    width: 500px;
+    width: 600px;
     position: sticky;
     top: 0px;
     float: right;
@@ -89,11 +89,11 @@ svg{
 .tooltip {
     position: absolute;
     text-align: center;
-    width: 60px;
-    height: 12px;
+    width: 100px;
+    height: 25px;
     padding: 8px;
     margin-top: -20px;
     font: 10px sans-serif;
-    background: #ddd;
+    background: white;
     pointer-events: none;
 }
