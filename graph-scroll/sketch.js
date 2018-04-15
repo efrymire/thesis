@@ -27,7 +27,7 @@ function render(){
 
     // data function
 
-    d3.csv('date_count', function(data) {
+    d3.csv('date_count.csv', function(data) {
         var dataset = data;
 
         dataset.forEach(function(d) {
@@ -113,6 +113,7 @@ function render(){
             d.likes = parseInt(d.likes);
             d.retweets = parseInt(d.retweets);
             d.replies = parseInt(d.replies);
+            d.count = parseInt(d.count);
         })
 
         console.log(d3.max(dataset, function(d) { return d.likes}))
@@ -135,8 +136,7 @@ function render(){
             .append('circle')
             .attr('r', function(d) { return l(d.likes)})
             .attr('cx', function(d) { return x(d.date)})
-            // .attr('cy', function(d) { return height - (y(d.count)) })
-            .attr('cy', function() { return Math.random() * height })
+            .attr('cy', function(d) { return (height - (Math.random() * y(d.count)))})
             .attr('date', function(d) { return (d.date) })
             .attr('likes', function(d) { return (d.likes) })
             .attr('text', function(d) { return (d.text) })
@@ -165,27 +165,26 @@ function render(){
             div.style("display", "none");
         }
 
+        // scroll activity
+
         var gs2 = d3.graphScroll()
             .container(d3.select('.container-2'))
             .graph(d3.selectAll('.container-2 #graph'))
             .eventId('uniqueId2')  // namespace for scroll and resize events
             .sections(d3.selectAll('.container-2 #sections > div'))
-            .on('active', function(i){
-                var ypos = [
-                    function() { return Math.random() * height },
-                    function() { return Math.random() * height },
-                    function(d) { return height - (y(d.count)) },
-                    function(d) { return height - (y(d.count)) }
-                ];
-
-                tweet.transition().duration(1000)
-                    .attr('cy', ypos[i])
-                    .style('fill', colors[i])
-            })
+            // .on('active', function(i){
+            //     var ypos = [
+            //         function(d) { return height - Math.random() * y(d.count) },
+            //         function(d) { return height - (y(d.count)) },
+            //         function(d) { return height - (y(d.count)) }
+            //     ];
+            //
+            //     tweet.transition().duration(1000)
+            //         .attr('cy', ypos[i])
+            //         .style('fill', colors[i])
+            // })
 
     });
-
-    // ------- SCROLL 2 --------
 
     d3.select('#source')
         .styles({'margin-bottom': window.innerHeight - 450 + 'px', padding: '100px'})
