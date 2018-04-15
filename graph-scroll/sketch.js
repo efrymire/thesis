@@ -23,6 +23,8 @@ function render(){
     // this is only global because of the next graph
     var colors = ['orange', 'purple', 'steelblue', 'pink'];
 
+    var parseDate = d3.timeFormat("%m-%d-%Y");
+
     // data function
 
     d3.csv('date_count', function(data) {
@@ -75,7 +77,7 @@ function render(){
 
         function mousemove() {
             div
-                .text('date:' + d3.select(this).attr('date') + ', tweets:' + d3.select(this).attr('count'))
+                .text('date:' + parseDate(d3.select(this).attr('date')) + ', tweets:' + d3.select(this).attr('count'))
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 25) + "px");
         }
@@ -102,60 +104,88 @@ function render(){
         .append('svg')
         .attrs({width: width, height: height})
 
-    d3.csv('date_count', function(data) {
+    d3.csv('worthwhile', function(data) {
         var dataset = data;
+        console.log(dataset)
 
-        dataset.forEach(function (d) {
+        dataset.forEach(function(d) {
             d.date = Date.parse(d.date);
-            d.count = parseInt(d.count);
+            d.likes = parseInt(d.likes);
+            d.retweets = parseInt(d.retweets);
+            d.replies = parseInt(d.replies);
         })
+
+        console.log(d3.max(dataset, function(d) { return d.likes}))
 
         var x = d3.scaleBand()
                 .range([0, width])
                 .padding(0.1)
-                .domain(dataset.map(function (d) {
-                    return d.date;
-                })),
-            y = d3.scaleLinear()
+                .domain(dataset.map(function(d) { return d.date; })),
+            y = d3.scaleLog()
                 .range([0, height])
-                .domain([0, d3.max(dataset, function (d) {
-                    return d.count;
-                })]);
+                .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
+        l = d3.scaleLinear()
+            .range([1,10])
+            .domain([0, d3.max(dataset, function(d) { return d.likes; })]);
+
 
         var tweet = svg2.selectAll('circle')
             .data(dataset)
             .enter()
             .append('circle')
-            .attr('r', '2')
+            .attr('r', function(d) { return l(d.likes)})
             .attr('cx', function(d) { return x(d.date)})
-            .attr('cy', height)
+            // .attr('cy', function(d) { return height - (y(d.count)) })
+            .attr('cy', function() { return Math.random() * height })
+            .attr('date', function(d) { return (d.date) })
+            .attr('likes', function(d) { return (d.likes) })
+            .attr('text', function(d) { return (d.text) })
+            .on("mouseover", mouseover)
+            .on("mousemove", mousemove)
+            .on("mouseout", mouseout);
 
-    })
+        var div = d3.select('body').append('div')
+            .attr('class', 'tooltip')
+            .style('display', 'none');
+
+        function mouseover() {
+            d3.select(this).style('fill','yellow')
+            div.style('display', 'inline');
+        }
+
+        function mousemove() {
+            div
+                .text('date:' + parseDate(d3.select(this).attr('date')) + ', likes:' + d3.select(this).attr('likes') + ', tweet text:' + d3.select(this).attr('text'))
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 25) + "px");
+        }
+
+        function mouseout() {
+            d3.select(this).style('fill','steelblue')
+            div.style("display", "none");
+        }
+
+        var gs2 = d3.graphScroll()
+            .container(d3.select('.container-2'))
+            .graph(d3.selectAll('.container-2 #graph'))
+            .eventId('uniqueId2')  // namespace for scroll and resize events
+            .sections(d3.selectAll('.container-2 #sections > div'))
+            .on('active', function(i){
+                var ypos = [
+                    function() { return Math.random() * height },
+                    function() { return Math.random() * height },
+                    function(d) { return height - (y(d.count)) },
+                    function(d) { return height - (y(d.count)) }
+                ];
+
+                tweet.transition().duration(1000)
+                    .attr('cy', ypos[i])
+                    .style('fill', colors[i])
+            })
+
+    });
 
     // ------- SCROLL 2 --------
-
-    var gs2 = d3.graphScroll()
-        .container(d3.select('.container-2'))
-        .graph(d3.selectAll('.container-2 #graph'))
-        .eventId('uniqueId2')  // namespace for scroll and resize events
-        .sections(d3.selectAll('.container-2 #sections > div'))
-        // .on('active', function(i){
-            // var h = height
-            // var w = width
-            // var dArray = [
-            //     [[w/4, h/4], [w*3/4, h/4],  [w*3/4, h*3/4], [w/4, h*3/4]],
-            //     [[0, 0],     [w*3/4, h/4],  [w*3/4, h*3/4], [w/4, h*3/4]],
-            //     [[w/2, h/2], [w, h/4],      [w, h],         [w/4, h]],
-            //     [[w/2, h/2], [w, h/4],      [w, h],         [w/4, h]],
-            //     [[w/2, h/2], [w, h/2],      [0, 0],         [w/4, h/2]],
-            //     [[w/2, h/2], [0, h/4],      [0, h/2],         [w/4, 0]],
-            // ].map(function(d){ return 'M' + d.join(' L ') })
-
-
-        //     tweet.transition().duration(1000)
-        //         .attr('d', dArray[i])
-        //         .style('fill', colors[i])
-        // })
 
     d3.select('#source')
         .styles({'margin-bottom': window.innerHeight - 450 + 'px', padding: '100px'})
