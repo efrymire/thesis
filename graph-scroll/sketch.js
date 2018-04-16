@@ -6,6 +6,8 @@ function render(){
     var width = d3.select('#graph').node().offsetWidth,
         height = d3.select('#graph').node().offsetWidth;
 
+    var width1 = d3.select('.container-1').node().offsetWidth,
+        height2 = window.innerHeight
 
     if (innerWidth <= 925){
         width = innerWidth
@@ -16,9 +18,9 @@ function render(){
 
     // set svg and global var
 
-    var svg = d3.select('#graph').html('')
+    var svg = d3.select('.container-1').html('')
         .append('svg')
-        .attrs({width: width, height: height})
+        .attrs({width: width1, height: height})
 
     // this is only global because of the next graph
     var colors = ['orange', 'purple', 'steelblue', 'pink'];
@@ -36,7 +38,7 @@ function render(){
         })
 
         var x = d3.scaleBand()
-                .range([0, width])
+                .range([0, width1])
                 .padding(0.1)
                 .domain(dataset.map(function(d) { return d.date; })),
             y = d3.scaleLog()
@@ -54,17 +56,18 @@ function render(){
             .attr('height', function(d) { return y(d.count) })
             .attr('date', function(d) { return (d.date) })
             .attr('count', function(d) { return (d.count) })
+            .style('fill','steelblue')
             .on("mouseover", mouseover)
             .on("mousemove", mousemove)
             .on("mouseout", mouseout);
 
-        var text = svg.selectAll('rect')
-            .append('text')
-            .text(function(d) { return d.count; })
-            .style('fill','black')
-            .attr('x', function(d) { return x(d.date) })
-            .attr('y', function(d) { return height - (y(d.count)) })
-            .attr('transform', function(d, i) { return 'translate(10, ' + (window.innerHeight-y(d.count)) + ')rotate(-90)'; });
+        // var text = svg.selectAll('rect')
+        //     .append('text')
+        //     .text(function(d) { return d.count; })
+        //     .style('fill','black')
+        //     .attr('x', function(d) { return x(d.date) })
+        //     .attr('y', function(d) { return height - (y(d.count)) })
+        //     .attr('transform', function(d, i) { return 'translate(10, ' + (window.innerHeight-y(d.count)) + ')rotate(-90)'; });
 
 
         var div = d3.select('body').append('div')
@@ -72,6 +75,7 @@ function render(){
             .style('display', 'none');
 
         function mouseover() {
+            d3.select(this).style('fill','darkblue')
             div.style('display', 'inline');
         }
 
@@ -83,6 +87,7 @@ function render(){
         }
 
         function mouseout() {
+            d3.select(this).style('fill','steelblue')
             div.style("display", "none");
         }
 
@@ -102,14 +107,18 @@ function render(){
 
     var svg2 = d3.select('.container-2 #graph').html('')
         .append('svg')
-        .attrs({width: width, height: height})
+        .attrs({width: width, height: height2})
 
     d3.csv('worthwhile', function(data) {
         var dataset = data;
         console.log(dataset)
 
         dataset.forEach(function(d) {
+            // d.time = Date.parse(d.date + 'T' + d.time);
             d.date = Date.parse(d.date);
+            // d.hour = parseInt(d.hour)
+            // d.minute = parseInt(d.minute)
+            // d.second = parseInt(d.second)
             d.likes = parseInt(d.likes);
             d.retweets = parseInt(d.retweets);
             d.replies = parseInt(d.replies);
@@ -123,11 +132,14 @@ function render(){
                 .padding(0.1)
                 .domain(dataset.map(function(d) { return d.date; })),
             y = d3.scaleLog()
-                .range([0, height])
+                .range([0, height2])
                 .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
-        l = d3.scaleLinear()
-            .range([1,10])
-            .domain([0, d3.max(dataset, function(d) { return d.likes; })]);
+            l = d3.scaleLinear()
+                .range([1,10])
+                .domain([0, d3.max(dataset, function(d) { return d.likes; })]);
+            // t = d3.scaleLinear()
+            //     .range([0, height])
+            //     .domain([0, 24])
 
 
         var tweet = svg2.selectAll('circle')
@@ -136,7 +148,9 @@ function render(){
             .append('circle')
             .attr('r', function(d) { return l(d.likes)})
             .attr('cx', function(d) { return x(d.date)})
-            .attr('cy', function(d) { return (height - (Math.random() * y(d.count)))})
+            .attr('cy', function(d) { return (Math.random() * height2)})
+            // .attr('cy', function(d) { return (height2 - (Math.random() * y(d.count)))})
+            // .attr('cy', function(d) { return (height2 - )})
             .attr('date', function(d) { return (d.date) })
             .attr('likes', function(d) { return (d.likes) })
             .attr('text', function(d) { return (d.text) })
@@ -149,7 +163,7 @@ function render(){
             .style('display', 'none');
 
         function mouseover() {
-            d3.select(this).style('fill','yellow')
+            d3.select(this).style('fill','darkblue');
             div.style('display', 'inline');
         }
 

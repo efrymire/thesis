@@ -1,5 +1,5 @@
 body{
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0px auto;
     font-family: 'News Gothic Std', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -18,7 +18,7 @@ h1{
 }
 
 #sections{
-    width: 340px;
+    width: 300px;
 }
 
 #sections > div{
