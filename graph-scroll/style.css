@@ -12,13 +12,25 @@ h1{
     text-align: center;
 }
 
+.type-it {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 3.5rem;
+    /*padding: 0 2rem;*/
+}
+
 
 #container{
     position: relative;
+    text-align: justify;
 }
 
 #sections{
-    width: 300px;
+    width: 50%;
+    padding-right:15px;
 }
 
 #sections > div{
@@ -35,9 +47,11 @@ h1{
 
 #graph{
     margin-left: 40px;
-    width: 600px;
+    padding-left: 15px;
+    width: 50%;
     position: sticky;
-    top: 0px;
+    top: 20px;
+    bottom: 20px;
     float: right;
 }
 
@@ -86,7 +100,7 @@ svg{
 
 /* MY ADDITIONS */
 
-.tooltip {
+#bootstrap-overrides .tooltip {
     position: absolute;
     text-align: center;
     width: 100px;

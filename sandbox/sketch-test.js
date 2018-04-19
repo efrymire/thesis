@@ -1,138 +1,107 @@
-var width = window.innerWidth;
-var height = window.innerHeight;
+var width = window.innerWidth,
+    height = window.innerHeight,
+    padding = 1.5, // separation between same-color nodes
+    clusterPadding = 6, // separation between different-color nodes
+    maxRadius = 12;
 
-// ------- SVG --------
+var n = 200, // total number of nodes
+    m = 10; // number of distinct clusters
 
-// set svg and global var
+var color = d3.scaleSequential(d3.interpolateRainbow)
+    .domain(d3.range(m));
 
-// var svg = d3.select('#graph').html('')
-var svg = d3.select('body')
-    .append('svg')
-    .attr('width', width)
-    .attr('height', height)
+// The largest node for each cluster.
+var clusters = new Array(m);
 
-// data function
-
-// d3.csv('date_count', function(data) {
-//     var dataset = data;
-//
-//     dataset.forEach(function(d) {
-//         d.date = Date.parse(d.date);
-//         d.count = parseInt(d.count);
-//     })
-//
-//     var x = d3.scaleBand()
-//             .range([0, width])
-//             .padding(0.1)
-//             .domain(dataset.map(function(d) { return d.date; })),
-//         y = d3.scaleLog()
-//             .range([0, height])
-//             .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
-//
-//     var rect = svg.selectAll('rect')
-//         .data(dataset)
-//         .enter()
-//         .append('rect')
-//         .attr("class", "bar")
-//         .attr('x', function(d) { return x(d.date) })
-//         .attr('y', function(d) { return height - (y(d.count)) })
-//         .attr('width', x.bandwidth())
-//         .attr('height', function(d) { return y(d.count) })
-//         .attr('date', function(d) { return (d.date) })
-//         .attr('count', function(d) { return (d.count) })
-//         .on("mouseover", mouseover)
-//         .on("mousemove", mousemove)
-//         .on("mouseout", mouseout);
-//
-//     var text = svg.selectAll('rect')
-//         .append('text')
-//         .text(function(d) { return d.count; })
-//         .style('fill','black')
-//         .attr('x', function(d) { return x(d.date) })
-//         .attr('y', function(d) { return height - (y(d.count)) })
-//         .attr('transform', function(d, i) { return 'translate(10, ' + (window.innerHeight-y(d.count)) + ')rotate(-90)'; });
-//
-//
-//     var div = d3.select('body').append('div')
-//         .attr('class', 'tooltip')
-//         .style('display', 'none');
-//
-//     function mouseover() {
-//         div.style('display', 'inline');
-//     }
-//
-//     function mousemove() {
-//         div
-//             .text('date:' + d3.select(this).attr('date') + ', tweets:' + d3.select(this).attr('count'))
-//             .style("left", (d3.event.pageX) + "px")
-//             .style("top", (d3.event.pageY - 25) + "px");
-//     }
-//
-//     function mouseout() {
-//         div.style("display", "none");
-//     }
-//
-// });
-
-d3.csv('worthwhile', function(data) {
-    var dataset = data;
-    console.log(dataset)
-
-    dataset.forEach(function(d) {
-        d.date = Date.parse(d.date);
-        d.likes = parseInt(d.likes);
-        d.retweets = parseInt(d.retweets);
-        d.replies = parseInt(d.replies);
-    })
-
-    console.log(d3.max(dataset, function(d) { return d.likes}))
-
-    var x = d3.scaleBand()
-            .range([0, width])
-            .padding(0.1)
-            .domain(dataset.map(function(d) { return d.date; })),
-        y = d3.scaleLog()
-            .range([0, height])
-            .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
-        l = d3.scaleLinear()
-            .range([1,10])
-            .domain([0, d3.max(dataset, function(d) { return d.likes; })]);
-
-
-    var tweet = svg.selectAll('circle')
-        .data(dataset)
-        .enter()
-        .append('circle')
-        .attr('r', function(d) { return l(d.likes)})
-        .attr('cx', function(d) { return x(d.date)})
-        .attr('cy', function(d) { return height - (y(d.count)) })
-        .attr('date', function(d) { return (d.date) })
-        .attr('likes', function(d) { return (d.likes) })
-        .attr('text', function(d) { return (d.text) })
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseout", mouseout);
-
-    var div = d3.select('body').append('div')
-        .attr('class', 'tooltip')
-        .style('display', 'none');
-
-    function mouseover() {
-        d3.select(this).style('fill','yellow')
-        div.style('display', 'inline');
-    }
-
-    function mousemove() {
-        div
-            .text('date:' + d3.select(this).attr('date') + ', likes:' + d3.select(this).attr('likes') + ', tweet text:' + d3.select(this).attr('text'))
-            .style("left", (d3.event.pageX) + "px")
-            .style("top", (d3.event.pageY - 25) + "px");
-    }
-
-    function mouseout() {
-        d3.select(this).style('fill','steelblue')
-        div.style("display", "none");
-    }
-
-
+var nodes = d3.range(n).map(function() {
+    var i = Math.floor(Math.random() * m),
+        r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
+        d = {
+            cluster: i,
+            radius: r,
+            // x1: Math.random() * width
+            // y1: Math.random() * height
+            x: Math.cos(i / m * 2 * Math.PI) * 200 + width / 2 + Math.random(),
+            y: Math.sin(i / m * 2 * Math.PI) * 200 + height / 2 + Math.random()
+        };
+    if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
+    return d;
 });
+
+
+var force = d3.forceSimulation()
+// keep entire simulation balanced around screen center
+    .force('center', d3.forceCenter(width/2, height/2))
+
+    // cluster by section
+    .force('cluster', cluster()
+        .strength(0.2))
+
+    // apply collision with padding
+    .force('collide', d3.forceCollide(d => d.radius + padding)
+    .strength(0.7))
+
+    .on('tick', layoutTick)
+        .nodes(nodes);
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    var node = svg.selectAll("circle")
+        .data(nodes)
+        .enter().append("circle")
+        .style("fill", function(d) { return color(d.cluster/10); });
+
+
+function layoutTick(e) {
+    node
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; })
+        .attr("r", function(d) { return d.radius; });
+}
+
+// Move d to be adjacent to the cluster node.
+// from: https://bl.ocks.org/mbostock/7881887
+function cluster () {
+
+    var nodes,
+        strength = 0.1;
+
+    function force (alpha) {
+
+        // scale + curve alpha value
+        alpha *= strength * alpha;
+
+        nodes.forEach(function(d) {
+            var cluster = clusters[d.cluster];
+            if (cluster === d) return;
+
+            let x = d.x - cluster.x,
+                y = d.y - cluster.y,
+                l = Math.sqrt(x * x + y * y),
+                r = d.radius + cluster.radius;
+
+            if (l != r) {
+                l = (l - r) / l * alpha;
+                d.x -= x *= l;
+                d.y -= y *= l;
+                cluster.x += x;
+                cluster.y += y;
+            }
+        });
+
+    }
+
+    force.initialize = function (_) {
+        nodes = _;
+    }
+
+    force.strength = _ => {
+        strength = _ == null ? strength : _;
+        return force;
+    };
+
+    return force;
+
+}
