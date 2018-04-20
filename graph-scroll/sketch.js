@@ -127,7 +127,7 @@ function render(){
         .append('svg')
         .attrs({width: width, height: height_full})
 
-    d3.csv('tweets', function(data) {
+    d3.csv('tweets_random', function(data) {
         var dataset = data;
         console.log(dataset)
 
@@ -154,7 +154,7 @@ function render(){
                 .range([0, height_full])
                 .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
             l = d3.scaleLinear()
-                .range([1,10])
+                .range([3,13])
                 .domain([0, d3.max(dataset, function(d) { return d.likes; })]);
             // t = d3.scaleLinear()
             //     .range([0, height])
@@ -211,8 +211,8 @@ function render(){
                 var ypos = [
                     function(d) { return (height_full - (Math.random() * y(d.count)))},
                     function(d) { return (Math.random() * height_full)},
-                    function(d) { if (d.cluster == 1 ) { return 100 } else { if (d.cluster == 2 ) { return 200 } else { if (d.cluster == 3 ) { return 300 }  else { 400 } } } },
-                    // function(d) { if (d.likes > 200 ) {return 100} else {500}},
+                    // function(d) { if (d.cluster == 1 ) { return 100 } else { if (d.cluster == 2 ) { return 200 } else { if (d.cluster == 3 ) { return 300 }  else { 400 } } } },
+                    function(d) { if (d.likes > 300 ) {return 100 + Math.random() * 100} else { if (d.likes > 200 ) {return 300 + Math.random() * 100} else { return 500 + Math.random() * 100}}},
                     // function(d) { return (Math.random() * height2)},
                     // if (function (d) { return d.likes > 200 } ) { height/3 } else { height/4 };
                 ];
@@ -244,6 +244,10 @@ function render(){
         .attrs({width: width_full, height: height})
         .attr('style','padding-left: 15px')
         .attr('style','padding-right: 15px')
+
+    var rect = svg3.append('rect')
+        .attr('width', width_full)
+        .attr('height', height)
         .attr('style','fill: steelblue')
 
     // data function

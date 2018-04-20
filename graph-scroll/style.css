@@ -100,7 +100,7 @@ svg{
 
 /* MY ADDITIONS */
 
-#bootstrap-overrides .tooltip {
+.tooltip {
     position: absolute;
     text-align: center;
     width: 100px;
