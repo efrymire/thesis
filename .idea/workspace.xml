@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6a82503-2946-4c35-af18-d5fab86fbab9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/graph-scroll/sketch.js" afterPath="$PROJECT_DIR$/graph-scroll/sketch.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="packing" pinned="false" current-in-tab="true">
+      <file leaf-file-name="packing" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph-scroll/packing">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -58,14 +57,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sketch.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sketch.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/graph-scroll/sketch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="170" column="88" lean-forward="true" selection-start-line="166" selection-start-column="33" selection-end-line="170" selection-end-column="88" />
+            <state relative-caret-position="333">
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1524345078955" expanded="true" signature="264:400" ph="..." />
+                <marker date="1524346077496" expanded="true" signature="264:400" ph="..." />
               </folding>
             </state>
           </provider>
@@ -160,8 +159,8 @@
         <option value="$PROJECT_DIR$/sandbox/sketch-test.js" />
         <option value="$PROJECT_DIR$/graph-scroll/style.css" />
         <option value="$PROJECT_DIR$/sandbox/packing" />
-        <option value="$PROJECT_DIR$/graph-scroll/sketch.js" />
         <option value="$PROJECT_DIR$/graph-scroll/packing" />
+        <option value="$PROJECT_DIR$/graph-scroll/sketch.js" />
       </list>
     </option>
   </component>
@@ -289,12 +288,12 @@
       <workItem from="1523372094864" duration="60000" />
       <workItem from="1523468488345" duration="649000" />
       <workItem from="1523554683430" duration="20253000" />
-      <workItem from="1523920891839" duration="44221000" />
+      <workItem from="1523920891839" duration="45182000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119073000" />
+    <option name="totallyTimeSpent" value="120034000" />
   </component>
   <component name="TodoView" selected-index="3" />
   <component name="ToolWindowManager">
@@ -742,17 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graph-scroll/sketch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="170" column="88" lean-forward="true" selection-start-line="166" selection-start-column="33" selection-end-line="170" selection-end-column="88" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1524345078955" expanded="true" signature="264:400" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sandbox/packing">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -766,6 +754,17 @@
         <state relative-caret-position="285">
           <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph-scroll/sketch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1524346077496" expanded="true" signature="264:400" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

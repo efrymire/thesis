@@ -65,12 +65,15 @@ function render(){
             y = d3.scaleLog()
                 .range([0, height - axisHeight])
                 .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
+            // t = d3.scaleTime()
+            //     .range([0, width_full])
+            //     .padding(0.1)
+            //     .domain([new Date(2017-10-17), new Date(2018-03-01)])
 
-        // var xAxis = d3.axisBottom(x)
-        //     // .tickSize(height)
+        // var xAxis = d3.axisBottom(t)
         //     .ticks(d3.timeMonths)
         //     .tickFormat(axisDate);
-
+        //
         // svg.append("g")
         //     .attr("class", "x axis")
         //     .attr("transform", "translate(0," + (height - axisHeight) + ")")
@@ -85,7 +88,7 @@ function render(){
             .enter()
             .append('g')
             .on('mouseover', function() {
-                d3.select(this).selectAll('.bar').style('fill','darkblue')
+                d3.select(this).selectAll('.bar').style('fill','darkgrey')
                 d3.select(this).selectAll('.tip').style('visibility','visible')
             })
             .on('mouseout', function() {
@@ -108,8 +111,9 @@ function render(){
 
         var tip = group.append('text')
             .attr('class','tip')
-            .text(function(d) { return d.count; })
-            .style('fill','darkblue')
+            .text(function(d) { return 'date: ' + parseDate(d.date) + ', tweets: ' + d.count; })
+            .style('fill','darkgrey')
+            .style('font-style','italic')
             .style('visibility','hidden')
             .style('font-size','12')
             .style('alignment-baseline', 'hanging')
