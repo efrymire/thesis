@@ -96,7 +96,7 @@ function render(){
 
         bandwidth = x.bandwidth()
 
-        group.append('rect')
+        var rect = group.append('rect')
             .attr("class", "bar")
             .attr('x', function(d) { return x(d.date) })
             .attr('y', function(d) { return height - (y(d.count)) - axisHeight })
@@ -106,7 +106,7 @@ function render(){
             .attr('count', function(d) { return (d.count) })
             .style('fill','steelblue')
 
-        group.append('text')
+        var tip = group.append('text')
             .attr('class','tip')
             .text(function(d) { return d.count; })
             .style('fill','darkblue')
@@ -135,9 +135,6 @@ function render(){
 
     d3.csv('packing', function(error, data) {
         if (error) throw error;
-
-        console.log(data)
-
         stratified = d3.stratify()(data);
         console.log(stratified)
 
@@ -159,12 +156,40 @@ function render(){
             .padding(5)
 
         // Layout + Data
-        var root = d3.hierarchy(stratified).sum(function (d) { return (d.data.likes); });
+        var root = d3.hierarchy(stratified).sum(function (d) { return parseInt(d.data.likes + 1); });
         var nodes = root.descendants();
         layout(root);
 
-        var tweet = svg2.selectAll('circle').data(nodes).enter().append('circle')
+        var node = svg2.selectAll('g')
+            .data(nodes)
+            .enter()
+            .append('g')
+            .attr('class','pack')
+
+
+        // var tweet = svg2.selectAll('circle').data(nodes).enter().append('circle')
+        //     .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
+
+        var tweet = node.append('circle')
             .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
+            .attr('id', function(d) { return 'id: ' + d.data.id})
+
+        var leaf = d3.selectAll('.leaf')
+            .on('mouseover', function() {
+                d3.select(this.parentNode).selectAll('.node').style('fill','darkblue')
+                d3.select(this.parentNode).selectAll('.tip').style('visibility','visible')
+            })
+            .on('mouseout', function() {
+                d3.select(this.parentNode).selectAll('.node').style('fill','steelblue')
+                d3.select(this.parentNode).selectAll('.tip').style('visibility','hidden')
+            })
+
+        var tip = d3.selectAll('.pack').append('text')
+            .text(function(d) { return d.data.id })
+            .attr('class','tip')
+            .style('alignment-baseline','hanging')
+            .style('visibility','hidden')
+            .attr('transform','translate(0,10)')
 
 
         // ------- draw random --------

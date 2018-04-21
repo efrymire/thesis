@@ -4,8 +4,6 @@
     <list default="true" id="b6a82503-2946-4c35-af18-d5fab86fbab9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/graph-scroll/sketch.js" afterPath="$PROJECT_DIR$/graph-scroll/sketch.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/style.css" afterPath="$PROJECT_DIR$/graph-scroll/style.css" />
-      <change beforePath="$PROJECT_DIR$/sandbox/sketch-test.js" afterPath="$PROJECT_DIR$/sandbox/sketch-test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +18,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="packing" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/graph-scroll/packing">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sandbox/data.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph-scroll/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="107" column="25" lean-forward="true" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+            <state relative-caret-position="534">
+              <caret line="107" column="25" lean-forward="false" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -34,20 +52,20 @@
         <entry file="file://$PROJECT_DIR$/graph-scroll/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+              <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sketch.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sketch.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph-scroll/sketch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="184" column="0" lean-forward="true" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+            <state relative-caret-position="525">
+              <caret line="170" column="88" lean-forward="true" selection-start-line="166" selection-start-column="33" selection-end-line="170" selection-end-column="88" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1524332320104" expanded="true" signature="264:400" ph="..." />
+                <marker date="1524345078955" expanded="true" signature="264:400" ph="..." />
               </folding>
             </state>
           </provider>
@@ -56,18 +74,8 @@
       <file leaf-file-name="sketch-test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sandbox/sketch-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="58" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="packing" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sandbox/packing">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+            <state relative-caret-position="-245">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -102,7 +110,6 @@
       <find>d.tweets</find>
       <find>active</find>
       <find>NaN</find>
-      <find>NaN-NaN</find>
       <find>radius</find>
       <find>padding</find>
       <find>col-lg-</find>
@@ -113,6 +120,8 @@
       <find>x</find>
       <find>parent</find>
       <find>padding-right</find>
+      <find>NaN-NaN</find>
+      <find>id</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -148,10 +157,11 @@
         <option value="$PROJECT_DIR$/graph-scroll/index.html" />
         <option value="$PROJECT_DIR$/sandbox/flare.csv" />
         <option value="$PROJECT_DIR$/sandbox/index-test.html" />
-        <option value="$PROJECT_DIR$/sandbox/packing" />
         <option value="$PROJECT_DIR$/sandbox/sketch-test.js" />
         <option value="$PROJECT_DIR$/graph-scroll/style.css" />
+        <option value="$PROJECT_DIR$/sandbox/packing" />
         <option value="$PROJECT_DIR$/graph-scroll/sketch.js" />
+        <option value="$PROJECT_DIR$/graph-scroll/packing" />
       </list>
     </option>
   </component>
@@ -163,7 +173,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="944" />
+    <option name="width" value="1115" />
     <option name="height" value="824" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -223,8 +233,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/sandbox" />
       <recent name="$PROJECT_DIR$/graph-scroll" />
+      <recent name="$PROJECT_DIR$/sandbox" />
       <recent name="$PROJECT_DIR$/archive" />
       <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/machine-learning" />
@@ -279,23 +289,23 @@
       <workItem from="1523372094864" duration="60000" />
       <workItem from="1523468488345" duration="649000" />
       <workItem from="1523554683430" duration="20253000" />
-      <workItem from="1523920891839" duration="39536000" />
+      <workItem from="1523920891839" duration="44221000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114388000" />
+    <option name="totallyTimeSpent" value="119073000" />
   </component>
   <component name="TodoView" selected-index="3" />
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="944" height="824" extended-state="0" />
+    <frame x="0" y="23" width="1115" height="824" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19290465" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16216215" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38154614" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38101983" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -322,8 +332,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19546743" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10928014" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19546743" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19290465" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38154614" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -684,14 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sandbox/data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graph-scroll/graph-scroll.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -708,34 +710,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graph-scroll/packing">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sandbox/packing">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sandbox/sketch-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="58" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph-scroll/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="107" column="25" lean-forward="true" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+        <state relative-caret-position="-245">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -743,19 +721,51 @@
     <entry file="file://$PROJECT_DIR$/graph-scroll/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph-scroll/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="107" column="25" lean-forward="false" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sandbox/data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graph-scroll/sketch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="184" column="0" lean-forward="true" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+        <state relative-caret-position="525">
+          <caret line="170" column="88" lean-forward="true" selection-start-line="166" selection-start-column="33" selection-end-line="170" selection-end-column="88" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1524332320104" expanded="true" signature="264:400" ph="..." />
+            <marker date="1524345078955" expanded="true" signature="264:400" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sandbox/packing">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph-scroll/packing">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
