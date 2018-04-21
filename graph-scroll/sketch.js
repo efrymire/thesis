@@ -34,16 +34,19 @@ function render(){
 
     // set svg and global var
 
+    var axisHeight = 40;
+
     var svg = d3.select('.container-1').html('')
         .append('svg')
         .attrs({width: width_full, height: height})
-        .attr('style','padding-left: 15px')
-        .attr('style','padding-right: 15px')
+        // .attr('style','padding-left: 15px')
+        // .attr('style','padding-right: 15px')
 
     // this is only global because of the next graph
     var colors = ['orange', 'purple', 'steelblue', 'pink'];
 
     var parseDate = d3.timeFormat("%m-%d-%Y");
+    var axisDate = d3.timeFormat('%B')
 
     // data function
 
@@ -60,54 +63,57 @@ function render(){
                 .padding(0.1)
                 .domain(dataset.map(function(d) { return d.date; })),
             y = d3.scaleLog()
-                .range([0, height])
+                .range([0, height - axisHeight])
                 .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
 
-        var rect = svg.selectAll('rect')
+        // var xAxis = d3.axisBottom(x)
+        //     // .tickSize(height)
+        //     .ticks(d3.timeMonths)
+        //     .tickFormat(axisDate);
+
+        // svg.append("g")
+        //     .attr("class", "x axis")
+        //     .attr("transform", "translate(0," + (height - axisHeight) + ")")
+        //     .call(xAxis);
+
+        var g = svg.append('g')
+            .attr('id', 'group')
+
+        var group = svg.select('#group')
+            .selectAll('g')
             .data(dataset)
             .enter()
-            .append('rect')
+            .append('g')
+            .on('mouseover', function() {
+                d3.select(this).selectAll('.bar').style('fill','darkblue')
+                d3.select(this).selectAll('.tip').style('visibility','visible')
+            })
+            .on('mouseout', function() {
+                d3.select(this).selectAll('.bar').style('fill','steelblue')
+                d3.select(this).selectAll('.tip').style('visibility','hidden')
+            })
+
+
+        bandwidth = x.bandwidth()
+
+        group.append('rect')
             .attr("class", "bar")
             .attr('x', function(d) { return x(d.date) })
-            .attr('y', function(d) { return height - (y(d.count)) })
-            .attr('width', x.bandwidth())
+            .attr('y', function(d) { return height - (y(d.count)) - axisHeight })
+            .attr('width', bandwidth)
             .attr('height', function(d) { return y(d.count) })
             .attr('date', function(d) { return (d.date) })
             .attr('count', function(d) { return (d.count) })
             .style('fill','steelblue')
-            .on("mouseover", mouseover)
-            .on("mousemove", mousemove)
-            .on("mouseout", mouseout);
 
-        // var text = svg.selectAll('rect')
-        //     .append('text')
-        //     .text(function(d) { return d.count; })
-        //     .style('fill','black')
-        //     .attr('x', function(d) { return x(d.date) })
-        //     .attr('y', function(d) { return height - (y(d.count)) })
-        //     .attr('transform', function(d, i) { return 'translate(10, ' + (window.innerHeight-y(d.count)) + ')rotate(-90)'; });
-
-
-        var div = d3.select('body').append('div')
-            .attr('class', 'tooltip')
-            .style('display', 'none');
-
-        function mouseover() {
-            d3.select(this).style('fill','darkblue')
-            div.style('display', 'inline');
-        }
-
-        function mousemove() {
-            div
-                .text('date:' + parseDate(d3.select(this).attr('date')) + ', tweets:' + d3.select(this).attr('count'))
-                .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY - 25) + "px");
-        }
-
-        function mouseout() {
-            d3.select(this).style('fill','steelblue')
-            div.style("display", "none");
-        }
+        group.append('text')
+            .attr('class','tip')
+            .text(function(d) { return d.count; })
+            .style('fill','darkblue')
+            .style('visibility','hidden')
+            .style('font-size','12')
+            .style('alignment-baseline', 'hanging')
+            .attr('transform',function(d) { return 'translate(' + parseInt( x(d.date)) + ', ' + (height - axisHeight - y(d.count) - 5) + ')rotate(-90)'; })
 
 
         // scroll activity
@@ -127,77 +133,56 @@ function render(){
         .append('svg')
         .attrs({width: width, height: height_full})
 
-    d3.csv('tweets_random', function(data) {
-        var dataset = data;
-        console.log(dataset)
+    d3.csv('packing', function(error, data) {
+        if (error) throw error;
 
-        dataset.forEach(function(d) {
-            d.cluster = parseInt(d.cluster)
-            // d.time = Date.parse(d.date + 'T' + d.time);
-            d.date = Date.parse(d.date);
-            // d.hour = parseInt(d.hour)
-            // d.minute = parseInt(d.minute)
-            // d.second = parseInt(d.second)
+        console.log(data)
+
+        stratified = d3.stratify()(data);
+        console.log(stratified)
+
+        data.forEach(function(d) {
+            d.parentId = parseInt(d.parentId)
             d.likes = parseInt(d.likes);
-            d.retweets = parseInt(d.retweets);
-            d.replies = parseInt(d.replies);
-            d.count = parseInt(d.count);
         })
 
-        console.log(d3.max(dataset, function(d) { return d.likes}))
-
-        var x = d3.scaleBand()
-                .range([0, width])
-                .padding(0.1)
-                .domain(dataset.map(function(d) { return d.date; })),
-            y = d3.scaleLog()
-                .range([0, height_full])
-                .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
-            l = d3.scaleLinear()
-                .range([3,13])
-                .domain([0, d3.max(dataset, function(d) { return d.likes; })]);
-            // t = d3.scaleLinear()
-            //     .range([0, height])
-            //     .domain([0, 24])
+        var l = d3.scaleLinear()
+            .range([3,13])
+            .domain([0, d3.max(data, function(d) { return d.likes; })]);
 
 
-        var tweet = svg2.selectAll('circle')
-            .data(dataset)
-            .enter()
-            .append('circle')
-            .attr('r', function(d) { return l(d.likes)})
-            // .attr('cx', function(d) { return x(d.date)})
-            // .attr('cy', function(d) { return (Math.random() * height2)})
-            // .attr('cy', function(d) { return (height_full - (Math.random() * y(d.count)))})
-            // .attr('cy', function(d) { return (height2 - )})
-            .attr('date', function(d) { return (d.date) })
-            .attr('likes', function(d) { return (d.likes) })
-            .attr('text', function(d) { return (d.text) })
-            .style('opacity',0.7)
-            .on("mouseover", mouseover)
-            .on("mousemove", mousemove)
-            .on("mouseout", mouseout);
+        // ------- circle packing --------
 
-        var div = d3.select('body').append('div')
-            .attr('class', 'tooltip')
-            .style('display', 'none');
+        // Declare d3 layout
+        var layout = d3.pack()
+            .size([width, height])
+            .padding(5)
 
-        function mouseover() {
-            d3.select(this).style('fill','darkblue');
-            div.style('display', 'inline');
-        }
+        // Layout + Data
+        var root = d3.hierarchy(stratified).sum(function (d) { return (d.data.likes); });
+        var nodes = root.descendants();
+        layout(root);
 
-        function mousemove() {
-            div
-                .text('date:' + parseDate(d3.select(this).attr('date')) + ', likes:' + d3.select(this).attr('likes') + ', tweet text:' + d3.select(this).attr('text'))
-                .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY - 25) + "px");
-        }
+        var tweet = svg2.selectAll('circle').data(nodes).enter().append('circle')
+            .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
 
-        function mouseout() {
-            d3.select(this).style('fill','steelblue')
-            div.style("display", "none");
-        }
+
+        // ------- draw random --------
+
+        tweet.attr('r', function(d) { return (d.r)})
+            .style('opacity',0.3)
+            // .attr('cx',function() { return (Math.random() * width)})
+            // .attr('cy', function() { return (Math.random() * height)})
+
+
+        // ------- draw packing --------
+
+        // tweet.attr('r', function (d) { return (d.r); })
+        //     .style('opacity',0.3)
+            // .attr('cx', function (d) { return d.x; })
+            // .attr('cy', function (d) { return d.y; })
+
+
 
         // scroll activity
 
@@ -209,21 +194,17 @@ function render(){
             .sections(d3.selectAll('.container-2 #sections > div'))
             .on('active', function (i) {
                 var ypos = [
-                    function(d) { return (height_full - (Math.random() * y(d.count)))},
-                    function(d) { return (Math.random() * height_full)},
-                    // function(d) { if (d.cluster == 1 ) { return 100 } else { if (d.cluster == 2 ) { return 200 } else { if (d.cluster == 3 ) { return 300 }  else { 400 } } } },
-                    function(d) { if (d.likes > 300 ) {return 100 + Math.random() * 100} else { if (d.likes > 200 ) {return 300 + Math.random() * 100} else { return 500 + Math.random() * 100}}},
-                    // function(d) { return (Math.random() * height2)},
-                    // if (function (d) { return d.likes > 200 } ) { height/3 } else { height/4 };
+                    function() { return (Math.random() * height_full)},
+                    function (d) { return d.y; },
+                    function (d) { return d.y; },
+                    function (d) { return d.y; }
                 ];
 
                 var xpos = [
-                    function(d) { return x(d.date)},
-                    function(d) { return (Math.random() * width)},
-                    // function(d) { if (d.likes > 200 ) {return 100} else {500}},
-                    // function(d) { if (d.likes > 200 ) {return 100} else {500}},
-                    function(d) { return (Math.random() * width)},
-                    // if (function (d) { return d.likes > 200 } ) { height/3 } else { height/4 };
+                    function() { return (Math.random() * width)},
+                    function (d) { return (d.x); },
+                    function (d) { return (d.x); },
+                    function (d) { return (d.x); }
                 ];
 
 

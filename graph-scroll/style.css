@@ -86,10 +86,6 @@ h1{
 }
 
 
-circle{
-    fill: steelblue;
-}
-
 .mono{
     font-family: monospace;
 }
@@ -110,4 +106,13 @@ svg{
     font: 10px sans-serif;
     background: white;
     pointer-events: none;
+}
+
+circle {
+    fill-opacity: 0;
+}
+
+.leaf {
+    fill: steelblue;
+    fill-opacity: 1;
 }

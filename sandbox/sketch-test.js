@@ -1,107 +1,61 @@
 var width = window.innerWidth,
-    height = window.innerHeight,
-    padding = 1.5, // separation between same-color nodes
-    clusterPadding = 6, // separation between different-color nodes
-    maxRadius = 12;
+    height = window.innerHeight
 
-var n = 200, // total number of nodes
-    m = 10; // number of distinct clusters
+d3.select('body').append('svg')
+    .attr('width', width)
+    .attr('height', height)
 
-var color = d3.scaleSequential(d3.interpolateRainbow)
-    .domain(d3.range(m));
+// Prepare our physical space
+var g = d3.select('svg').append('g');
 
-// The largest node for each cluster.
-var clusters = new Array(m);
+// Get the data from our CSV file
+d3.csv('packing', function(error, data) {
+    if (error) throw error;
 
-var nodes = d3.range(n).map(function() {
-    var i = Math.floor(Math.random() * m),
-        r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
-        d = {
-            cluster: i,
-            radius: r,
-            // x1: Math.random() * width
-            // y1: Math.random() * height
-            x: Math.cos(i / m * 2 * Math.PI) * 200 + width / 2 + Math.random(),
-            y: Math.sin(i / m * 2 * Math.PI) * 200 + height / 2 + Math.random()
-        };
-    if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
-    return d;
+    console.log(data)
+
+    stratified = d3.stratify()(data);
+    console.log(stratified)
+
+    data.forEach(function(d) {
+        d.parentId = parseInt(d.parentId)
+        d.likes = parseInt(d.likes);
+    })
+
+    var l = d3.scaleLinear()
+            .range([3,13])
+            .domain([0, d3.max(data, function(d) { return d.likes; })]);
+
+
+    // ------- circle packing --------
+
+    // Declare d3 layout
+    var layout = d3.pack()
+        .size([width, height])
+        .padding(5)
+
+    // Layout + Data
+    var root = d3.hierarchy(stratified).sum(function (d) { return (d.data.likes); });
+    var nodes = root.descendants();
+
+    console.log(nodes)
+
+    layout(root);
+
+    var tweet = g.selectAll('circle').data(nodes).enter().append('circle');
+
+    // ------- draw random --------
+
+    // tweet.attr('r', function(d) { return (d.r)})
+    //     .attr('cx',function() { return (Math.random() * width)})
+    //     .attr('cy', function() { return (Math.random() * height)})
+    //     .style('opacity',0.3)
+
+    // ------- draw packing --------
+
+    tweet.attr('cx', function (d) { return d.x; })
+        .attr('cy', function (d) { return d.y; })
+        .attr('r', function (d) { return (d.r); })
+        .style('opacity','0.3')
+
 });
-
-
-var force = d3.forceSimulation()
-// keep entire simulation balanced around screen center
-    .force('center', d3.forceCenter(width/2, height/2))
-
-    // cluster by section
-    .force('cluster', cluster()
-        .strength(0.2))
-
-    // apply collision with padding
-    .force('collide', d3.forceCollide(d => d.radius + padding)
-    .strength(0.7))
-
-    .on('tick', layoutTick)
-        .nodes(nodes);
-
-    var svg = d3.select("body").append("svg")
-        .attr("width", width)
-        .attr("height", height);
-
-    var node = svg.selectAll("circle")
-        .data(nodes)
-        .enter().append("circle")
-        .style("fill", function(d) { return color(d.cluster/10); });
-
-
-function layoutTick(e) {
-    node
-        .attr("cx", function(d) { return d.x; })
-        .attr("cy", function(d) { return d.y; })
-        .attr("r", function(d) { return d.radius; });
-}
-
-// Move d to be adjacent to the cluster node.
-// from: https://bl.ocks.org/mbostock/7881887
-function cluster () {
-
-    var nodes,
-        strength = 0.1;
-
-    function force (alpha) {
-
-        // scale + curve alpha value
-        alpha *= strength * alpha;
-
-        nodes.forEach(function(d) {
-            var cluster = clusters[d.cluster];
-            if (cluster === d) return;
-
-            let x = d.x - cluster.x,
-                y = d.y - cluster.y,
-                l = Math.sqrt(x * x + y * y),
-                r = d.radius + cluster.radius;
-
-            if (l != r) {
-                l = (l - r) / l * alpha;
-                d.x -= x *= l;
-                d.y -= y *= l;
-                cluster.x += x;
-                cluster.y += y;
-            }
-        });
-
-    }
-
-    force.initialize = function (_) {
-        nodes = _;
-    }
-
-    force.strength = _ => {
-        strength = _ == null ? strength : _;
-        return force;
-    };
-
-    return force;
-
-}
