@@ -25,7 +25,7 @@ function render(){
     var width_full = d3.select('.container-1').node().offsetWidth,
         height_full = window.innerHeight - 40
 
-    if (innerWidth <= 1025){
+    if (innerWidth <= 1200){
         width = innerWidth
         height = innerHeight*.7
     }

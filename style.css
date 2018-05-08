@@ -1,0 +1,56 @@
+body{
+    max-width: 1000px;
+    margin: auto;
+    font-family: 'News Gothic Std', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*h1{*/
+    /*margin: 50px;*/
+/*}*/
+
+/*h1{*/
+    /*text-align: center;*/
+/*}*/
+
+.type-it {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 3.5rem;
+    /*padding: 0 2rem;*/
+}
+
+
+/*#container{*/
+    /*position: relative;*/
+    /*text-align: justify;*/
+/*}*/
+
+
+/*#graph{*/
+    /*margin-left: 40px;*/
+    /*padding-left: 15px;*/
+    /*width: 90%;*/
+    /*position: sticky;*/
+    /*top: 20px;*/
+    /*bottom: 20px;*/
+    /*float: right;*/
+/*}*/
+
+/*svg{*/
+    /*background-color: white;*/
+/*}*/
+
+/* MY ADDITIONS */
+
+
+!important circle.node {
+    fill-opacity: 0;
+}
+
+.leaf {
+    fill: steelblue;
+    fill-opacity: 1;
+}
