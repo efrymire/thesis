@@ -3,70 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b6a82503-2946-4c35-af18-d5fab86fbab9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/css/bootstrap-grid.css" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-grid.css" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/css/bootstrap-grid.css.map" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-grid.css.map" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/css/bootstrap-grid.min.css" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-grid.min.css" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/css/bootstrap-grid.min.css.map" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-grid.min.css.map" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/css/bootstrap-reboot.css" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-reboot.css" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/css/bootstrap-reboot.css.map" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-reboot.css.map" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/css/bootstrap-reboot.min.css" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-reboot.min.css" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/css/bootstrap-reboot.min.css.map" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-reboot.min.css.map" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/css/bootstrap.css" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap.css" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap.css.map" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/css/bootstrap.min.css.map" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap.min.css.map" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/js/bootstrap.bundle.js" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/js/bootstrap.bundle.js.map" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/js/bootstrap.bundle.min.js" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.bundle.min.js" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/js/bootstrap.bundle.min.js.map" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.bundle.min.js.map" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/js/bootstrap.js" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.js" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/js/bootstrap.js.map" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.js.map" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-4.1.0-dist/js/bootstrap.min.js.map" afterPath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.min.js.map" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/archive/sketch_fakedata.js" afterPath="$PROJECT_DIR$/archive/graph-scroll/archive/sketch_fakedata.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/archive/sketch_original.js" afterPath="$PROJECT_DIR$/archive/graph-scroll/archive/sketch_original.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/archive/sketch_pos+neg.js" afterPath="$PROJECT_DIR$/archive/graph-scroll/archive/sketch_pos+neg.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/archive/test-data.csv" afterPath="$PROJECT_DIR$/archive/graph-scroll/archive/test-data.csv" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/bootstrap.min.css" afterPath="$PROJECT_DIR$/archive/graph-scroll/bootstrap.min.css" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/bootstrap.min.js" afterPath="$PROJECT_DIR$/archive/graph-scroll/bootstrap.min.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/canvas/blocks.html" afterPath="$PROJECT_DIR$/archive/graph-scroll/canvas/blocks.html" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/canvas/canvas.js" afterPath="$PROJECT_DIR$/archive/graph-scroll/canvas/canvas.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/canvas/index-canvas.html" afterPath="$PROJECT_DIR$/archive/graph-scroll/canvas/index-canvas.html" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/canvas/packing" afterPath="$PROJECT_DIR$/archive/graph-scroll/canvas/packing" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/canvas/packing_large" afterPath="$PROJECT_DIR$/archive/graph-scroll/canvas/packing_large" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/canvas/packing_large_half" afterPath="$PROJECT_DIR$/archive/graph-scroll/canvas/packing_large_half" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/canvas/style.css" afterPath="$PROJECT_DIR$/archive/graph-scroll/canvas/style.css" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/d3v4+jetpack.js" afterPath="$PROJECT_DIR$/d3v4+jetpack.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/date_count.csv" afterPath="$PROJECT_DIR$/data/date_count.csv" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/engagement" afterPath="$PROJECT_DIR$/archive/graph-scroll/engagement" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/full-screen-test/graph-scroll-test.js" afterPath="$PROJECT_DIR$/archive/graph-scroll/full-screen-test/graph-scroll-test.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/full-screen-test/index-test.html" afterPath="$PROJECT_DIR$/archive/graph-scroll/full-screen-test/index-test.html" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/full-screen-test/packing" afterPath="$PROJECT_DIR$/archive/graph-scroll/full-screen-test/packing" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/full-screen-test/sketch-test.js" afterPath="$PROJECT_DIR$/archive/graph-scroll/full-screen-test/sketch-test.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/full-screen-test/style-test.css" afterPath="$PROJECT_DIR$/archive/graph-scroll/full-screen-test/style-test.css" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/graph-scroll.js" afterPath="$PROJECT_DIR$/archive/graph-scroll/graph-scroll.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/index.html" afterPath="$PROJECT_DIR$/archive/graph-scroll/index.html" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/index.js" afterPath="$PROJECT_DIR$/archive/graph-scroll/index.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/packing" afterPath="$PROJECT_DIR$/archive/sandbox/packing" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/sketch.js" afterPath="$PROJECT_DIR$/archive/graph-scroll/sketch.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/style.css" afterPath="$PROJECT_DIR$/archive/graph-scroll/style.css" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/tweets" afterPath="$PROJECT_DIR$/archive/graph-scroll/tweets" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/tweets_random" afterPath="$PROJECT_DIR$/archive/graph-scroll/tweets_random" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/typeit.min.js" afterPath="$PROJECT_DIR$/typeit.min.js" />
-      <change beforePath="$PROJECT_DIR$/graph-scroll/worthwhile" afterPath="$PROJECT_DIR$/archive/graph-scroll/worthwhile" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/packing" afterPath="$PROJECT_DIR$/archive/graph-scroll/packing" />
-      <change beforePath="$PROJECT_DIR$/sandbox/data.csv" afterPath="$PROJECT_DIR$/archive/sandbox/data.csv" />
-      <change beforePath="$PROJECT_DIR$/sandbox/date_count" afterPath="$PROJECT_DIR$/archive/sandbox/date_count" />
-      <change beforePath="$PROJECT_DIR$/sandbox/engagement" afterPath="$PROJECT_DIR$/archive/sandbox/engagement" />
-      <change beforePath="$PROJECT_DIR$/sandbox/index-test.html" afterPath="$PROJECT_DIR$/archive/sandbox/index-test.html" />
-      <change beforePath="$PROJECT_DIR$/sandbox/packing" afterPath="$PROJECT_DIR$/data/packing" />
-      <change beforePath="$PROJECT_DIR$/sandbox/sketch-test.js" afterPath="$PROJECT_DIR$/archive/sandbox/sketch-test.js" />
-      <change beforePath="$PROJECT_DIR$/sandbox/style.css" afterPath="$PROJECT_DIR$/archive/sandbox/style.css" />
-      <change beforePath="$PROJECT_DIR$/sandbox/tweets" afterPath="$PROJECT_DIR$/archive/sandbox/tweets" />
-      <change beforePath="$PROJECT_DIR$/sandbox/tweets_random" afterPath="$PROJECT_DIR$/archive/sandbox/tweets_random" />
-      <change beforePath="$PROJECT_DIR$/sandbox/worthwhile" afterPath="$PROJECT_DIR$/archive/sandbox/worthwhile" />
       <change beforePath="$PROJECT_DIR$/sketch.js" afterPath="$PROJECT_DIR$/sketch.js" />
-      <change beforePath="$PROJECT_DIR$/test/index.html" afterPath="$PROJECT_DIR$/archive/test/index.html" />
-      <change beforePath="$PROJECT_DIR$/test/scroll.js" afterPath="$PROJECT_DIR$/archive/test/scroll.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -94,8 +31,8 @@
       <file leaf-file-name="sketch.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sketch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="147" column="14" lean-forward="true" selection-start-line="147" selection-start-column="14" selection-end-line="147" selection-end-column="14" />
+            <state relative-caret-position="75">
+              <caret line="124" column="34" lean-forward="false" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -336,8 +273,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/archive" />
       <recent name="$PROJECT_DIR$/graph-scroll" />
       <recent name="$PROJECT_DIR$/graph-scroll/canvas" />
@@ -403,12 +340,12 @@
       <workItem from="1525395081036" duration="5860000" />
       <workItem from="1525656343539" duration="438000" />
       <workItem from="1525792589985" duration="1546000" />
-      <workItem from="1525796885882" duration="16688000" />
+      <workItem from="1525796885882" duration="16739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173285000" />
+    <option name="totallyTimeSpent" value="173336000" />
   </component>
   <component name="TodoView" selected-index="3" />
   <component name="ToolWindowManager">
@@ -499,13 +436,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/archive/sandbox/engagement">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="-120267">
-          <caret line="7001" column="0" lean-forward="false" selection-start-line="7001" selection-start-column="0" selection-end-line="7001" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/archive/sandbox/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -866,10 +796,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/cluster_count.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sketch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="147" column="14" lean-forward="true" selection-start-line="147" selection-start-column="14" selection-end-line="147" selection-end-column="14" />
+        <state relative-caret-position="75">
+          <caret line="124" column="34" lean-forward="false" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
           <folding />
         </state>
       </provider>

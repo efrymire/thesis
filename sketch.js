@@ -122,7 +122,7 @@ function render(){
         .append('svg')
         .attrs({width: 500, height: 380})
 
-    d3.csv('data/cluster_count', function(data) {
+    d3.csv('data/cluster_count.csv', function(data) {
 
         data.forEach( function(d) {
             d.cluster = parseInt(d.cluster),
