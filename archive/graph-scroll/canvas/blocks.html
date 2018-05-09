@@ -15,8 +15,8 @@
 
 <script type="text/javascript">
     var data = [];
-    d3.range(20000).forEach(function(el){
-        data.push({ x: d3.randomNormal(5,3)(), y: d3.randomNormal(5,3)(), r: d3.randomNormal(3,1)() });
+    d3.range(1500000).forEach(function(el){
+        data.push({ x: d3.randomNormal(5,3)(), y: d3.randomNormal(5,3)(), r: d3.randomNormal(1,.2)() });
     });
     console.log(data);
 
@@ -51,7 +51,7 @@
     }
 
     var x = d3.scaleLinear()
-        .domain([2, 8])
+        .domain([2,8])
         .range([0, width]);
 
     var y = d3.scaleLinear()
@@ -64,7 +64,7 @@
 
     function databind(data, x, y){
 
-        var join = custom.selectAll('custon.circle')
+        var join = custom.selectAll('custom.circle')
             .data(data);
 
         var enterSel = join.enter()

@@ -10,7 +10,8 @@ function render(){
     oldWidth = innerWidth
 
     var width = d3.select('#graph1').node().offsetWidth,
-        height = d3.select('#graph1').node().offsetWidth;
+        height = d3.select('#graph1').node().offsetWidth,
+        height_small = 120
 
     var width_full = d3.select('#graph0').node().offsetWidth - 30
     var height_full = window.innerHeight - 40
@@ -24,11 +25,11 @@ function render(){
 
     // set svg and global var
 
-    var axisHeight = 40;
+    var axisHeight = 10;
 
     var svg = d3.select('#graph0').html('')
         .append('svg')
-        .attrs({width: width_full, height: height})
+        .attrs({width: width_full, height: height_small})
     // .attr('style','padding-left: 15px')
     // .attr('style','padding-right: 15px')
 
@@ -40,7 +41,7 @@ function render(){
 
     // data function
 
-    d3.csv('graph-scroll/date_count.csv', function(data) {
+    d3.csv('data/date_count.csv', function(data) {
         var dataset = data;
 
         dataset.forEach(function(d) {
@@ -53,7 +54,7 @@ function render(){
                 .padding(0.1)
                 .domain(dataset.map(function(d) { return d.date; })),
             y = d3.scaleLog()
-                .range([0, height - axisHeight])
+                .range([0, height_small - axisHeight])
                 .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
         // t = d3.scaleTime()
         //     .range([0, width_full])
@@ -92,7 +93,7 @@ function render(){
         var rect = group.append('rect')
             .attr("class", "bar")
             .attr('x', function(d) { return x(d.date) })
-            .attr('y', function(d) { return height - (y(d.count)) - axisHeight })
+            .attr('y', function(d) { return height_small - (y(d.count)) - axisHeight })
             .attr('width', bandwidth)
             .attr('height', function(d) { return y(d.count) })
             .attr('date', function(d) { return (d.date) })
@@ -115,13 +116,48 @@ function render(){
 
     });
 
+    // SVG CLUSTERS ------
+
+    var svg_clusters = d3.select('#graph_clusters').html('')
+        .append('svg')
+        .attrs({width: 500, height: 380})
+
+    d3.csv('data/cluster_count', function(data) {
+
+        data.forEach( function(d) {
+            d.cluster = parseInt(d.cluster),
+            d.count = parseInt(d.count)
+        });
+
+        console.log(d3.max(data, function(d) {return d.count}))
+
+        var r = d3.scaleLog()
+            .range([0,5])
+            .domain([1, d3.max(data, function(d) {return d.count})])
+
+        var clusters = svg_clusters.selectAll('circle')
+            .data(data)
+            .enter()
+            .append('circle')
+            .attr('cluster', function(d) { return d.cluster})
+            .attr('cx', function(d) { return (d.cluster % 25) * 20 + 5 })
+            .attr('cy', function(d) { return Math.floor(d.cluster / 25) * 20 + 5 })
+            .attr('r', function(d) { return r(d.count) })
+            .on('mouseover', function(d) {
+
+            })
+
+    })
+
+
+
     // ------- SVG 1 --------
 
     var svg1 = d3.select('#graph1').html('')
         .append('svg')
         .attrs({width: width, height: width})
 
-    d3.csv('packing', function(error, data) {
+    d3.csv('data/packing', function(error, data) {
         if (error) throw error;
         stratified = d3.stratify()(data);
         console.log(stratified)
@@ -189,28 +225,34 @@ function render(){
         .append('svg')
         .attrs({width: width, height: width})
 
-    d3.csv('packing', function(error, data) {
+    d3.json('data/jsonpacking.json', function(error, data) {
         if (error) throw error;
-        stratified = d3.stratify()(data);
-        console.log(stratified)
+        // stratified = d3.stratify()(data);
+        // console.log(data)
 
-        data.forEach(function(d) {
-            d.parentId = parseInt(d.parentId)
-            d.likes = parseInt(d.likes);
-        })
+        root = d3.hierarchy(data).sum(function(d) { return d.likes; })
 
+        // console.log(data)
 
-        // ------- circle packing --------
-
-        // Declare d3 layout
+        // data.forEach(function(d) {
+        //     d.parentId = parseInt(d.parentId)
+        //     d.likes = parseInt(d.likes);
+        // })
+        //
+        //
+        // // ------- circle packing --------
+        //
+        // // Declare d3 layout
         var layout = d3.pack()
             .size([width, height])
             .padding(5)
-
-        // Layout + Data
-        var root = d3.hierarchy(stratified).sum(function (d) { return parseInt(d.data.likes + 1); });
+        //
+        // // Layout + Data
+        // var root = d3.hierarchy(stratified).sum(function (d) { return parseInt(d.data.likes + 1); });
         var nodes = root.descendants();
         layout(root);
+
+        console.log(nodes)
 
         var node = svg2.selectAll('g')
             .data(nodes)
@@ -220,7 +262,7 @@ function render(){
 
         var tweet = node.append('circle')
             .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-            .attr('id', function(d) { return 'id: ' + d.data.id})
+            .attr('text', function(d) { return 'id: ' + d.data.text})
             .style('fill','white')
 
         var leaf = d3.selectAll('.leaf')
@@ -235,7 +277,7 @@ function render(){
             })
 
         var tip = d3.selectAll('.pack').append('text')
-            .text(function(d) { return d.data.id })
+            .text(function(d) { return d.data.text })
             .attr('class','tip')
             .style('alignment-baseline','hanging')
             .style('visibility','hidden')
