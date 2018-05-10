@@ -1,16 +1,8 @@
 body{
     max-width: 1000px;
     margin: auto;
-    font-family: 'News Gothic Std', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Nunito', Arial, sans-serif;
 }
-
-/*h1{*/
-    /*margin: 50px;*/
-/*}*/
-
-/*h1{*/
-    /*text-align: center;*/
-/*}*/
 
 .type-it {
     height: 100vh;
@@ -19,32 +11,32 @@ body{
     align-items: center;
     font-family: 'Nunito', sans-serif;
     font-size: 3.5rem;
-    /*padding: 0 2rem;*/
+    padding: 0 1rem;
 }
 
+.cluster_tip {
+    font-size: 2rem;
+    fill: steelblue;
+    font-family: Inconsolata, monospace;
+    visibility: hidden;
+    alignment-baseline: hanging;
+}
 
-/*#container{*/
-    /*position: relative;*/
-    /*text-align: justify;*/
-/*}*/
+.bar_tip {
+    fill: steelblue;
+    font-family: Inconsolata, monospace;
+    visibility: hidden;
+    text-anchor: end;
+    font-size: 1rem;
+    alignment-baseline: hanging;
+}
 
-
-/*#graph{*/
-    /*margin-left: 40px;*/
-    /*padding-left: 15px;*/
-    /*width: 90%;*/
-    /*position: sticky;*/
-    /*top: 20px;*/
-    /*bottom: 20px;*/
-    /*float: right;*/
-/*}*/
-
-/*svg{*/
-    /*background-color: white;*/
-/*}*/
-
-/* MY ADDITIONS */
-
+.node_tip {
+    fill: steelblue;
+    font-family: Inconsolata, monospace;
+    alignment-baseline: hanging;
+    visibility: hidden;
+}
 
 !important circle.node {
     fill-opacity: 0;

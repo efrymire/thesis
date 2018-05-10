@@ -11,7 +11,7 @@ function render(){
 
     var width = d3.select('#graph1').node().offsetWidth,
         height = d3.select('#graph1').node().offsetWidth,
-        height_small = 120
+        height_small = 120;
 
     var width_full = d3.select('#graph0').node().offsetWidth - 30
     var height_full = window.innerHeight - 40
@@ -24,23 +24,15 @@ function render(){
     // ------- SVG --------
 
     // set svg and global var
-
     var axisHeight = 10;
 
     var svg = d3.select('#graph0').html('')
         .append('svg')
         .attrs({width: width_full, height: height_small})
-    // .attr('style','padding-left: 15px')
-    // .attr('style','padding-right: 15px')
-
-    // this is only global because of the next graph
-    var colors = ['orange', 'purple', 'steelblue', 'pink'];
 
     var parseDate = d3.timeFormat("%m-%d-%Y");
-    var axisDate = d3.timeFormat('%B')
 
     // data function
-
     d3.csv('data/date_count.csv', function(data) {
         var dataset = data;
 
@@ -56,21 +48,9 @@ function render(){
             y = d3.scaleLog()
                 .range([0, height_small - axisHeight])
                 .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
-        // t = d3.scaleTime()
-        //     .range([0, width_full])
-        //     .padding(0.1)
-        //     .domain([new Date(2017-10-17), new Date(2018-03-01)])
 
-        // var xAxis = d3.axisBottom(t)
-        //     .ticks(d3.timeMonths)
-        //     .tickFormat(axisDate);
-        //
-        // svg.append("g")
-        //     .attr("class", "x axis")
-        //     .attr("transform", "translate(0," + (height - axisHeight) + ")")
-        //     .call(xAxis);
-
-        var g = svg.append('g')
+        // G for all bars
+        svg.append('g')
             .attr('id', 'group')
 
         var group = svg.select('#group')
@@ -80,47 +60,46 @@ function render(){
             .append('g')
             .on('mouseover', function() {
                 d3.select(this).selectAll('.bar').style('fill','darkgrey')
-                d3.select(this).selectAll('.tip').style('visibility','visible')
+                d3.select(this).selectAll('.bar_tip').style('visibility','visible')
             })
             .on('mouseout', function() {
                 d3.select(this).selectAll('.bar').style('fill','steelblue')
-                d3.select(this).selectAll('.tip').style('visibility','hidden')
+                d3.select(this).selectAll('.bar_tip').style('visibility','hidden')
             })
 
-
-        bandwidth = x.bandwidth()
-
-        var rect = group.append('rect')
+        // RECT
+        group.append('rect')
             .attr("class", "bar")
             .attr('x', function(d) { return x(d.date) })
             .attr('y', function(d) { return height_small - (y(d.count)) - axisHeight })
-            .attr('width', bandwidth)
+            .attr('width', x.bandwidth())
             .attr('height', function(d) { return y(d.count) })
             .attr('date', function(d) { return (d.date) })
             .attr('count', function(d) { return (d.count) })
             .style('fill','steelblue')
 
-        var tip = group.append('text')
-            .attr('class','tip')
+        // TIP
+        group.append('text')
+            .attr('class','bar_tip')
             .text(function(d) { return 'date: ' + parseDate(d.date) + ', tweets: ' + d.count; })
-            .style('fill','steelblue')
-            .style('visibility','hidden')
-            .style('alignment-baseline', 'hanging')
-            // .style('font-style','italic')
-            // .style('font-size','12')
-            // .attr('transform',function(d) { return 'translate(' + parseInt( x(d.date)) + ', ' + (height - axisHeight - y(d.count) - 5) + ')rotate(-90)'; })
             .attr('transform', function() { return 'translate(' + parseInt( width_full - 2 ) + ',10)'} )
-            .style('text-anchor','end')
-            .style('font-size','1rem')
 
 
     });
 
     // SVG CLUSTERS ------
 
+    var cluster_height = 400
+
     var svg_clusters = d3.select('#graph_clusters').html('')
         .append('svg')
-        .attrs({width: 500, height: 380})
+        .attr('width', d3.select('#graph_clusters').node().offsetWidth)
+        .attr('height', cluster_height)
+
+    // var svg_clusters_tip = d3.select('#graph_clusters_tip').html('')
+    //     .append('svg')
+    //     .attr('width', d3.select('#graph_clusters_tip').node().offsetWidth)
+    //     .attr('height', cluster_height)
 
     d3.csv('data/cluster_count.csv', function(data) {
 
@@ -129,27 +108,70 @@ function render(){
             d.count = parseInt(d.count)
         });
 
-        console.log(d3.max(data, function(d) {return d.count}))
-
         var r = d3.scaleLog()
-            .range([0,5])
+            .range([0.2,8])
             .domain([1, d3.max(data, function(d) {return d.count})])
 
-        var clusters = svg_clusters.selectAll('circle')
+        var o = d3.scaleLog()
+            .range([0,1])
+            .domain([1, d3.max(data, function(d) {return d.count})])
+
+        // Cluster G
+        var g = svg_clusters.append('g')
+            .attr('id', 'group')
+            // .attr('transform', function() {
+            //     if (width > 500) { return 'translate(' + parseInt( width/2 - 250 ) + ',0)' }
+            //     else { return 'translate(0,0)' }
+            // })
+
+        var cluster_group = svg_clusters.select('#group')
+            .selectAll('g')
             .data(data)
             .enter()
-            .append('circle')
-            .attr('cluster', function(d) { return d.cluster})
-            .attr('cx', function(d) { return (d.cluster % 25) * 20 + 5 })
-            .attr('cy', function(d) { return Math.floor(d.cluster / 25) * 20 + 5 })
-            .attr('r', function(d) { return r(d.count) })
-            .on('mouseover', function(d) {
-
+            .append('g')
+            .on('mouseover', function() {
+                d3.select(this).selectAll('.cluster').style('fill','darkgrey')
+                d3.select(this).selectAll('.cluster_tip').style('visibility','visible')
+            })
+            .on('mouseout', function() {
+                d3.select(this).selectAll('.cluster').style('fill','steelblue')
+                d3.select(this).selectAll('.cluster_tip').style('visibility','hidden')
             })
 
+        // Cluster Cirle
+        cluster_group.append('circle')
+            .attr('cluster', function(d) { return d.cluster})
+            .attr('class', 'cluster')
+            .attr('cx', function(d) { return (d.cluster % 25) * (width/25) + 10 })
+            .attr('cy', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/19) + 20) })
+            .attr('r', function(d) { return r(d.count) })
+            .style('fill', 'steelblue')
+            .style('fill-opacity', function(d) { return o(d.count) })
+
+        // cluster tooltip - div
+        cluster_tip_div = g.append('div')
+            .attr('class', 'cluster_tip_div')
+            // .attr('width', width_fill - width)
+
+        // Cluster tooltip - name
+        cluster_group.append('text')
+            .attr('class', 'cluster_tip')
+            .text( function(d) { return 'cluster number: ' + d.cluster })
+            .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 15 + ')'} );
+
+        // Cluster tooltip - count
+        cluster_group.append('text')
+            .attr('class', 'cluster_tip')
+            .text( function(d) { return 'count of tweets: ' + d.count})
+            .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 50 + ')'} );
+
+        // Cluster tooltip - words
+        cluster_group.append('text')
+            .attr('class', 'cluster_tip')
+            .text( function(d) { return 'top words: TBD '})
+            .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 85 + ')'} )
+
     })
-
-
 
     // ------- SVG 1 --------
 
@@ -195,16 +217,16 @@ function render(){
             .style('fill','steelblue')
             .on('mouseover', function() {
                 d3.select(this.parentNode).selectAll('.node').style('fill','darkblue')
-                d3.select(this.parentNode).selectAll('.tip').style('visibility','visible')
+                d3.select(this.parentNode).selectAll('.node_tip').style('visibility','visible')
             })
             .on('mouseout', function() {
                 d3.select(this.parentNode).selectAll('.node').style('fill','steelblue')
-                d3.select(this.parentNode).selectAll('.tip').style('visibility','hidden')
+                d3.select(this.parentNode).selectAll('.node_tip').style('visibility','hidden')
             })
 
         var tip = d3.selectAll('.pack').append('text')
             .text(function(d) { return d.data.id })
-            .attr('class','tip')
+            .attr('class','node_tip')
             .style('alignment-baseline','hanging')
             .style('visibility','hidden')
             .attr('transform','translate(0,10)')
@@ -227,32 +249,19 @@ function render(){
 
     d3.json('data/jsonpacking.json', function(error, data) {
         if (error) throw error;
-        // stratified = d3.stratify()(data);
-        // console.log(data)
 
         root = d3.hierarchy(data).sum(function(d) { return d.likes; })
 
-        // console.log(data)
+        // ------- circle packing --------
 
-        // data.forEach(function(d) {
-        //     d.parentId = parseInt(d.parentId)
-        //     d.likes = parseInt(d.likes);
-        // })
-        //
-        //
-        // // ------- circle packing --------
-        //
-        // // Declare d3 layout
+        // Declare d3 layout
         var layout = d3.pack()
             .size([width, height])
             .padding(5)
-        //
-        // // Layout + Data
-        // var root = d3.hierarchy(stratified).sum(function (d) { return parseInt(d.data.likes + 1); });
+
+        // Layout + Data
         var nodes = root.descendants();
         layout(root);
-
-        console.log(nodes)
 
         var node = svg2.selectAll('g')
             .data(nodes)
@@ -269,16 +278,16 @@ function render(){
             .style('fill','steelblue')
             .on('mouseover', function() {
                 d3.select(this.parentNode).selectAll('.node').style('fill','darkblue')
-                d3.select(this.parentNode).selectAll('.tip').style('visibility','visible')
+                d3.select(this.parentNode).selectAll('.node_tip').style('visibility','visible')
             })
             .on('mouseout', function() {
                 d3.select(this.parentNode).selectAll('.node').style('fill','steelblue')
-                d3.select(this.parentNode).selectAll('.tip').style('visibility','hidden')
+                d3.select(this.parentNode).selectAll('.node_tip').style('visibility','hidden')
             })
 
         var tip = d3.selectAll('.pack').append('text')
             .text(function(d) { return d.data.text })
-            .attr('class','tip')
+            .attr('class','node_tip')
             .style('alignment-baseline','hanging')
             .style('visibility','hidden')
             .attr('transform','translate(0,10)')
