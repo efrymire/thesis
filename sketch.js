@@ -168,7 +168,7 @@ function render(){
         // Cluster tooltip - words
         cluster_group.append('text')
             .attr('class', 'cluster_tip')
-            .text( function(d) { return 'top words: TBD '})
+            .text( function(d) { return 'top words: sexual harassment, women, conversation, spark, men, power'})
             .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 85 + ')'} )
 
     })
