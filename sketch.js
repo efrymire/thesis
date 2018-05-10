@@ -129,14 +129,6 @@ function render(){
             .data(data)
             .enter()
             .append('g')
-            .on('mouseover', function() {
-                d3.select(this).selectAll('.cluster').style('fill','darkgrey')
-                d3.select(this).selectAll('.cluster_tip').style('visibility','visible')
-            })
-            .on('mouseout', function() {
-                d3.select(this).selectAll('.cluster').style('fill','steelblue')
-                d3.select(this).selectAll('.cluster_tip').style('visibility','hidden')
-            })
 
         // Cluster Cirle
         cluster_group.append('circle')
@@ -148,10 +140,23 @@ function render(){
             .style('fill', 'steelblue')
             .style('fill-opacity', function(d) { return o(d.count) })
 
-        // cluster tooltip - div
-        cluster_tip_div = g.append('div')
-            .attr('class', 'cluster_tip_div')
-            // .attr('width', width_fill - width)
+        cluster_group.append('rect')
+            .attr('x', function(d) { return (d.cluster % 25) * (width/25) })
+            .attr('y', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/19) + 10 ) })
+            .attr('width', 20)
+            .attr('height',20)
+            .style('fill','white')
+            .style('opacity', 0)
+            .style('stroke','black')
+            .style('stroke-width','1px')
+            .on('mouseover', function() {
+                d3.select(this.parentNode).selectAll('.cluster').style('fill','darkgrey')
+                d3.select(this.parentNode).selectAll('.cluster_tip').style('visibility','visible')
+            })
+            .on('mouseout', function() {
+                d3.select(this.parentNode).selectAll('.cluster').style('fill','steelblue')
+                d3.select(this.parentNode).selectAll('.cluster_tip').style('visibility','hidden')
+            })
 
         // Cluster tooltip - name
         cluster_group.append('text')
@@ -170,6 +175,7 @@ function render(){
             .attr('class', 'cluster_tip')
             .text( function(d) { return 'top words: sexual harassment, women, conversation, spark, men, power'})
             .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 85 + ')'} )
+
 
     })
 

@@ -9,7 +9,7 @@ fs.readFile(path, (err, data) => {
     let json = JSON.parse(data)
 
     let grouped = _.chain(json)
-        .groupBy('rand_cluster')
+        .groupBy('cluster')
         .map( (val, key) => {
             return {"cluster": key,
                 "children": val}
