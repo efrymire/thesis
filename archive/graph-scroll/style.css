@@ -1,15 +1,38 @@
 body{
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0px auto;
     font-family: 'News Gothic Std', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    fill: none
 }
 
-h1{
-    margin: 50px;
+.xaxis {
+    font-family: Inconsolata, monospace;
+    font: lightgrey;
 }
 
-h1{
-    text-align: center;
+path.domain {
+    stroke: none;
+}
+
+line {
+    stroke: none;
+}
+
+.bar_tip {
+    fill: steelblue;
+    font-family: Inconsolata, monospace;
+    visibility: hidden;
+    text-anchor: end;
+    font-size: 1rem;
+    alignment-baseline: hanging;
+}
+
+.cluster_tip {
+    font-size: 2rem;
+    fill: steelblue;
+    font-family: Inconsolata, monospace;
+    visibility: hidden;
+    alignment-baseline: hanging;
 }
 
 .type-it {

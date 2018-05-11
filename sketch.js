@@ -24,7 +24,7 @@ function render(){
     // ------- SVG --------
 
     // set svg and global var
-    var axisHeight = 10;
+    var axisHeight = 30;
 
     var svg = d3.select('#graph0').html('')
         .append('svg')
@@ -41,11 +41,18 @@ function render(){
             d.count = parseInt(d.count);
         })
 
+        console.log(dataset)
+
         var x = d3.scaleBand()
                 .range([0, width_full])
                 .padding(0.1)
-                .domain(dataset.map(function(d) { return d.date; })),
-            y = d3.scaleLog()
+                .domain(dataset.map(function(d) { return d.date; }));
+
+        var t = d3.scaleBand()
+            .domain(["November", "December", "January", "February", "March", "April"])
+            .range([0, width_full]);
+
+        var y = d3.scaleLog()
                 .range([0, height_small - axisHeight])
                 .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
 
@@ -84,6 +91,14 @@ function render(){
             .text(function(d) { return 'date: ' + parseDate(d.date) + ', tweets: ' + d.count; })
             .attr('transform', function() { return 'translate(' + parseInt( width_full - 2 ) + ',10)'} )
 
+        var xAxis = d3.axisBottom(t)
+            // .attr('transform','translate(0,' + (height_small - axisHeight) + ')')
+            // .orient("bottom");
+
+        svg.append("g")
+            .attr("class", "xaxis")
+            .attr('transform','translate(20,' + (height_small - axisHeight) + ')')
+            .call(xAxis)
 
     });
 
@@ -143,7 +158,7 @@ function render(){
         cluster_group.append('rect')
             .attr('x', function(d) { return (d.cluster % 25) * (width/25) })
             .attr('y', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/19) + 10 ) })
-            .attr('width', 20)
+            .attr('width', 25)
             .attr('height',20)
             .style('fill','white')
             .style('opacity', 0)
@@ -171,11 +186,23 @@ function render(){
             .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 50 + ')'} );
 
         // Cluster tooltip - words
-        cluster_group.append('text')
+        // cluster_group.append('text')
+        //     .attr('class', 'cluster_tip')
+        //     .text( function(d) { return 'top words: sexual harassment, women, conversation, spark, men, power'})
+        //     .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 85 + ')'} )
+
+        // Cluster tooltip - words
+        cluster_group.append('div')
+            .style('position','absolute')
+            .style('top', 0)
+            .style('left', 0)
+            .style('width', 100)
+            .style('height', 100)
+            .style('background-color','black')
+            .append('text')
             .attr('class', 'cluster_tip')
             .text( function(d) { return 'top words: sexual harassment, women, conversation, spark, men, power'})
             .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 85 + ')'} )
-
 
     })
 

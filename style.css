@@ -4,6 +4,19 @@ body{
     font-family: 'Nunito', Arial, sans-serif;
 }
 
+.xaxis {
+    font-family: Inconsolata, monospace;
+    font: lightgrey;
+}
+
+path.domain {
+    stroke: none;
+}
+
+line {
+    stroke: none;
+}
+
 .type-it {
     height: 100vh;
     display: flex;

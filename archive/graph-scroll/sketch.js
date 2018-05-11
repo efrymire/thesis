@@ -23,14 +23,15 @@ function render(){
         height = d3.select('#graph').node().offsetWidth;
 
     var width_full = d3.select('.container-1').node().offsetWidth,
-        height_full = window.innerHeight - 40
+        height_full = window.innerHeight - 40,
+        height_small = 150
 
     if (innerWidth <= 1200){
         width = innerWidth
         height = innerHeight*.7
     }
 
-    // ------- SVG --------
+    // ------- BAR CHART SVG 1 --------
 
     // set svg and global var
 
@@ -38,19 +39,13 @@ function render(){
 
     var svg = d3.select('.container-1').html('')
         .append('svg')
-        .attrs({width: width_full, height: height})
-        // .attr('style','padding-left: 15px')
-        // .attr('style','padding-right: 15px')
-
-    // this is only global because of the next graph
-    var colors = ['orange', 'purple', 'steelblue', 'pink'];
+        .attrs({width: width_full, height: height_small})
 
     var parseDate = d3.timeFormat("%m-%d-%Y");
-    var axisDate = d3.timeFormat('%B')
 
     // data function
 
-    d3.csv('date_count.csv', function(data) {
+    d3.csv('data/date_count.csv', function(data) {
         var dataset = data;
 
         dataset.forEach(function(d) {
@@ -58,28 +53,23 @@ function render(){
             d.count = parseInt(d.count);
         })
 
+        console.log(dataset)
+
         var x = d3.scaleBand()
-                .range([0, width_full])
-                .padding(0.1)
-                .domain(dataset.map(function(d) { return d.date; })),
-            y = d3.scaleLog()
-                .range([0, height - axisHeight])
-                .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
-            // t = d3.scaleTime()
-            //     .range([0, width_full])
-            //     .padding(0.1)
-            //     .domain([new Date(2017-10-17), new Date(2018-03-01)])
+            .range([0, width_full])
+            .padding(0.1)
+            .domain(dataset.map(function(d) { return d.date; }));
 
-        // var xAxis = d3.axisBottom(t)
-        //     .ticks(d3.timeMonths)
-        //     .tickFormat(axisDate);
-        //
-        // svg.append("g")
-        //     .attr("class", "x axis")
-        //     .attr("transform", "translate(0," + (height - axisHeight) + ")")
-        //     .call(xAxis);
+        var t = d3.scaleBand()
+            .domain(["November", "December", "January", "February", "March", "April"])
+            .range([0, width_full]);
 
-        var g = svg.append('g')
+        var y = d3.scaleLog()
+            .range([0, height_small - axisHeight])
+            .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
+
+        // G for all bars
+        svg.append('g')
             .attr('id', 'group')
 
         var group = svg.select('#group')
@@ -89,36 +79,38 @@ function render(){
             .append('g')
             .on('mouseover', function() {
                 d3.select(this).selectAll('.bar').style('fill','darkgrey')
-                d3.select(this).selectAll('.tip').style('visibility','visible')
+                d3.select(this).selectAll('.bar_tip').style('visibility','visible')
             })
             .on('mouseout', function() {
                 d3.select(this).selectAll('.bar').style('fill','steelblue')
-                d3.select(this).selectAll('.tip').style('visibility','hidden')
+                d3.select(this).selectAll('.bar_tip').style('visibility','hidden')
             })
 
-
-        bandwidth = x.bandwidth()
-
-        var rect = group.append('rect')
+        // RECT
+        group.append('rect')
             .attr("class", "bar")
             .attr('x', function(d) { return x(d.date) })
-            .attr('y', function(d) { return height - (y(d.count)) - axisHeight })
-            .attr('width', bandwidth)
+            .attr('y', function(d) { return height_small - (y(d.count)) - axisHeight })
+            .attr('width', x.bandwidth())
             .attr('height', function(d) { return y(d.count) })
             .attr('date', function(d) { return (d.date) })
             .attr('count', function(d) { return (d.count) })
             .style('fill','steelblue')
 
-        var tip = group.append('text')
-            .attr('class','tip')
+        // TIP
+        group.append('text')
+            .attr('class','bar_tip')
             .text(function(d) { return 'date: ' + parseDate(d.date) + ', tweets: ' + d.count; })
-            .style('fill','darkgrey')
-            .style('font-style','italic')
-            .style('visibility','hidden')
-            .style('font-size','12')
-            .style('alignment-baseline', 'hanging')
-            .attr('transform',function(d) { return 'translate(' + parseInt( x(d.date)) + ', ' + (height - axisHeight - y(d.count) - 5) + ')rotate(-90)'; })
+            .attr('transform', function() { return 'translate(' + parseInt( width_full - 2 ) + ',10)'} )
 
+        var xAxis = d3.axisBottom(t)
+        // .attr('transform','translate(0,' + (height_small - axisHeight) + ')')
+        // .orient("bottom");
+
+        svg.append("g")
+            .attr("class", "xaxis")
+            .attr('transform','translate(20,' + (height_small - axisHeight) + ')')
+            .call(xAxis)
 
         // scroll activity
 
@@ -131,7 +123,9 @@ function render(){
 
     });
 
-    // ------- SVG 2 --------
+    // ------- GRAPH SCROLL SVG 2 --------
+
+    var colors = ['orange', 'purple', 'steelblue', 'pink'];
 
     var svg2 = d3.select('.container-2 #graph').html('')
         .append('svg')
@@ -236,7 +230,6 @@ function render(){
                     function (d) { return (d.x); }
                 ];
 
-
                 tweet.transition().duration(1000)
                     .attr('cy', ypos[i])
                     .attr('cx', xpos[i])
@@ -245,96 +238,271 @@ function render(){
 
     });
 
-    // ------- SVG 3 --------
+    // ------- GRAPH CLUSTERS SVG 3 --------
 
     // set svg and global var
 
-    var svg3 = d3.select('.container-3').html('')
+    var svg3 = d3.select('#graph_clusters').html('')
         .append('svg')
-        .attrs({width: width_full, height: height})
+        .attrs({width: width, height: height})
         .attr('style','padding-left: 15px')
         .attr('style','padding-right: 15px')
 
-    var rect = svg3.append('rect')
-        .attr('width', width_full)
-        .attr('height', height)
-        .attr('style','fill: steelblue')
 
     // data function
+    var cluster_height = 400
 
-    // d3.csv('date_count.csv', function(data) {
-    //     var dataset = data;
-    //
-    //     dataset.forEach(function(d) {
-    //         d.date = Date.parse(d.date);
-    //         d.count = parseInt(d.count);
-    //     })
-    //
-    //     var x = d3.scaleBand()
-    //             .range([0, width_full])
-    //             .padding(0.1)
-    //             .domain(dataset.map(function(d) { return d.date; })),
-    //         y = d3.scaleLog()
-    //             .range([0, height])
-    //             .domain([1000, d3.max(dataset, function(d) { return d.count; })]);
-    //
-    //     var rect = svg.selectAll('rect')
-    //         .data(dataset)
-    //         .enter()
-    //         .append('rect')
-    //         .attr("class", "bar")
-    //         .attr('x', function(d) { return x(d.date) })
-    //         .attr('y', function(d) { return height - (y(d.count)) })
-    //         .attr('width', x.bandwidth())
-    //         .attr('height', function(d) { return y(d.count) })
-    //         .attr('date', function(d) { return (d.date) })
-    //         .attr('count', function(d) { return (d.count) })
-    //         .style('fill','steelblue')
-    //         .on("mouseover", mouseover)
-    //         .on("mousemove", mousemove)
-    //         .on("mouseout", mouseout);
-    //
-    //     // var text = svg.selectAll('rect')
-    //     //     .append('text')
-    //     //     .text(function(d) { return d.count; })
-    //     //     .style('fill','black')
-    //     //     .attr('x', function(d) { return x(d.date) })
-    //     //     .attr('y', function(d) { return height - (y(d.count)) })
-    //     //     .attr('transform', function(d, i) { return 'translate(10, ' + (window.innerHeight-y(d.count)) + ')rotate(-90)'; });
-    //
-    //
-    //     var div = d3.select('body').append('div')
-    //         .attr('class', 'tooltip')
-    //         .style('display', 'none');
-    //
-    //     function mouseover() {
-    //         d3.select(this).style('fill','darkblue')
-    //         div.style('display', 'inline');
-    //     }
-    //
-    //     function mousemove() {
-    //         div
-    //             .text('date:' + parseDate(d3.select(this).attr('date')) + ', tweets:' + d3.select(this).attr('count'))
-    //             .style("left", (d3.event.pageX) + "px")
-    //             .style("top", (d3.event.pageY - 25) + "px");
-    //     }
-    //
-    //     function mouseout() {
-    //         d3.select(this).style('fill','steelblue')
-    //         div.style("display", "none");
-    //     }
-    //
-    //
-    //     // scroll activity
-    //
-    //     var gs = d3.graphScroll()
-    //         .container(d3.select('.container-1'))
-    //         .graph(d3.selectAll('container-1 #graph'))
-    //         .eventId('uniqueId1')  // namespace for scroll and resize events
-    //         .sections(d3.selectAll('.container-1 #sections > div'))
-    //         .offset(innerWidth < 900 ? innerHeight - 30 : 200)
-    //
-    // });
+    var svg_clusters = d3.select('#graph_clusters').html('')
+        .append('svg')
+        .attr('width', d3.select('#graph_clusters').node().offsetWidth)
+        .attr('height', cluster_height)
+
+    // var svg_clusters_tip = d3.select('#graph_clusters_tip').html('')
+    //     .append('svg')
+    //     .attr('width', d3.select('#graph_clusters_tip').node().offsetWidth)
+    //     .attr('height', cluster_height)
+
+    d3.csv('data/cluster_count.csv', function(data) {
+
+        data.forEach( function(d) {
+            d.cluster = parseInt(d.cluster),
+                d.count = parseInt(d.count)
+        });
+
+        var r = d3.scaleLog()
+            .range([0.2,8])
+            .domain([1, d3.max(data, function(d) {return d.count})])
+
+        var o = d3.scaleLog()
+            .range([0,1])
+            .domain([1, d3.max(data, function(d) {return d.count})])
+
+        // Cluster G
+        var g = svg_clusters.append('g')
+            .attr('id', 'group')
+        // .attr('transform', function() {
+        //     if (width > 500) { return 'translate(' + parseInt( width/2 - 250 ) + ',0)' }
+        //     else { return 'translate(0,0)' }
+        // })
+
+        var cluster_group = svg_clusters.select('#group')
+            .selectAll('g')
+            .data(data)
+            .enter()
+            .append('g')
+
+        // Cluster Cirle
+        cluster_group.append('circle')
+            .attr('cluster', function(d) { return d.cluster})
+            .attr('class', 'cluster')
+            .attr('cx', function(d) { return (d.cluster % 25) * (width/25) + 10 })
+            .attr('cy', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/19) + 20) })
+            .attr('r', function(d) { return r(d.count) })
+            .style('fill', 'steelblue')
+            .style('fill-opacity', function(d) { return o(d.count) })
+
+        cluster_group.append('rect')
+            .attr('x', function(d) { return (d.cluster % 25) * (width/25) })
+            .attr('y', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/19) + 10 ) })
+            .attr('width', 25)
+            .attr('height',20)
+            .style('fill','white')
+            .style('opacity', 0)
+            .style('stroke','black')
+            .style('stroke-width','1px')
+            .on('mouseover', function() {
+                d3.select(this.parentNode).selectAll('.cluster').style('fill','darkgrey')
+                d3.select(this.parentNode).selectAll('.cluster_tip').style('visibility','visible')
+            })
+            .on('mouseout', function() {
+                d3.select(this.parentNode).selectAll('.cluster').style('fill','steelblue')
+                d3.select(this.parentNode).selectAll('.cluster_tip').style('visibility','hidden')
+            })
+
+        // Cluster tooltip - name
+        cluster_group.append('text')
+            .attr('class', 'cluster_tip')
+            .text( function(d) { return 'cluster number: ' + d.cluster })
+            .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 15 + ')'} );
+
+        // Cluster tooltip - count
+        cluster_group.append('text')
+            .attr('class', 'cluster_tip')
+            .text( function(d) { return 'count of tweets: ' + d.count})
+            .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 50 + ')'} );
+
+        // Cluster tooltip - words
+        // cluster_group.append('text')
+        //     .attr('class', 'cluster_tip')
+        //     .text( function(d) { return 'top words: sexual harassment, women, conversation, spark, men, power'})
+        //     .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 85 + ')'} )
+
+        // Cluster tooltip - words
+        cluster_group.append('div')
+            .style('position','absolute')
+            .style('top', 0)
+            .style('left', 0)
+            .style('width', 100)
+            .style('height', 100)
+            .style('background-color','black')
+            .append('text')
+            .attr('class', 'cluster_tip')
+            .text( function(d) { return 'top words: sexual harassment, women, conversation, spark, men, power'})
+            .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 85 + ')'} )
+
+    });
+
+    /// CIRCLE PACK 1
+
+    var svg_pack1 = d3.select('.container-4 #graph1').html('')
+        .append('svg')
+        .attrs({width: width, height: width})
+
+    d3.json('data/jsonpacking.json', function(error, data) {
+        if (error) throw error;
+
+        root = d3.hierarchy(data).sum(function (d) {
+            return d.likes;
+        })
+
+        // ------- circle packing --------
+
+        // Declare d3 layout
+        var layout = d3.pack()
+            .size([width, height])
+            .padding(5)
+
+        // Layout + Data
+        var nodes = root.descendants();
+        layout(root);
+
+        var node = svg_pack1.selectAll('g')
+            .data(nodes)
+            .enter()
+            .append('g')
+            .attr('class', 'pack')
+
+        var tweet = node.append('circle')
+            .attr("class", function (d) {
+                return d.children ? "node" : "leaf node";
+            })
+            .attr('text', function (d) {
+                return 'id: ' + d.data.text
+            })
+            .style('fill', 'white')
+
+        var leaf = d3.selectAll('.leaf')
+            .style('fill', 'steelblue')
+            .on('mouseover', function () {
+                d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
+                d3.select(this.parentNode).selectAll('.node_tip').style('visibility', 'visible')
+            })
+            .on('mouseout', function () {
+                d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
+                d3.select(this.parentNode).selectAll('.node_tip').style('visibility', 'hidden')
+            })
+
+        var tip = d3.selectAll('.pack').append('text')
+            .text(function (d) {
+                return d.data.text
+            })
+            .attr('class', 'node_tip')
+            .style('alignment-baseline', 'hanging')
+            .style('visibility', 'hidden')
+            .attr('transform', 'translate(0,10)')
+
+
+        // ------- draw circles --------
+
+        tweet.attr('r', function (d) {
+            return (d.r)
+        })
+            .style('opacity', 0.3)
+            .attr('cx', function (d) {
+                return d.x;
+            })
+            .attr('cy', function (d) {
+                return d.y;
+            })
+
+    })
+
+
+    /// CIRCLE PACK 2
+
+    var svg_pack2 = d3.select('.container-5 #graph2').html('')
+        .append('svg')
+        .attrs({width: width, height: width})
+
+    d3.json('data/jsonpacking.json', function(error, data) {
+        if (error) throw error;
+
+        root = d3.hierarchy(data).sum(function (d) {
+            return d.likes;
+        })
+
+        // ------- circle packing --------
+
+        // Declare d3 layout
+        var layout = d3.pack()
+            .size([width, height])
+            .padding(5)
+
+        // Layout + Data
+        var nodes = root.descendants();
+        layout(root);
+
+        var node = svg_pack2.selectAll('g')
+            .data(nodes)
+            .enter()
+            .append('g')
+            .attr('class', 'pack')
+
+        var tweet = node.append('circle')
+            .attr("class", function (d) {
+                return d.children ? "node" : "leaf node";
+            })
+            .attr('text', function (d) {
+                return 'id: ' + d.data.text
+            })
+            .style('fill', 'white')
+
+        var leaf = d3.selectAll('.leaf')
+            .style('fill', 'steelblue')
+            .on('mouseover', function () {
+                d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
+                d3.select(this.parentNode).selectAll('.node_tip').style('visibility', 'visible')
+            })
+            .on('mouseout', function () {
+                d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
+                d3.select(this.parentNode).selectAll('.node_tip').style('visibility', 'hidden')
+            })
+
+        var tip = d3.selectAll('.pack').append('text')
+            .text(function (d) {
+                return d.data.text
+            })
+            .attr('class', 'node_tip')
+            .style('alignment-baseline', 'hanging')
+            .style('visibility', 'hidden')
+            .attr('transform', 'translate(0,10)')
+
+
+        // ------- draw circles --------
+
+        tweet.attr('r', function (d) {
+            return (d.r)
+        })
+            .style('opacity', 0.3)
+            .attr('cx', function (d) {
+                return d.x;
+            })
+            .attr('cy', function (d) {
+                return d.y;
+            })
+
+    })
+
 
     d3.select('#source')
         .styles({'margin-bottom': window.innerHeight - 450 + 'px', padding: '100px'})
