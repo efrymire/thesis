@@ -26,7 +26,7 @@ function render(){
         height_full = window.innerHeight - 40,
         height_small = 150
 
-    if (innerWidth <= 1200){
+    if (innerWidth <= 1000){
         width = innerWidth
         height = innerHeight*.7
     }
@@ -52,8 +52,6 @@ function render(){
             d.date = Date.parse(d.date);
             d.count = parseInt(d.count);
         })
-
-        console.log(dataset)
 
         var x = d3.scaleBand()
             .range([0, width_full])
@@ -104,8 +102,6 @@ function render(){
             .attr('transform', function() { return 'translate(' + parseInt( width_full - 2 ) + ',10)'} )
 
         var xAxis = d3.axisBottom(t)
-        // .attr('transform','translate(0,' + (height_small - axisHeight) + ')')
-        // .orient("bottom");
 
         svg.append("g")
             .attr("class", "xaxis")
@@ -187,24 +183,9 @@ function render(){
             .attr('class','tip')
             .style('alignment-baseline','hanging')
             .style('visibility','hidden')
-            .attr('transform','translate(0,10)')
-
-
-        // ------- draw random --------
 
         tweet.attr('r', function(d) { return (d.r)})
             .style('opacity',0.3)
-            // .attr('cx',function() { return (Math.random() * width)})
-            // .attr('cy', function() { return (Math.random() * height)})
-
-
-        // ------- draw packing --------
-
-        // tweet.attr('r', function (d) { return (d.r); })
-        //     .style('opacity',0.3)
-            // .attr('cx', function (d) { return d.x; })
-            // .attr('cy', function (d) { return d.y; })
-
 
 
         // scroll activity
@@ -248,25 +229,20 @@ function render(){
         .attr('style','padding-left: 15px')
         .attr('style','padding-right: 15px')
 
-
     // data function
-    var cluster_height = 400
+    var cluster_height = 400,
+        cluster_width = d3.select('#graph_clusters').node().offsetWidth
 
     var svg_clusters = d3.select('#graph_clusters').html('')
         .append('svg')
-        .attr('width', d3.select('#graph_clusters').node().offsetWidth)
+        .attr('width', cluster_width)
         .attr('height', cluster_height)
-
-    // var svg_clusters_tip = d3.select('#graph_clusters_tip').html('')
-    //     .append('svg')
-    //     .attr('width', d3.select('#graph_clusters_tip').node().offsetWidth)
-    //     .attr('height', cluster_height)
 
     d3.csv('data/cluster_count.csv', function(data) {
 
         data.forEach( function(d) {
             d.cluster = parseInt(d.cluster),
-                d.count = parseInt(d.count)
+            d.count = parseInt(d.count)
         });
 
         var r = d3.scaleLog()
@@ -280,10 +256,6 @@ function render(){
         // Cluster G
         var g = svg_clusters.append('g')
             .attr('id', 'group')
-        // .attr('transform', function() {
-        //     if (width > 500) { return 'translate(' + parseInt( width/2 - 250 ) + ',0)' }
-        //     else { return 'translate(0,0)' }
-        // })
 
         var cluster_group = svg_clusters.select('#group')
             .selectAll('g')
@@ -291,72 +263,43 @@ function render(){
             .enter()
             .append('g')
 
-        // Cluster Cirle
+        // Cluster Circle
         cluster_group.append('circle')
             .attr('cluster', function(d) { return d.cluster})
             .attr('class', 'cluster')
-            .attr('cx', function(d) { return (d.cluster % 25) * (width/25) + 10 })
+            .attr('cx', function(d) { return (d.cluster % 25) * (cluster_width/25) + 10 })
             .attr('cy', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/19) + 20) })
             .attr('r', function(d) { return r(d.count) })
             .style('fill', 'steelblue')
             .style('fill-opacity', function(d) { return o(d.count) })
 
         cluster_group.append('rect')
-            .attr('x', function(d) { return (d.cluster % 25) * (width/25) })
+            .attr('x', function(d) { return (d.cluster % 25) * (cluster_width/25) })
             .attr('y', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/19) + 10 ) })
-            .attr('width', 25)
+            .attr('width', cluster_width/25)
             .attr('height',20)
             .style('fill','white')
             .style('opacity', 0)
             .style('stroke','black')
             .style('stroke-width','1px')
-            .on('mouseover', function() {
+            .on('mouseover', function(a, b, c, d) {
+                d3.select('#graph_clusters_tip').html('cluster: ' + a.cluster + '<br>' + 'count of tweets in cluster: ' + a.count + '<br>' + 'top words in cluster: ' )
                 d3.select(this.parentNode).selectAll('.cluster').style('fill','darkgrey')
-                d3.select(this.parentNode).selectAll('.cluster_tip').style('visibility','visible')
             })
             .on('mouseout', function() {
+                d3.select('#graph_clusters_tip').html('')
                 d3.select(this.parentNode).selectAll('.cluster').style('fill','steelblue')
-                d3.select(this.parentNode).selectAll('.cluster_tip').style('visibility','hidden')
             })
-
-        // Cluster tooltip - name
-        cluster_group.append('text')
-            .attr('class', 'cluster_tip')
-            .text( function(d) { return 'cluster number: ' + d.cluster })
-            .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 15 + ')'} );
-
-        // Cluster tooltip - count
-        cluster_group.append('text')
-            .attr('class', 'cluster_tip')
-            .text( function(d) { return 'count of tweets: ' + d.count})
-            .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 50 + ')'} );
-
-        // Cluster tooltip - words
-        // cluster_group.append('text')
-        //     .attr('class', 'cluster_tip')
-        //     .text( function(d) { return 'top words: sexual harassment, women, conversation, spark, men, power'})
-        //     .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 85 + ')'} )
-
-        // Cluster tooltip - words
-        cluster_group.append('div')
-            .style('position','absolute')
-            .style('top', 0)
-            .style('left', 0)
-            .style('width', 100)
-            .style('height', 100)
-            .style('background-color','black')
-            .append('text')
-            .attr('class', 'cluster_tip')
-            .text( function(d) { return 'top words: sexual harassment, women, conversation, spark, men, power'})
-            .attr('transform', function() { return 'translate(' + parseInt(width + 10) + ',' + 85 + ')'} )
 
     });
 
     /// CIRCLE PACK 1
 
-    var svg_pack1 = d3.select('.container-4 #graph1').html('')
-        .append('svg')
-        .attrs({width: width, height: width})
+    var svg_pack1 = d3.select('.container-4 #pack1')
+
+    var height_pack1 = svg_pack1.node().getBoundingClientRect().height,
+        width_pack1 = svg_pack1.node().getBoundingClientRect().height;
+
 
     d3.json('data/jsonpacking.json', function(error, data) {
         if (error) throw error;
@@ -369,7 +312,7 @@ function render(){
 
         // Declare d3 layout
         var layout = d3.pack()
-            .size([width, height])
+            .size([width_pack1, height_pack1])
             .padding(5)
 
         // Layout + Data
@@ -430,9 +373,10 @@ function render(){
 
     /// CIRCLE PACK 2
 
-    var svg_pack2 = d3.select('.container-5 #graph2').html('')
-        .append('svg')
-        .attrs({width: width, height: width})
+    var svg_pack2 = d3.select('.container-5 #pack2')
+
+    var height_pack2 = svg_pack2.node().getBoundingClientRect().height,
+        width_pack2 = svg_pack2.node().getBoundingClientRect().width;
 
     d3.json('data/jsonpacking.json', function(error, data) {
         if (error) throw error;
@@ -445,7 +389,7 @@ function render(){
 
         // Declare d3 layout
         var layout = d3.pack()
-            .size([width, height])
+            .size([width_pack2, height_pack2])
             .padding(5)
 
         // Layout + Data

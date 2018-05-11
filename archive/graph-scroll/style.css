@@ -27,16 +27,17 @@ line {
     alignment-baseline: hanging;
 }
 
-.cluster_tip {
+#graph_clusters_tip {
     font-size: 2rem;
-    fill: steelblue;
+    color: steelblue;
     font-family: Inconsolata, monospace;
-    visibility: hidden;
+    /*visibility: hidden;*/
     alignment-baseline: hanging;
+    text-align: left;
 }
 
 .type-it {
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
