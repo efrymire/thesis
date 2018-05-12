@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b6a82503-2946-4c35-af18-d5fab86fbab9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/data/date_count.csv" afterPath="$PROJECT_DIR$/archive/graph-scroll/data/date_count.csv" />
-      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/data/packing" afterPath="$PROJECT_DIR$/archive/graph-scroll/data/packing" />
       <change beforePath="$PROJECT_DIR$/archive/graph-scroll/index.html" afterPath="$PROJECT_DIR$/archive/graph-scroll/index.html" />
       <change beforePath="$PROJECT_DIR$/archive/graph-scroll/sketch.js" afterPath="$PROJECT_DIR$/archive/graph-scroll/sketch.js" />
       <change beforePath="$PROJECT_DIR$/archive/graph-scroll/style.css" afterPath="$PROJECT_DIR$/archive/graph-scroll/style.css" />
+      <change beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,21 +41,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="537">
+              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/archive/graph-scroll/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            <state relative-caret-position="307">
+              <caret line="152" column="6" lean-forward="true" selection-start-line="152" selection-start-column="6" selection-end-line="152" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -65,8 +64,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/archive/graph-scroll/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+            <state relative-caret-position="333">
+              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,8 +74,8 @@
       <file leaf-file-name="sketch.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/archive/graph-scroll/sketch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+            <state relative-caret-position="648">
+              <caret line="419" column="41" lean-forward="false" selection-start-line="419" selection-start-column="41" selection-end-line="419" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -193,9 +192,9 @@
         <option value="$PROJECT_DIR$/archive/graph-scroll/data/date_count.csv" />
         <option value="$PROJECT_DIR$/archive/graph-scroll/data/packing" />
         <option value="$PROJECT_DIR$/archive/graph-scroll/sketch.js" />
-        <option value="$PROJECT_DIR$/archive/graph-scroll/style.css" />
-        <option value="$PROJECT_DIR$/archive/graph-scroll/index.html" />
         <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/archive/graph-scroll/index.html" />
+        <option value="$PROJECT_DIR$/archive/graph-scroll/style.css" />
       </list>
     </option>
   </component>
@@ -345,12 +344,12 @@
       <workItem from="1525792589985" duration="1546000" />
       <workItem from="1525796885882" duration="17107000" />
       <workItem from="1525907278665" duration="22856000" />
-      <workItem from="1526048486342" duration="8657000" />
+      <workItem from="1526048486342" duration="13387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205217000" />
+    <option name="totallyTimeSpent" value="209947000" />
   </component>
   <component name="TodoView" selected-index="3" />
   <component name="ToolWindowManager">
@@ -366,7 +365,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.04107649" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -764,34 +763,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/sketch.js">
+    <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        <state relative-caret-position="537">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/archive/graph-scroll/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        <state relative-caret-position="333">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/sketch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="419" column="41" lean-forward="false" selection-start-line="419" selection-start-column="41" selection-end-line="419" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/archive/graph-scroll/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="307">
+          <caret line="152" column="6" lean-forward="true" selection-start-line="152" selection-start-column="6" selection-end-line="152" selection-end-column="6" />
           <folding />
         </state>
       </provider>

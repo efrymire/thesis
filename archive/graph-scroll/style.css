@@ -31,9 +31,17 @@ line {
     font-size: 2rem;
     color: steelblue;
     font-family: Inconsolata, monospace;
-    /*visibility: hidden;*/
     alignment-baseline: hanging;
     text-align: left;
+}
+
+.pack_tip {
+    font-size: 1rem;
+    color: steelblue;
+    font-family: Inconsolata, monospace;
+    alignment-baseline: hanging;
+    text-align: left;
+    word-break: break-all;
 }
 
 .type-it {
@@ -137,6 +145,11 @@ circle {
 }
 
 .leaf {
+    fill: steelblue;
+    fill-opacity: 1;
+}
+
+.leaf2 {
     fill: steelblue;
     fill-opacity: 1;
 }

@@ -127,6 +127,8 @@ function render(){
         .append('svg')
         .attrs({width: width, height: height_full})
 
+    var r = Math.min(width, height_full) - 10;
+
     d3.csv('packing', function(error, data) {
         if (error) throw error;
         stratified = d3.stratify()(data);
@@ -146,7 +148,7 @@ function render(){
 
         // Declare d3 layout
         var layout = d3.pack()
-            .size([width, height])
+            .size([r, r])
             .padding(5)
 
         // Layout + Data
@@ -158,7 +160,7 @@ function render(){
             .data(nodes)
             .enter()
             .append('g')
-            .attr('class','pack')
+            .attr('class','pack');
 
 
         // var tweet = svg2.selectAll('circle').data(nodes).enter().append('circle')
@@ -298,8 +300,9 @@ function render(){
     var svg_pack1 = d3.select('.container-4 #pack1')
 
     var height_pack1 = svg_pack1.node().getBoundingClientRect().height,
-        width_pack1 = svg_pack1.node().getBoundingClientRect().height;
+        width_pack1 = svg_pack1.node().getBoundingClientRect().width;
 
+    var r = Math.min(width_pack1, height_pack1) - 10;
 
     d3.json('data/jsonpacking.json', function(error, data) {
         if (error) throw error;
@@ -312,7 +315,7 @@ function render(){
 
         // Declare d3 layout
         var layout = d3.pack()
-            .size([width_pack1, height_pack1])
+            .size([r, r])
             .padding(5)
 
         // Layout + Data
@@ -324,35 +327,27 @@ function render(){
             .enter()
             .append('g')
             .attr('class', 'pack')
+            .attr('transform', 'translate(' + parseInt(width_pack2 - r) / 2 + ',' + parseInt(height_pack2 - r) / 2 + ')');
 
         var tweet = node.append('circle')
             .attr("class", function (d) {
                 return d.children ? "node" : "leaf node";
             })
-            .attr('text', function (d) {
-                return 'id: ' + d.data.text
-            })
-            .style('fill', 'white')
+            .attr('text', function (d) { return d.data.text })
+            .attr('user', function (d) { return d.data.user })
+            // .attr('date', function (d) { return d.data.timestamp })
+
 
         var leaf = d3.selectAll('.leaf')
             .style('fill', 'steelblue')
-            .on('mouseover', function () {
+            .on('mouseover', function(a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
-                d3.select(this.parentNode).selectAll('.node_tip').style('visibility', 'visible')
+                d3.select('#pack1_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.text)
             })
             .on('mouseout', function () {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
-                d3.select(this.parentNode).selectAll('.node_tip').style('visibility', 'hidden')
+                d3.select('#pack1_tip').html('')
             })
-
-        var tip = d3.selectAll('.pack').append('text')
-            .text(function (d) {
-                return d.data.text
-            })
-            .attr('class', 'node_tip')
-            .style('alignment-baseline', 'hanging')
-            .style('visibility', 'hidden')
-            .attr('transform', 'translate(0,10)')
 
 
         // ------- draw circles --------
@@ -385,11 +380,13 @@ function render(){
             return d.likes;
         })
 
+        var r = Math.min(width_pack2, height_pack2) - 10
+
         // ------- circle packing --------
 
         // Declare d3 layout
         var layout = d3.pack()
-            .size([width_pack2, height_pack2])
+            .size([r, r])
             .padding(5)
 
         // Layout + Data
@@ -401,25 +398,26 @@ function render(){
             .enter()
             .append('g')
             .attr('class', 'pack')
+            .attr('transform', 'translate(' + parseInt(width_pack2 - r) / 2 + ',' + parseInt(height_pack2 - r) / 2 + ')');
 
         var tweet = node.append('circle')
             .attr("class", function (d) {
-                return d.children ? "node" : "leaf node";
+                return d.children ? "node" : "leaf2 node";
             })
             .attr('text', function (d) {
                 return 'id: ' + d.data.text
             })
             .style('fill', 'white')
 
-        var leaf = d3.selectAll('.leaf')
+        var leaf2 = d3.selectAll('.leaf2')
             .style('fill', 'steelblue')
-            .on('mouseover', function () {
+            .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
-                d3.select(this.parentNode).selectAll('.node_tip').style('visibility', 'visible')
+                d3.select('#pack2_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.text)
             })
             .on('mouseout', function () {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
-                d3.select(this.parentNode).selectAll('.node_tip').style('visibility', 'hidden')
+                d3.select('#pack2_tip').html('')
             })
 
         var tip = d3.selectAll('.pack').append('text')
