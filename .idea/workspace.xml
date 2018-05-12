@@ -2,11 +2,73 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6a82503-2946-4c35-af18-d5fab86fbab9" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/archive/sketch.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/archive/style.css" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/index.html" afterPath="$PROJECT_DIR$/archive/graph-scroll/index.html" />
-      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/sketch.js" afterPath="$PROJECT_DIR$/archive/graph-scroll/sketch.js" />
-      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/style.css" afterPath="$PROJECT_DIR$/archive/graph-scroll/style.css" />
-      <change beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-grid.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-grid.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-grid.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-grid.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-reboot.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-reboot.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-reboot.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap-reboot.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/css/bootstrap.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.bundle.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.bundle.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.bundle.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.bundle.min.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/bootstrap-4.1.0-dist/js/bootstrap.min.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/archive/sketch_fakedata.js" afterPath="$PROJECT_DIR$/archive/sketch_fakedata.js" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/archive/sketch_original.js" afterPath="$PROJECT_DIR$/archive/sketch_original.js" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/archive/sketch_pos+neg.js" afterPath="$PROJECT_DIR$/archive/sketch_pos+neg.js" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/archive/test-data.csv" afterPath="$PROJECT_DIR$/archive/test-data.csv" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/bootstrap.min.css" afterPath="$PROJECT_DIR$/bootstrap.min.css" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/bootstrap.min.js" afterPath="$PROJECT_DIR$/bootstrap.min.js" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/canvas/blocks.html" afterPath="$PROJECT_DIR$/archive/canvas/blocks.html" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/canvas/canvas.js" afterPath="$PROJECT_DIR$/archive/canvas/canvas.js" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/canvas/index-canvas.html" afterPath="$PROJECT_DIR$/archive/canvas/index-canvas.html" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/canvas/packing" afterPath="$PROJECT_DIR$/archive/canvas/packing" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/canvas/packing_large" afterPath="$PROJECT_DIR$/archive/canvas/packing_large" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/canvas/packing_large_half" afterPath="$PROJECT_DIR$/archive/canvas/packing_large_half" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/canvas/style.css" afterPath="$PROJECT_DIR$/archive/canvas/style.css" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/data/cluster_count.csv" afterPath="$PROJECT_DIR$/archive/data/cluster_count.csv" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/data/date_count.csv" afterPath="$PROJECT_DIR$/archive/data/date_count.csv" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/data/json_pack_1" afterPath="$PROJECT_DIR$/archive/data/json_pack_1" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/data/jsonpacking.json" afterPath="$PROJECT_DIR$/archive/data/jsonpacking.json" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/data/nesting.js" afterPath="$PROJECT_DIR$/archive/data/nesting.js" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/data/packing" afterPath="$PROJECT_DIR$/data/packing" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/data/test.json" afterPath="$PROJECT_DIR$/archive/data/test.json" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/engagement" afterPath="$PROJECT_DIR$/archive/engagement" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/full-screen-test/graph-scroll-test.js" afterPath="$PROJECT_DIR$/archive/full-screen-test/graph-scroll-test.js" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/full-screen-test/index-test.html" afterPath="$PROJECT_DIR$/archive/full-screen-test/index-test.html" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/full-screen-test/packing" afterPath="$PROJECT_DIR$/archive/full-screen-test/packing" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/full-screen-test/sketch-test.js" afterPath="$PROJECT_DIR$/archive/full-screen-test/sketch-test.js" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/full-screen-test/style-test.css" afterPath="$PROJECT_DIR$/archive/full-screen-test/style-test.css" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/graph-scroll.js" afterPath="$PROJECT_DIR$/graph-scroll.js" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/packing" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/sketch.js" afterPath="$PROJECT_DIR$/sketch.js" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/style.css" afterPath="$PROJECT_DIR$/style.css" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/tweets" afterPath="$PROJECT_DIR$/archive/tweets" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/tweets_random" afterPath="$PROJECT_DIR$/archive/tweets_random" />
+      <change beforePath="$PROJECT_DIR$/archive/graph-scroll/worthwhile" afterPath="$PROJECT_DIR$/archive/worthwhile" />
+      <change beforePath="$PROJECT_DIR$/bootstrap.min.css" afterPath="$PROJECT_DIR$/archive/bootstrap.min.css" />
+      <change beforePath="$PROJECT_DIR$/bootstrap.min.js" afterPath="$PROJECT_DIR$/archive/bootstrap.min.js" />
+      <change beforePath="$PROJECT_DIR$/data/date_count.csv" afterPath="$PROJECT_DIR$/data/date_count.csv" />
+      <change beforePath="$PROJECT_DIR$/data/jsonpack_1.json" afterPath="$PROJECT_DIR$/archive/data/jsonpack_1.json" />
+      <change beforePath="$PROJECT_DIR$/data/jsonpack_2.json" afterPath="$PROJECT_DIR$/archive/data/jsonpack_2.json" />
+      <change beforePath="$PROJECT_DIR$/data/jsonpack_3.json" afterPath="$PROJECT_DIR$/archive/data/jsonpack_3.json" />
+      <change beforePath="$PROJECT_DIR$/data/nesting.js" afterPath="$PROJECT_DIR$/data/nesting.js" />
+      <change beforePath="$PROJECT_DIR$/data/packing" afterPath="$PROJECT_DIR$/archive/data/packing" />
+      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/archive/index.html" />
+      <change beforePath="$PROJECT_DIR$/mindmap.html" afterPath="$PROJECT_DIR$/images/mindmap.html" />
+      <change beforePath="$PROJECT_DIR$/mindmap.png" afterPath="$PROJECT_DIR$/images/mindmap.png" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,18 +86,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sketch.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sketch.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="333" column="53" lean-forward="false" selection-start-line="278" selection-start-column="4" selection-end-line="333" selection-end-column="53" />
+            <state relative-caret-position="-313">
+              <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -44,48 +96,28 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/archive/graph-scroll/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="152" column="6" lean-forward="true" selection-start-line="152" selection-start-column="6" selection-end-line="152" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/archive/graph-scroll/style.css">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="333">
-              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sketch.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/archive/graph-scroll/sketch.js">
+      <file leaf-file-name="sketch.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sketch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="419" column="41" lean-forward="false" selection-start-line="419" selection-start-column="41" selection-end-line="419" selection-end-column="41" />
+            <state relative-caret-position="368">
+              <caret line="375" column="28" lean-forward="false" selection-start-line="375" selection-start-column="28" selection-end-line="375" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/archive/graph-scroll/index.js">
+      <file leaf-file-name="nesting.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/nesting.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+            <state relative-caret-position="330">
+              <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -144,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/graph-scroll/sketch_original.js" />
         <option value="$PROJECT_DIR$/sandbox/fresh.js" />
         <option value="$PROJECT_DIR$/sandbox/test-data.csv" />
         <option value="$PROJECT_DIR$/graph-scroll/test-data.csv" />
@@ -172,7 +203,6 @@
         <option value="$PROJECT_DIR$/graph-scroll/canvas/packing" />
         <option value="$PROJECT_DIR$/graph-scroll/canvas/packing_large_half" />
         <option value="$PROJECT_DIR$/graph-scroll/style.css" />
-        <option value="$PROJECT_DIR$/graph-scroll/index.html" />
         <option value="$PROJECT_DIR$/graph-scroll/canvas/blocks.html" />
         <option value="$PROJECT_DIR$/clusters/clusters-index.html" />
         <option value="$PROJECT_DIR$/clusters/clusters.js" />
@@ -186,15 +216,17 @@
         <option value="$PROJECT_DIR$/nesting.js" />
         <option value="$PROJECT_DIR$/data/cluster_count" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/data/nesting.js" />
         <option value="$PROJECT_DIR$/data/date_count.csv" />
-        <option value="$PROJECT_DIR$/sketch.js" />
         <option value="$PROJECT_DIR$/archive/graph-scroll/data/date_count.csv" />
         <option value="$PROJECT_DIR$/archive/graph-scroll/data/packing" />
         <option value="$PROJECT_DIR$/archive/graph-scroll/sketch.js" />
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/archive/graph-scroll/index.html" />
         <option value="$PROJECT_DIR$/archive/graph-scroll/style.css" />
+        <option value="$PROJECT_DIR$/graph-scroll/index.html" />
+        <option value="$PROJECT_DIR$/data/packing" />
+        <option value="$PROJECT_DIR$/data/nesting.js" />
+        <option value="$PROJECT_DIR$/sketch.js" />
       </list>
     </option>
   </component>
@@ -239,24 +271,6 @@
             <path>
               <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
               <item name="thesis" type="462c0819:PsiDirectoryNode" />
-              <item name="archive" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis" type="462c0819:PsiDirectoryNode" />
-              <item name="archive" type="462c0819:PsiDirectoryNode" />
-              <item name="graph-scroll" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis" type="462c0819:PsiDirectoryNode" />
-              <item name="archive" type="462c0819:PsiDirectoryNode" />
-              <item name="graph-scroll" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesis" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -274,18 +288,18 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/archive" />
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/graph-scroll" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/archive/graph-scroll" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/new-direction" />
-      <recent name="$PROJECT_DIR$/graph-scroll/canvas" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/archive" />
-      <recent name="$PROJECT_DIR$/graph-scroll" />
       <recent name="$PROJECT_DIR$/graph-scroll/canvas" />
     </key>
   </component>
@@ -344,19 +358,19 @@
       <workItem from="1525792589985" duration="1546000" />
       <workItem from="1525796885882" duration="17107000" />
       <workItem from="1525907278665" duration="22856000" />
-      <workItem from="1526048486342" duration="13387000" />
+      <workItem from="1526048486342" duration="14860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209947000" />
+    <option name="totallyTimeSpent" value="211420000" />
   </component>
   <component name="TodoView" selected-index="3" />
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1331" height="824" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2102405" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19084562" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -365,7 +379,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.04107649" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13031161" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -440,21 +454,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/typeit.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/archive/sandbox/tweets">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="289" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph-scroll/popper.min.js" />
     <entry file="file://$PROJECT_DIR$/archive/sandbox/tweets_random">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -462,7 +461,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/bootstrap.min.css">
+    <entry file="file://$PROJECT_DIR$/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
           <caret line="5" column="8432" lean-forward="false" selection-start-line="5" selection-start-column="8414" selection-end-line="5" selection-end-column="8432" />
@@ -483,7 +482,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/graph-scroll.js">
+    <entry file="file://$PROJECT_DIR$/graph-scroll.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-371">
           <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
@@ -504,84 +503,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/canvas/index-canvas.html">
+    <entry file="file://$PROJECT_DIR$/archive/canvas/index-canvas.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/full-screen-test/graph-scroll-test.js">
+    <entry file="file://$PROJECT_DIR$/archive/full-screen-test/graph-scroll-test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="41" lean-forward="true" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/full-screen-test/style-test.css">
+    <entry file="file://$PROJECT_DIR$/archive/full-screen-test/style-test.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/canvas/style.css">
+    <entry file="file://$PROJECT_DIR$/archive/canvas/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/full-screen-test/packing">
+    <entry file="file://$PROJECT_DIR$/archive/full-screen-test/packing">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="1731" column="9" lean-forward="true" selection-start-line="1731" selection-start-column="9" selection-end-line="1731" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/canvas/packing_large">
+    <entry file="file://$PROJECT_DIR$/archive/canvas/packing_large">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="224">
           <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/canvas/packing_large">
+    <entry file="file://$PROJECT_DIR$/archive/canvas/packing_large">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/canvas/packing">
+    <entry file="file://$PROJECT_DIR$/archive/canvas/packing">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/canvas/packing_large_half">
+    <entry file="file://$PROJECT_DIR$/archive/canvas/packing_large_half">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="599999" column="23" lean-forward="false" selection-start-line="599999" selection-start-column="23" selection-end-line="599999" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/full-screen-test/index-test.html">
+    <entry file="file://$PROJECT_DIR$/archive/full-screen-test/index-test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/full-screen-test/sketch-test.js">
+    <entry file="file://$PROJECT_DIR$/archive/full-screen-test/sketch-test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap.min.css">
+    <entry file="file://$PROJECT_DIR$/archive/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="5" column="102977" lean-forward="false" selection-start-line="5" selection-start-column="102971" selection-end-line="5" selection-end-column="102977" />
@@ -602,17 +601,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/canvas/canvas.js">
+    <entry file="file://$PROJECT_DIR$/archive/canvas/canvas.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
           <caret line="64" column="25" lean-forward="false" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/canvas/blocks.html">
+    <entry file="file://$PROJECT_DIR$/archive/canvas/blocks.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
           <caret line="60" column="25" lean-forward="false" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -627,6 +627,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -637,29 +640,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/packing">
+    <entry file="file://$PROJECT_DIR$/packing">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8610">
           <caret line="574" column="10" lean-forward="false" selection-start-line="574" selection-start-column="10" selection-end-line="574" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/packing">
+    <entry file="file://$PROJECT_DIR$/archive/data/packing">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5430">
           <caret line="362" column="10" lean-forward="false" selection-start-line="362" selection-start-column="10" selection-end-line="362" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/cluster_count" />
-    <entry file="file://$PROJECT_DIR$/data/cluster_count.csv">
+    <entry file="file://$PROJECT_DIR$/archive/data/cluster_count.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/json_pack_1">
+    <entry file="file://$PROJECT_DIR$/archive/data/json_pack_1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1130">
           <caret line="0" column="2402" lean-forward="false" selection-start-line="0" selection-start-column="2402" selection-end-line="0" selection-end-column="2402" />
@@ -671,59 +676,67 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/canvas/index-canvas.html">
+    <entry file="file://$PROJECT_DIR$/archive/canvas/index-canvas.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/test.json">
+    <entry file="file://$PROJECT_DIR$/archive/data/test.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/nesting.js">
+    <entry file="file://$PROJECT_DIR$/archive/data/nesting.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/date_count.csv">
+    <entry file="file://$PROJECT_DIR$/archive/data/date_count.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1755">
           <caret line="117" column="8" lean-forward="false" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/date_count.csv">
+    <entry file="file://$PROJECT_DIR$/archive/data/date_count.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="118" column="4" lean-forward="false" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/jsonpacking.json">
+    <entry file="file://$PROJECT_DIR$/archive/data/jsonpacking.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1306">
           <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/jsonpack_1.json">
+    <entry file="file://$PROJECT_DIR$/archive/data/jsonpack_1.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sketch.js">
+    <entry file="file://$PROJECT_DIR$/archive/sketch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="744">
           <caret line="333" column="53" lean-forward="false" selection-start-line="278" selection-start-column="4" selection-end-line="333" selection-end-column="53" />
@@ -731,7 +744,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/archive/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="744">
           <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
@@ -739,7 +752,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/data/date_count.csv">
+    <entry file="file://$PROJECT_DIR$/data/date_count.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
@@ -747,23 +760,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/data/packing">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="57" column="10" lean-forward="true" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
+    <entry file="file://$PROJECT_DIR$/archive/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="537">
           <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
@@ -771,26 +768,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/style.css">
+    <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/sketch.js">
+    <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="419" column="41" lean-forward="false" selection-start-line="419" selection-start-column="41" selection-end-line="419" selection-end-column="41" />
+        <state relative-caret-position="106">
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive/graph-scroll/index.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="152" column="6" lean-forward="true" selection-start-line="152" selection-start-column="6" selection-end-line="152" selection-end-column="6" />
+        <state relative-caret-position="-313">
+          <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/packing">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3565">
+          <caret line="710" column="10" lean-forward="false" selection-start-line="710" selection-start-column="10" selection-end-line="710" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/jsonpack_1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/jsonpack_1_formatted.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/nesting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sketch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="375" column="28" lean-forward="false" selection-start-line="375" selection-start-column="28" selection-end-line="375" selection-end-column="28" />
           <folding />
         </state>
       </provider>

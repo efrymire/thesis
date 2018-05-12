@@ -1,0 +1,61 @@
+body{
+    max-width: 1000px;
+    margin: auto;
+    font-family: 'Nunito', Arial, sans-serif;
+}
+
+.xaxis {
+    font-family: Inconsolata, monospace;
+    font: lightgrey;
+}
+
+path.domain {
+    stroke: none;
+}
+
+line {
+    stroke: none;
+}
+
+.type-it {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 3.5rem;
+    padding: 0 1rem;
+}
+
+.cluster_tip {
+    font-size: 2rem;
+    fill: steelblue;
+    font-family: Inconsolata, monospace;
+    visibility: hidden;
+    alignment-baseline: hanging;
+}
+
+.bar_tip {
+    fill: steelblue;
+    font-family: Inconsolata, monospace;
+    visibility: hidden;
+    text-anchor: end;
+    font-size: 1rem;
+    alignment-baseline: hanging;
+}
+
+.node_tip {
+    fill: steelblue;
+    font-family: Inconsolata, monospace;
+    alignment-baseline: hanging;
+    visibility: hidden;
+}
+
+!important circle.node {
+    fill-opacity: 0;
+}
+
+.leaf {
+    fill: steelblue;
+    fill-opacity: 1;
+}

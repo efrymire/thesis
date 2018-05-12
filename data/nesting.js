@@ -1,7 +1,7 @@
 const fs = require('fs');
 const _ = require('lodash');
 
-var path = 'test.json';
+var path = 'jsonpack_3.json';
 
 fs.readFile(path, (err, data) => {
     // console.log(data)
@@ -26,7 +26,7 @@ fs.readFile(path, (err, data) => {
                 "children": grouped};
     console.log(arr)
 
-    fs.writeFileSync('jsonpacking.json', JSON.stringify(arr, null, 2))
+    fs.writeFileSync('jsonpack_3_formatted.json', JSON.stringify(arr, null, 2))
 
 
 })
