@@ -269,15 +269,15 @@ function render(){
         cluster_group.append('circle')
             .attr('cluster', function(d) { return d.cluster})
             .attr('class', 'cluster')
-            .attr('cx', function(d) { return (d.cluster % 25) * (cluster_width/25) + 10 })
-            .attr('cy', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/19) + 20) })
+            .attr('cx', function(d) { return (d.cluster % 25) * (cluster_width/26) + 20 })
+            .attr('cy', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/18) + 20) })
             .attr('r', function(d) { return r(d.count) })
             .style('fill', 'steelblue')
             .style('fill-opacity', function(d) { return o(d.count) })
 
         cluster_group.append('rect')
-            .attr('x', function(d) { return (d.cluster % 25) * (cluster_width/25) })
-            .attr('y', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/19) + 10 ) })
+            .attr('x', function(d) { return (d.cluster % 25) * (cluster_width/26) })
+            .attr('y', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/18) + 10 ) })
             .attr('width', cluster_width/25)
             .attr('height',20)
             .style('fill','white')
@@ -286,11 +286,13 @@ function render(){
             .style('stroke-width','1px')
             .on('mouseover', function(a, b, c, d) {
                 d3.select('#graph_clusters_tip').html('cluster: ' + a.cluster + '<br>' + 'count of tweets in cluster: ' + a.count + '<br>' + 'top words in cluster: ' )
-                d3.select(this.parentNode).selectAll('.cluster').style('fill','darkgrey')
+                // d3.select(this.parentNode).selectAll('.cluster').style('fill','darkgrey')
+                d3.select(this.parentNode).selectAll('.cluster').transition().attr('r', function(d) { return parseInt( r(d.count) * 3) } )
             })
             .on('mouseout', function() {
                 d3.select('#graph_clusters_tip').html('')
-                d3.select(this.parentNode).selectAll('.cluster').style('fill','steelblue')
+                // d3.select(this.parentNode).selectAll('.cluster').style('fill','steelblue')
+                d3.select(this.parentNode).selectAll('.cluster').transition().attr('r', function(d) { return parseInt( r(d.count)) } )
             })
 
     });
@@ -304,7 +306,7 @@ function render(){
 
     var r = Math.min(width_pack1, height_pack1) - 10;
 
-    d3.json('data/jsonpack_1_formatted.json', function(error, data) {
+    d3.json('data/politics_formatted.json', function(error, data) {
         if (error) throw error;
 
         root = d3.hierarchy(data).sum(function (d) {
@@ -333,8 +335,9 @@ function render(){
             .attr("class", function (d) {
                 return d.children ? "node" : "leaf node";
             })
-            .attr('text', function (d) { return d.data.text })
+            .attr('text', function (d) { return d.data.original_text })
             .attr('user', function (d) { return d.data.user })
+            .attr('url', function (d) { return d.data.url })
             // .attr('date', function (d) { return d.data.timestamp })
 
 
@@ -342,11 +345,14 @@ function render(){
             .style('fill', 'steelblue')
             .on('mouseover', function(a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
-                d3.select('#pack1_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.text)
+                d3.select('#pack1_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.original_text)
             })
-            .on('mouseout', function () {
+            .on('mouseout', function() {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
                 d3.select('#pack1_tip').html('')
+            })
+            .on('click', function(a) {
+                window.open('http://www.twitter.com' + a.data.url, '_blank')
             })
 
 
@@ -373,7 +379,7 @@ function render(){
     var height_pack2 = svg_pack2.node().getBoundingClientRect().height,
         width_pack2 = svg_pack2.node().getBoundingClientRect().width;
 
-    d3.json('data/jsonpack_2_formatted.json', function(error, data) {
+    d3.json('data/workplace_formatted.json', function(error, data) {
         if (error) throw error;
 
         root = d3.hierarchy(data).sum(function (d) {
@@ -401,34 +407,91 @@ function render(){
             .attr('transform', 'translate(' + parseInt(width_pack2 - r) / 2 + ',' + parseInt(height_pack2 - r) / 2 + ')');
 
         var tweet = node.append('circle')
-            .attr("class", function (d) {
-                return d.children ? "node" : "leaf2 node";
-            })
-            .attr('text', function (d) {
-                return 'id: ' + d.data.text
-            })
-            .style('fill', 'white')
+            .attr("class", function (d) { return d.children ? "node" : "leaf2 node"; })
+            .attr('text', function (d) { return d.data.original_text })
+            .attr('url', function (d) { return d.data.url })
 
         var leaf2 = d3.selectAll('.leaf2')
             .style('fill', 'steelblue')
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
-                d3.select('#pack2_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.text)
+                d3.select('#pack2_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.original_text)
             })
             .on('mouseout', function () {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
                 d3.select('#pack2_tip').html('')
             })
-
-        var tip = d3.selectAll('.pack').append('text')
-            .text(function (d) {
-                return d.data.text
+            .on('click', function(a) {
+                window.open('http://www.twitter.com' + a.data.url, '_blank')
             })
-            .attr('class', 'node_tip')
-            .style('alignment-baseline', 'hanging')
-            .style('visibility', 'hidden')
-            .attr('transform', 'translate(0,10)')
 
+        // ------- draw circles --------
+
+        tweet.attr('r', function (d) {
+            return (d.r)
+        })
+            .style('opacity', 0.3)
+            .attr('cx', function (d) {
+                return d.x;
+            })
+            .attr('cy', function (d) {
+                return d.y;
+            })
+
+    })
+
+    /// CIRCLE PACK 3
+
+    var svg_pack3 = d3.select('.container-6 #pack3')
+
+    var height_pack3 = svg_pack3.node().getBoundingClientRect().height,
+        width_pack3 = svg_pack3.node().getBoundingClientRect().width;
+
+    d3.json('data/toxic_formatted.json', function(error, data) {
+        if (error) throw error;
+
+        root = d3.hierarchy(data).sum(function (d) {
+            return d.likes;
+        })
+
+        var r = Math.min(width_pack3, height_pack3) - 10
+
+        // ------- circle packing --------
+
+        // Declare d3 layout
+        var layout = d3.pack()
+            .size([r, r])
+            .padding(5)
+
+        // Layout + Data
+        var nodes = root.descendants();
+        layout(root);
+
+        var node = svg_pack3.selectAll('g')
+            .data(nodes)
+            .enter()
+            .append('g')
+            .attr('class', 'pack')
+            .attr('transform', 'translate(' + parseInt(width_pack3 - r) / 2 + ',' + parseInt(height_pack3 - r) / 2 + ')');
+
+        var tweet = node.append('circle')
+            .attr("class", function (d) { return d.children ? "node" : "leaf3 node"; })
+            .attr('text', function (d) { return d.data.original_text })
+            .attr('url', function (d) { return d.data.url })
+
+        var leaf3 = d3.selectAll('.leaf3')
+            .style('fill', 'steelblue')
+            .on('mouseover', function (a) {
+                d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
+                d3.select('#pack3_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.original_text)
+            })
+            .on('mouseout', function () {
+                d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
+                d3.select('#pack3_tip').html('')
+            })
+            .on('click', function(a) {
+                window.open('http://www.twitter.com' + a.data.url, '_blank')
+            })
 
         // ------- draw circles --------
 
