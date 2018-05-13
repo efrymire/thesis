@@ -7,15 +7,22 @@ body{
 
 .xaxis {
     font-family: Inconsolata, monospace;
-    font: lightgrey;
 }
 
 path.domain {
     stroke: none;
 }
 
+g > text {
+    fill: steelblue;
+}
+
 line {
     stroke: none;
+}
+
+h1 {
+    text-align: left;
 }
 
 .bar_tip {
@@ -28,7 +35,7 @@ line {
 }
 
 #graph_clusters_tip {
-    font-size: 1rem;
+    font-size: 2rem;
     color: steelblue;
     font-family: Inconsolata, monospace;
     alignment-baseline: hanging;
@@ -125,20 +132,6 @@ line {
 
 svg{
     background-color: white;
-}
-
-/* MY ADDITIONS */
-
-.tooltip {
-    position: absolute;
-    text-align: center;
-    width: 100px;
-    height: 25px;
-    padding: 8px;
-    margin-top: -20px;
-    font: 10px sans-serif;
-    background: white;
-    pointer-events: none;
 }
 
 circle {

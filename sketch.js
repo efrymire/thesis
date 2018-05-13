@@ -240,11 +240,13 @@ function render(){
         .attr('width', cluster_width)
         .attr('height', cluster_height)
 
-    d3.csv('data/cluster_count.csv', function(data) {
+    d3.csv('data/cluster_count_terms.csv', function(data) {
 
         data.forEach( function(d) {
+            d.index = parseInt(d.index),
             d.cluster = parseInt(d.cluster),
-            d.count = parseInt(d.count)
+            d.count = parseInt(d.count),
+            d.terms = d.terms
         });
 
         var r = d3.scaleLog()
@@ -269,15 +271,15 @@ function render(){
         cluster_group.append('circle')
             .attr('cluster', function(d) { return d.cluster})
             .attr('class', 'cluster')
-            .attr('cx', function(d) { return (d.cluster % 25) * (cluster_width/26) + 20 })
-            .attr('cy', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/18) + 20) })
+            .attr('cx', function(d) { return (d.index % 25) * (cluster_width/26) + 20 })
+            .attr('cy', function(d) { return parseInt(Math.floor(d.index / 25) * (cluster_height/18) + 20) })
             .attr('r', function(d) { return r(d.count) })
             .style('fill', 'steelblue')
             .style('fill-opacity', function(d) { return o(d.count) })
 
         cluster_group.append('rect')
-            .attr('x', function(d) { return (d.cluster % 25) * (cluster_width/26) })
-            .attr('y', function(d) { return parseInt(Math.floor(d.cluster / 25) * (cluster_height/18) + 10 ) })
+            .attr('x', function(d) { return (d.index % 25) * (cluster_width/26) })
+            .attr('y', function(d) { return parseInt(Math.floor(d.index / 25) * (cluster_height/18) + 10 ) })
             .attr('width', cluster_width/25)
             .attr('height',20)
             .style('fill','white')
@@ -285,7 +287,7 @@ function render(){
             .style('stroke','black')
             .style('stroke-width','1px')
             .on('mouseover', function(a, b, c, d) {
-                d3.select('#graph_clusters_tip').html('cluster: ' + a.cluster + '<br>' + 'count of tweets in cluster: ' + a.count + '<br>' + 'top words in cluster: ' )
+                d3.select('#graph_clusters_tip').html('cluster: ' + a.cluster + '<br>' + 'count of tweets in cluster: ' + a.count + '<br>' + 'top words in cluster: ' + a.terms)
                 // d3.select(this.parentNode).selectAll('.cluster').style('fill','darkgrey')
                 d3.select(this.parentNode).selectAll('.cluster').transition().attr('r', function(d) { return parseInt( r(d.count) * 3) } )
             })
