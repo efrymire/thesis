@@ -164,7 +164,6 @@ function render(){
 
         var tweet = node.append('circle')
             .attr("class", function(d) { return d.children ? "node" : "leaf0 node"; })
-            .attr('id', function(d) { return 'id: ' + d.data.id})
 
         tweet.attr('r', function(d) { return (d.r)})
             .style('opacity',0.3)
@@ -266,12 +265,10 @@ function render(){
             .style('stroke-width','1px')
             .on('mouseover', function(a, b, c, d) {
                 d3.select('#graph_clusters_tip').html('cluster: ' + a.cluster + '<br>' + 'count of tweets in cluster: ' + a.count + '<br>' + 'top words in cluster: ' + a.terms)
-                // d3.select(this.parentNode).selectAll('.cluster').style('fill','darkgrey')
                 d3.select(this.parentNode).selectAll('.cluster').transition().attr('r', function(d) { return parseInt( r(d.count) * 3) } )
             })
             .on('mouseout', function() {
                 d3.select('#graph_clusters_tip').html('')
-                // d3.select(this.parentNode).selectAll('.cluster').style('fill','steelblue')
                 d3.select(this.parentNode).selectAll('.cluster').transition().attr('r', function(d) { return parseInt( r(d.count)) } )
             })
 
@@ -318,7 +315,6 @@ function render(){
             .attr('text', function (d) { return d.data.original_text })
             .attr('user', function (d) { return d.data.user })
             .attr('url', function (d) { return d.data.url })
-            // .attr('date', function (d) { return d.data.timestamp })
 
 
         var leaf = d3.selectAll('.leaf')
