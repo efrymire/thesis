@@ -76,11 +76,11 @@ function render(){
             .enter()
             .append('g')
             .on('mouseover', function() {
-                d3.select(this).selectAll('.bar').style('fill','darkgrey')
+                d3.select(this).selectAll('.bar').style('fill-opacity',0.3)
                 d3.select(this).selectAll('.bar_tip').style('visibility','visible')
             })
             .on('mouseout', function() {
-                d3.select(this).selectAll('.bar').style('fill','steelblue')
+                d3.select(this).selectAll('.bar').style('fill-opacity',1)
                 d3.select(this).selectAll('.bar_tip').style('visibility','hidden')
             })
 
@@ -121,7 +121,7 @@ function render(){
 
     // ------- GRAPH SCROLL SVG 2 --------
 
-    var colors = ['orange', 'purple', 'steelblue', 'pink'];
+    var colors = ['orange', 'purple', 'purple'];
 
     var svg2 = d3.select('.container-2 #graph').html('')
         .append('svg')
@@ -162,29 +162,9 @@ function render(){
             .append('g')
             .attr('class','pack');
 
-
-        // var tweet = svg2.selectAll('circle').data(nodes).enter().append('circle')
-        //     .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-
         var tweet = node.append('circle')
-            .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
+            .attr("class", function(d) { return d.children ? "node" : "leaf0 node"; })
             .attr('id', function(d) { return 'id: ' + d.data.id})
-
-        var leaf = d3.selectAll('.leaf')
-            .on('mouseover', function() {
-                d3.select(this.parentNode).selectAll('.node').style('fill','darkblue')
-                d3.select(this.parentNode).selectAll('.tip').style('visibility','visible')
-            })
-            .on('mouseout', function() {
-                d3.select(this.parentNode).selectAll('.node').style('fill','steelblue')
-                d3.select(this.parentNode).selectAll('.tip').style('visibility','hidden')
-            })
-
-        var tip = d3.selectAll('.pack').append('text')
-            .text(function(d) { return d.data.id })
-            .attr('class','tip')
-            .style('alignment-baseline','hanging')
-            .style('visibility','hidden')
 
         tweet.attr('r', function(d) { return (d.r)})
             .style('opacity',0.3)
@@ -200,15 +180,13 @@ function render(){
             .sections(d3.selectAll('.container-2 #sections > div'))
             .on('active', function (i) {
                 var ypos = [
-                    function() { return (Math.random() * height_full)},
+                    function(d) { return (Math.random() * height_full)},
                     function (d) { return d.y; },
-                    function (d) { return d.y; },
-                    function (d) { return d.y; }
+                    function (d) { return (d.y); }
                 ];
 
                 var xpos = [
-                    function() { return (Math.random() * width)},
-                    function (d) { return (d.x); },
+                    function(d) { return (Math.random() * width)},
                     function (d) { return (d.x); },
                     function (d) { return (d.x); }
                 ];
@@ -490,6 +468,142 @@ function render(){
             .on('mouseout', function () {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
                 d3.select('#pack3_tip').html('')
+            })
+            .on('click', function(a) {
+                window.open('http://www.twitter.com' + a.data.url, '_blank')
+            })
+
+        // ------- draw circles --------
+
+        tweet.attr('r', function (d) {
+            return (d.r)
+        })
+            .style('opacity', 0.3)
+            .attr('cx', function (d) {
+                return d.x;
+            })
+            .attr('cy', function (d) {
+                return d.y;
+            })
+
+    })
+
+    /// CIRCLE PACK 4
+
+    var svg_pack4 = d3.select('.container-7 #pack4')
+
+    var height_pack4 = svg_pack4.node().getBoundingClientRect().height,
+        width_pack4 = svg_pack4.node().getBoundingClientRect().width;
+
+    d3.json('data/support_formatted.json', function(error, data) {
+        if (error) throw error;
+
+        root = d3.hierarchy(data).sum(function (d) {
+            return d.likes;
+        })
+
+        var r = Math.min(width_pack4, height_pack4) - 10
+
+        // ------- circle packing --------
+
+        // Declare d3 layout
+        var layout = d3.pack()
+            .size([r, r])
+            .padding(5)
+
+        // Layout + Data
+        var nodes = root.descendants();
+        layout(root);
+
+        var node = svg_pack4.selectAll('g')
+            .data(nodes)
+            .enter()
+            .append('g')
+            .attr('class', 'pack')
+            .attr('transform', 'translate(' + parseInt(width_pack4 - r) / 2 + ',' + parseInt(height_pack4 - r) / 2 + ')');
+
+        var tweet = node.append('circle')
+            .attr("class", function (d) { return d.children ? "node" : "leaf4 node"; })
+            .attr('text', function (d) { return d.data.original_text })
+            .attr('url', function (d) { return d.data.url })
+
+        var leaf4 = d3.selectAll('.leaf4')
+            .style('fill', 'steelblue')
+            .on('mouseover', function (a) {
+                d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
+                d3.select('#pack4_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.original_text)
+            })
+            .on('mouseout', function () {
+                d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
+                d3.select('#pack4_tip').html('')
+            })
+            .on('click', function(a) {
+                window.open('http://www.twitter.com' + a.data.url, '_blank')
+            })
+
+        // ------- draw circles --------
+
+        tweet.attr('r', function (d) {
+            return (d.r)
+        })
+            .style('opacity', 0.3)
+            .attr('cx', function (d) {
+                return d.x;
+            })
+            .attr('cy', function (d) {
+                return d.y;
+            })
+
+    })
+
+    /// CIRCLE PACK 4
+
+    var svg_pack5 = d3.select('.container-8 #pack5')
+
+    var height_pack5 = svg_pack4.node().getBoundingClientRect().height,
+        width_pack5 = svg_pack4.node().getBoundingClientRect().width;
+
+    d3.json('data/uplifting_formatted.json', function(error, data) {
+        if (error) throw error;
+
+        root = d3.hierarchy(data).sum(function (d) {
+            return d.likes;
+        })
+
+        var r = Math.min(width_pack5, height_pack5) - 10
+
+        // ------- circle packing --------
+
+        // Declare d3 layout
+        var layout = d3.pack()
+            .size([r, r])
+            .padding(5)
+
+        // Layout + Data
+        var nodes = root.descendants();
+        layout(root);
+
+        var node = svg_pack5.selectAll('g')
+            .data(nodes)
+            .enter()
+            .append('g')
+            .attr('class', 'pack')
+            .attr('transform', 'translate(' + parseInt(width_pack5 - r) / 2 + ',' + parseInt(height_pack5 - r) / 2 + ')');
+
+        var tweet = node.append('circle')
+            .attr("class", function (d) { return d.children ? "node" : "leaf5 node"; })
+            .attr('text', function (d) { return d.data.original_text })
+            .attr('url', function (d) { return d.data.url })
+
+        var leaf4 = d3.selectAll('.leaf5')
+            .style('fill', 'steelblue')
+            .on('mouseover', function (a) {
+                d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
+                d3.select('#pack5_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.original_text)
+            })
+            .on('mouseout', function () {
+                d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
+                d3.select('#pack5_tip').html('')
             })
             .on('click', function(a) {
                 window.open('http://www.twitter.com' + a.data.url, '_blank')

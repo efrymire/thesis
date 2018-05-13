@@ -35,7 +35,7 @@ h1 {
 }
 
 #graph_clusters_tip {
-    font-size: 2rem;
+    font-size: 1rem;
     color: steelblue;
     font-family: Inconsolata, monospace;
     alignment-baseline: hanging;
@@ -138,6 +138,11 @@ circle {
     fill-opacity: 0;
 }
 
+.leaf0 {
+    fill: steelblue;
+    fill-opacity: 1;
+}
+
 .leaf {
     fill: steelblue;
     fill-opacity: 1;
@@ -149,6 +154,16 @@ circle {
 }
 
 .leaf3 {
+    fill: steelblue;
+    fill-opacity: 1;
+}
+
+.leaf4 {
+    fill: steelblue;
+    fill-opacity: 1;
+}
+
+.leaf5 {
     fill: steelblue;
     fill-opacity: 1;
 }

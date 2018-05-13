@@ -14,7 +14,7 @@ export function graphScroll(){
         containerStart = 0,
         belowStart,
         eventId = Math.random(),
-        offset = 200
+        offset = 600
 
     function reposition(){
         var i1 = 0
