@@ -322,7 +322,7 @@ function render(){
             .on('mouseover', function(a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
                 d3.select(this.parentNode).style('cursor', 'pointer')
-                d3.select('#pack1_tip').html(a.data.user + ': '+ a.data.original_text)
+                d3.select('#pack1_tip').html('@' + a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function() {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
@@ -393,7 +393,7 @@ function render(){
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
                 d3.select(this.parentNode).style('cursor', 'pointer')
-                d3.select('#pack2_tip').html(a.data.user + ': '+ a.data.original_text)
+                d3.select('#pack2_tip').html('@' + a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function () {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
@@ -462,7 +462,7 @@ function render(){
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
                 d3.select(this.parentNode).style('cursor', 'pointer')
-                d3.select('#pack3_tip').html(a.data.user + ': '+ a.data.original_text)
+                d3.select('#pack3_tip').html('@' + a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function () {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
@@ -531,7 +531,7 @@ function render(){
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
                 d3.select(this.parentNode).style('cursor', 'pointer')
-                d3.select('#pack4_tip').html(a.data.user + ': '+ a.data.original_text)
+                d3.select('#pack4_tip').html('@' +a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function () {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
@@ -600,7 +600,7 @@ function render(){
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
                 d3.select(this.parentNode).style('cursor', 'pointer')
-                d3.select('#pack5_tip').html( a.data.user + ': '+ a.data.original_text)
+                d3.select('#pack5_tip').html( '@' + a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function () {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
