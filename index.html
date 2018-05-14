@@ -19,19 +19,12 @@
     <div class='row'>
         <div class="col-lg-6">
             <p>
-                Since October, 2017, the phrase “#metoo” has been shared millions of times. This simple phrase has become famous because it is just that — a simple phrase. In the wake of several women coming forward against Hollywood producer Harvey Weinstein, this phrase became a symbol of support and a tool to illuminate the vastness of sexual harassment. The idea is this: if anyone who has experienced sexual harassment wrote #metoo as an online status, “we might give people a sense of the magnitude of the problem”. This is a simple phrase, without demanding evidence or requiring victims to relive their stories, caught like wildfire.
+                Following the wake of several women coming forward against Harvey Weinstein, on October 15th, 2017, Alyssa Milano started an online movement behind the hashtag #metoo. She posted, “If you’ve been sexually harassed or assaulted write 'me too' as a reply to this tweet” (@Alyssa_Milano). What followed was a flood of stories, building a community of support, natively and primarily through social media.  The movement encouraged more women to come forward — not only
                 <br/>
-                <br/>
-                #metoo quickly became a powerful movement in just a few days. It drew incredible support from all over the world - with #metoo sprouting in other languages, like #BalanceTonPorc and #YoTambien. But despite incredible media coverage and what seems like positive support from all over the world, there are lots of dissenting opinions. Many women feel as though the #metoo movement isn’t supportive of minority groups.
-            </p>
         </div>
         <div class="col-lg-6">
             <p>
-                Others feel as though it takes away the power of innocent until proven guilty. As is true with most social movements, #metoo has a number of dissenting voices in the crowd.
-                <br/>
-                <br/>
-                As with almost every social movements, counter movements are born. While a simple tweet dissenting the #metoo movement may not be considered a “countermovement”, the central themes to these responses can be. But as we’ve learned through time, movements and countermovements are critical to each other’s success. By understanding the dissenting voices, one can better articulate their message, goals, and outcomes.
-                This paper will discuss the breadth of response to the #metoo movement, from supportive to against. The movement was born on twitter - so by analyzing tweets from October through 2018, we can understand the sentiment (fully supporting or fully against) of responses. The research method includes machine learning sentiment analysis.
+                validating the experience of victims, but exposing more perpetrators beyond Weinstein. But is that all that was said within #metoo? This project explores the text of tweets from the 6 months following the birth of the digitally native social movement. By using unsupervised k-means cluster analysis, we can uncover organic themes. The project aims to answer the question: “what are people really saying with #metoo?”            </p>
             </p>
         </div>
     </div>
@@ -44,19 +37,19 @@
 </div>
 
 <h1>
-    Timeline and Activity
+    Data Collection
 </h1>
 
 <div class='container'>
     <div class='row'>
         <div class="col-lg-6">
             <p>
-                Lorem ipsum dolor sit amet, ei vis decore praesent, solum aliquam id eum, nobis dolorum nec ad. Te quaeque vocibus phaedrum quo, vidit aliquip mei ex. An stet nemore vituperata eum. Eum ad omnes omittam mentitum, dicat graecis sadipscing ex eam.            </p>
+                #metoo was shared millions of times from countries all over the world. It sparked new hashtags in other languages - like #balancetonporc and #yotambien. The data used in this project was scraped from the public twitter search page. The only requirement was that the tweet used the hashtag #metoo and was tweeted between October 14th and April 14th. The result was nearly 1.4 million tweets —
+            </p>
         </div>
         <div class="col-lg-6">
             <p>
-                Sit no veniam pertinax incorrupte. Vidit elitr duo eu, nostro oblique pri id, vis omnis praesent intellegat no. Ad populo possit consequuntur qui, nullam efficiendi in eam. Ne probo nihil eam, elit labore ex mel.
-            </p>
+                1,392,076, to be exact. The below bar chart is a log scale of tweets per day over 6 months. There are clear peaks for the first wave of #metoo tweets (October 16), the release of the silence breakers as Time’s Person of the Year (December 5th), the Golden Globes and the announcement of the #timesup movement (January 7th), and the Oscars (March 4th).             </p>
         </div>
     </div>
 </div>
@@ -74,33 +67,28 @@
     </div>
 </div>
 
-<h1>
-    Cluster Formations
-</h1>
-
 <div id='container' class='container-2'>
 
     <div id='graph'></div>
 
     <div id='sections'>
+
+        <h1>
+            Cluster Formations
+        </h1>
+
         <div>
             <p>
-                Sit amet porttitor eget dolor morbi. Ut pharetra sit amet aliquam id. Nibh mauris cursus mattis molestie a iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                <br><br><br><br><br><br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc. Viverra nam libero justo laoreet. Orci nulla pellentesque dignissim enim sit amet. Sit amet est placerat in egestas erat imperdiet. Egestas tellus rutrum tellus pellentesque. Mi quis hendrerit dolor magna eget est lorem. Praesent elementum facilisis leo vel. Dictum sit amet justo donec enim. Sed augue lacus viverra vitae congue eu consequat ac felis. Tortor consequat id porta nibh venenatis cras. Arcu felis bibendum ut tristique et egestas quis. Risus ultricies tristique nulla aliquet enim tortor at. Nec ultrices dui sapien eget mi proin sed libero enim. Tempor orci dapibus ultrices in. Duis tristique sollicitudin nibh sit. Eget lorem dolor sed viverra. Malesuada fames ac turpis egestas integer. Varius morbi enim nunc faucibus a.
+                K-means clustering is an unsupervised machine learning process that uses the input to find natural groups in the data. In this case, the only information being used to create these groups was the words in the tweets. For example, if the word “trump” or “vote” was used, the tweet was assigned to be grouped with other tweets that use those words as well. This process is critical for this project because it does not require human intervention. Through k-means clustering, we can let the words “speak for themselves” and create groups just by the nature of the words within.
             </p>
         </div>
         <div>
             <p>
-                Tortor consequat id porta nibh venenatis cras. Sit amet porttitor eget dolor morbi. Ut pharetra sit amet aliquam id. Nibh mauris cursus mattis molestie a iaculis. Eget dolor morbi non arcu risus quis varius. Nunc sed augue lacus viverra vitae congue eu consequat ac. Et molestie ac feugiat sed. Dui ut ornare lectus sit amet est placerat. Id donec ultrices tincidunt arcu non sodales. Tincidunt vitae semper quis lectus. Odio morbi quis commodo odio. Sed id semper risus in hendrerit gravida rutrum quisque. Feugiat in ante metus dictum at tempor. Sed faucibus turpis in eu mi. Ipsum consequat nisl vel pretium lectus quam id leo in. Tincidunt tortor aliquam nulla facilisi. Praesent tristique magna sit amet. Sit amet volutpat consequat mauris nunc congue nisi vitae. Purus ut faucibus pulvinar elementum. Fusce id velit ut tortor pretium viverra suspendisse potenti.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc.
-            </p>
+                The roughly 1.4 million tweets in this dataset are analyzed using “bag-of-words”, a process which identifies unique words and finds them across the entire corpus. Because of the size of data, 26,193,288 unique words were found. To make this more manageable, the clustering process only used a small portion of them — the word must be present in at least 0.5% of the corpus and cannot be present in 99% of the corpus. That narrowed the total words down to 348.             </p>
         </div>
         <div>
             <p>
-                Tortor consequat id porta nibh venenatis cras. Sit amet porttitor eget dolor morbi. Ut pharetra sit amet aliquam id. Nibh mauris cursus mattis molestie a iaculis. Eget dolor morbi non arcu risus quis varius. Nunc sed augue lacus viverra vitae congue eu consequat ac. Et molestie ac feugiat sed. Dui ut ornare lectus sit amet est placerat. Id donec ultrices tincidunt arcu non sodales. Tincidunt vitae semper quis lectus. Odio morbi quis commodo odio. Sed id semper risus in hendrerit gravida rutrum quisque. Feugiat in ante metus dictum at tempor. Sed faucibus turpis in eu mi. Ipsum consequat nisl vel pretium lectus quam id leo in. Tincidunt tortor aliquam nulla facilisi. Praesent tristique magna sit amet. Sit amet volutpat consequat mauris nunc congue nisi vitae. Purus ut faucibus pulvinar elementum. Fusce id velit ut tortor pretium viverra suspendisse potenti.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc.
-            </p>
+                The clustering process considers if the word was included — as well as relationships to other words. The result is 425 clusters, each with a group of tweets within them.            </p>
         </div>
     </div>
 
@@ -115,7 +103,7 @@
             <h1> Overall Clusters </h1>
         </div>
         <div class="col-lg-8">
-            <p> Lorem ipsum dolor sit amet, rebum appetere eu eam, cu qui melius option nostrum, ad homero altera vim. Hover over a cluster to find out more, including its size, name, and top 10 words </p>
+            <p> The final clusters vary by size. The largest cluster, with over 81,000 tweets, serves as a “catch-all” for those tweets without an obvious direction or intention. The remaining cluster sizes vary from 17,000 - 32. Hover over a cluster to find out more, including its size, name, and top 10 words in that cluster.  </p>
         </div>
         <div class="col-lg-8" id="graph_clusters">
         </div>
@@ -139,19 +127,12 @@
     <div class='row'>
         <div class="col-lg-6">
             <p>
-                Since October, 2017, the phrase “#metoo” has been shared millions of times. This simple phrase has become famous because it is just that — a simple phrase. In the wake of several women coming forward against Hollywood producer Harvey Weinstein, this phrase became a symbol of support and a tool to illuminate the vastness of sexual harassment. The idea is this: if anyone who has experienced sexual harassment wrote #metoo as an online status, “we might give people a sense of the magnitude of the problem”. This is a simple phrase, without demanding evidence or requiring victims to relive their stories, caught like wildfire.
-                <br/>
-                <br/>
-                #metoo quickly became a powerful movement in just a few days. It drew incredible support from all over the world - with #metoo sprouting in other languages, like #BalanceTonPorc and #YoTambien. But despite incredible media coverage and what seems like positive support from all over the world, there are lots of dissenting opinions. Many women feel as though the #metoo movement isn’t supportive of minority groups.
+                Although each individual cluster is interesting. 425 is quite a lot to parse through. By applying a qualitative lens and examining the top words in each tweet and the top tweets in each cluster, we can find some interesting themes brought to life from the data. The following are just a few of the themes that arose from the
             </p>
         </div>
         <div class="col-lg-6">
             <p>
-                Others feel as though it takes away the power of innocent until proven guilty. As is true with most social movements, #metoo has a number of dissenting voices in the crowd.
-                <br/>
-                <br/>
-                As with almost every social movements, counter movements are born. While a simple tweet dissenting the #metoo movement may not be considered a “countermovement”, the central themes to these responses can be. But as we’ve learned through time, movements and countermovements are critical to each other’s success. By understanding the dissenting voices, one can better articulate their message, goals, and outcomes.
-                This paper will discuss the breadth of response to the #metoo movement, from supportive to against. The movement was born on twitter - so by analyzing tweets from October through 2018, we can understand the sentiment (fully supporting or fully against) of responses. The research method includes machine learning sentiment analysis.
+                clusters. Each theme is comprised of anywhere from 2-10 individual clusters. Each circle represents a single tweet, and the size of the circle is representative of the tweet’s engagement. The top 1000 tweets from each theme are represented here, but there are many more in each cluster.
             </p>
         </div>
     </div>

@@ -35,7 +35,7 @@ h1 {
 }
 
 #graph_clusters_tip {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: steelblue;
     font-family: Inconsolata, monospace;
     alignment-baseline: hanging;
@@ -48,8 +48,8 @@ h1 {
     font-family: Inconsolata, monospace;
     alignment-baseline: hanging;
     text-align: left;
-    word-break: break-all;
-    min-height: 300px
+    word-break: normal;
+    min-height: 300px;
 }
 
 .type-it {

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const _ = require('lodash');
 
-var path = 'uplifting.json';
+var path = 'oprah.json';
 
 fs.readFile(path, (err, data) => {
     // console.log(data)
@@ -26,7 +26,7 @@ fs.readFile(path, (err, data) => {
                 "children": grouped};
     console.log(arr)
 
-    fs.writeFileSync('uplifting_formatted.json', JSON.stringify(arr, null, 2))
+    fs.writeFileSync('oprah_formatted.json', JSON.stringify(arr, null, 2))
 
 
 })

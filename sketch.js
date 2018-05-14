@@ -264,7 +264,7 @@ function render(){
             .style('stroke','black')
             .style('stroke-width','1px')
             .on('mouseover', function(a, b, c, d) {
-                d3.select('#graph_clusters_tip').html('cluster: ' + a.cluster + '<br>' + 'count of tweets in cluster: ' + a.count + '<br>' + 'top words in cluster: ' + a.terms)
+                d3.select('#graph_clusters_tip').html( 'cluster: ' + a.cluster + '<br>' + 'count of tweets in cluster: ' + a.count + '<br>' + 'top words in cluster: ' + a.terms)
                 d3.select(this.parentNode).selectAll('.cluster').transition().attr('r', function(d) { return parseInt( r(d.count) * 3) } )
             })
             .on('mouseout', function() {
@@ -321,7 +321,8 @@ function render(){
             .style('fill', 'steelblue')
             .on('mouseover', function(a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
-                d3.select('#pack1_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.original_text)
+                d3.select(this.parentNode).style('cursor', 'pointer')
+                d3.select('#pack1_tip').html(a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function() {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
@@ -391,7 +392,8 @@ function render(){
             .style('fill', 'steelblue')
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
-                d3.select('#pack2_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.original_text)
+                d3.select(this.parentNode).style('cursor', 'pointer')
+                d3.select('#pack2_tip').html(a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function () {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
@@ -459,7 +461,8 @@ function render(){
             .style('fill', 'steelblue')
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
-                d3.select('#pack3_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.original_text)
+                d3.select(this.parentNode).style('cursor', 'pointer')
+                d3.select('#pack3_tip').html(a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function () {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
@@ -527,7 +530,8 @@ function render(){
             .style('fill', 'steelblue')
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
-                d3.select('#pack4_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.original_text)
+                d3.select(this.parentNode).style('cursor', 'pointer')
+                d3.select('#pack4_tip').html(a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function () {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
@@ -595,7 +599,8 @@ function render(){
             .style('fill', 'steelblue')
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
-                d3.select('#pack5_tip').html('user: ' + a.data.user + '<br>' +  'tweet text: ' + a.data.original_text)
+                d3.select(this.parentNode).style('cursor', 'pointer')
+                d3.select('#pack5_tip').html( a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function () {
                 d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
