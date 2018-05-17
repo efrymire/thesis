@@ -338,7 +338,7 @@ function render(){
         tweet.attr('r', function (d) {
             return (d.r)
         })
-            .style('opacity', 0.3)
+            .style('opacity', 0.6)
             .attr('cx', function (d) {
                 return d.x;
             })
@@ -408,7 +408,7 @@ function render(){
         tweet.attr('r', function (d) {
             return (d.r)
         })
-            .style('opacity', 0.3)
+            .style('opacity', 0.6)
             .attr('cx', function (d) {
                 return d.x;
             })
@@ -477,7 +477,7 @@ function render(){
         tweet.attr('r', function (d) {
             return (d.r)
         })
-            .style('opacity', 0.3)
+            .style('opacity', 0.6)
             .attr('cx', function (d) {
                 return d.x;
             })
@@ -546,7 +546,7 @@ function render(){
         tweet.attr('r', function (d) {
             return (d.r)
         })
-            .style('opacity', 0.3)
+            .style('opacity', 0.6)
             .attr('cx', function (d) {
                 return d.x;
             })
@@ -615,7 +615,7 @@ function render(){
         tweet.attr('r', function (d) {
             return (d.r)
         })
-            .style('opacity', 0.3)
+            .style('opacity', 0.6)
             .attr('cx', function (d) {
                 return d.x;
             })
