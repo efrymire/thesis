@@ -320,12 +320,12 @@ function render(){
         var leaf = d3.selectAll('.leaf')
             .style('fill', 'steelblue')
             .on('mouseover', function(a) {
-                d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
+                d3.select(this.parentNode).selectAll('.node').style('opacity', 0.3)
                 d3.select(this.parentNode).style('cursor', 'pointer')
                 d3.select('#pack1_tip').html('@' + a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function() {
-                d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
+                d3.select(this.parentNode).selectAll('.node').style('opacity', 0.6)
                 d3.select('#pack1_tip').html('')
             })
             .on('click', function(a) {
@@ -391,12 +391,12 @@ function render(){
         var leaf2 = d3.selectAll('.leaf2')
             .style('fill', 'steelblue')
             .on('mouseover', function (a) {
-                d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
+                d3.select(this.parentNode).selectAll('.node').style('opacity', 0.3)
                 d3.select(this.parentNode).style('cursor', 'pointer')
                 d3.select('#pack2_tip').html('@' + a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function () {
-                d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
+                d3.select(this.parentNode).selectAll('.node').style('opacity', 0.6)
                 d3.select('#pack2_tip').html('')
             })
             .on('click', function(a) {
@@ -460,12 +460,12 @@ function render(){
         var leaf3 = d3.selectAll('.leaf3')
             .style('fill', 'steelblue')
             .on('mouseover', function (a) {
-                d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
+                d3.select(this.parentNode).selectAll('.node').style('opacity', 0.3)
                 d3.select(this.parentNode).style('cursor', 'pointer')
                 d3.select('#pack3_tip').html('@' + a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function () {
-                d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
+                d3.select(this.parentNode).selectAll('.node').style('opacity', 0.6)
                 d3.select('#pack3_tip').html('')
             })
             .on('click', function(a) {
@@ -529,12 +529,12 @@ function render(){
         var leaf4 = d3.selectAll('.leaf4')
             .style('fill', 'steelblue')
             .on('mouseover', function (a) {
-                d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
+                d3.select(this.parentNode).selectAll('.node').style('opacity', 0.3)
                 d3.select(this.parentNode).style('cursor', 'pointer')
                 d3.select('#pack4_tip').html('@' +a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function () {
-                d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
+                d3.select(this.parentNode).selectAll('.node').style('opacity', 0.6)
                 d3.select('#pack4_tip').html('')
             })
             .on('click', function(a) {
@@ -598,12 +598,12 @@ function render(){
         var leaf4 = d3.selectAll('.leaf5')
             .style('fill', 'steelblue')
             .on('mouseover', function (a) {
-                d3.select(this.parentNode).selectAll('.node').style('fill', 'darkblue')
+                d3.select(this.parentNode).selectAll('.node').style('opacity', 0.3)
                 d3.select(this.parentNode).style('cursor', 'pointer')
                 d3.select('#pack5_tip').html( '@' + a.data.user + ': '+ a.data.original_text)
             })
             .on('mouseout', function () {
-                d3.select(this.parentNode).selectAll('.node').style('fill', 'steelblue')
+                d3.select(this.parentNode).selectAll('.node').style('opacity', 0.6)
                 d3.select('#pack5_tip').html('')
             })
             .on('click', function(a) {
