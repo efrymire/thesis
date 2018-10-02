@@ -109,16 +109,15 @@ function update(prevState) {
   barGroup = barGroupEnter
     .merge(barGroup)
 
-  barGroup.on('mouseover', function() {
-
-    // d3.select(text)
-    // d3.select(this).selectAll('.bar').style('fill-opacity',0.3)
-    // d3.select(this).selectAll('.bar_tip').style('visibility','visible')
-  })
-
-
-
-
+  barGroupEnter
+    .on('mouseover', function() {
+      d3.select(this).selectAll('.bar').style('fill-opacity',0.3)
+      d3.select(this).selectAll('.bar_tip').style('visibility','visible')
+    })
+    .on('mouseout', function() {
+      d3.select(this).selectAll('.bar').style('fill-opacity',1)
+      d3.select(this).selectAll('.bar_tip').style('visibility','hidden')
+    })
 
 }
 
