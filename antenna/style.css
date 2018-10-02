@@ -26,7 +26,7 @@ h1 {
 }
 
 .bar_tip {
-    fill: steelblue;
+    fill: rgb(37,165,242);
     font-family: Inconsolata, monospace;
     visibility: hidden;
     text-anchor: end;

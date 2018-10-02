@@ -1,4 +1,4 @@
-/* ---------------- Set Constantas and Global Variables ---------------- */ 
+/* ---------------- Set Constants and Global Variables ---------------- */ 
 
 const Constants = {
   ID: "ID",
@@ -6,6 +6,8 @@ const Constants = {
   AUDIENCE: "AUDIENCE",
 }
 const { ID, ADDRESSABILITY, AUDIENCE, AUTOMOBILE, } = Constants
+
+const parseDate = d3.timeFormat("%m-%d-%Y")
 
 /* ---------------- Default Initial State ---------------- */ 
 
@@ -71,7 +73,7 @@ function update(prevState) {
   // scales
 
   const date_xScale = d3.scaleBand()
-    .range([0, w])
+    .range([0, barChartWidth])
     .padding(0.1)
     .domain(dateData.map(d => d.date));
 
@@ -79,64 +81,40 @@ function update(prevState) {
     .range([0, barChartHeight])
     .domain([barChartWidth, d3.max(dateData, d => d.count)])
 
-  // working static
-
-  const barChartDiv = body.select('div.container-1')
-
-  barChart = barChartDiv
-    .append('svg')
-    .style('width', barChartWidth + 'px')
-    .style('height', barChartHeight + 'px')
-
-  barChart.selectAll('rect')
-    .data(dateData)
-    .enter()
-    .append('rect')
-    .attr('class', 'bar')
-    .attr('x', d => date_xScale(d.date))
-    .attr('y', barChartHeight)
-    .attr('width', date_xScale.bandwidth())
-    .attr('height', d => date_yScale(d.count))
-    .style('fill', 'rgb(37,165,242')
-    .transition()
-      .delay((d,i) => i*10 + barChartWidth)
-      .attr('y', d => barChartHeight - date_yScale(d.count))
-
-  var xAxis = d3.axisBottom(date_xScale)
-
-  barChart.append("g")
-    .attr("class", "xaxis")
-    .attr('transform','translate(20,' + (barChartHeight) + ')')
-    .call(xAxis)
-
-
-
   // enter/exit
 
-  // let barChart = barChartDiv
-  //   .data([null])
+  const barChartSvg = body.select('svg.container-1')
 
-  // barChart = barChart
-  //   .enter()
-  //   .append('svg')
-  //   .merge(barChart)
-  //   .style('width', 1000 + 'px')
-  //   .style('height', 100 + 'px')
+  let barGroup = barChartSvg
+    .selectAll('g')
+    .data(dateData)
 
-  // let bars = barChart
+  const barGroupEnter = barGroup.enter()
+    .append('g')
+    .attr('class', 'barGroup')
 
-  // let bar = barChartDiv
-  //   .selectAll('rect')
-  //   .data(dateData)
+  barGroupEnter.append('rect')
+    .attr('class', 'bar')
+    .attr('x', d => date_xScale(d.date))
+    .attr('y', d => barChartHeight - date_yScale(d.count))
+    .attr('width', date_xScale.bandwidth())
+    .attr('height', d => date_yScale(d.count))
+    .style('fill', 'rgb(37,165,242)')
 
-  // const barEnter = bar
-  //   .enter()
-  //   .append('div')
-  //   .attr('class', 'bar')
+  barGroupEnter.append('text')
+    .attr('class', 'bar_tip')
+    .text(function(d) { return 'date: ' + parseDate(d.date) + ', tweets: ' + d.count; })
+    .attr('transform', function() { return 'translate(' + parseInt( barChartWidth - 2 ) + ',10)'} )
 
-  // bar.exit().remove()
-  // bar = barEnter
-  //   .merge(bar)
+  barGroup = barGroupEnter
+    .merge(barGroup)
+
+  barGroup.on('mouseover', function() {
+
+    // d3.select(text)
+    // d3.select(this).selectAll('.bar').style('fill-opacity',0.3)
+    // d3.select(this).selectAll('.bar_tip').style('visibility','visible')
+  })
 
 
 
