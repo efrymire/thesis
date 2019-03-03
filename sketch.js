@@ -93,7 +93,7 @@ function render(){
             .attr('height', function(d) { return y(d.count) })
             .attr('date', function(d) { return (d.date) })
             .attr('count', function(d) { return (d.count) })
-            .style('fill','steelblue')
+            .style('fill','rgb(37,165,242')
 
         // TIP
         group.append('text')
@@ -251,7 +251,7 @@ function render(){
             .attr('cx', function(d) { return (d.index % 25) * (cluster_width/26) + 20 })
             .attr('cy', function(d) { return parseInt(Math.floor(d.index / 25) * (cluster_height/18) + 20) })
             .attr('r', function(d) { return r(d.count) })
-            .style('fill', 'steelblue')
+            .style('fill', 'rgb(37,165,242')
             .style('fill-opacity', function(d) { return o(d.count) })
 
         cluster_group.append('rect')
@@ -318,7 +318,7 @@ function render(){
 
 
         var leaf = d3.selectAll('.leaf')
-            .style('fill', 'steelblue')
+            .style('fill', 'rgb(37,165,242')
             .on('mouseover', function(a) {
                 d3.select(this.parentNode).selectAll('.node').style('opacity', 0.3)
                 d3.select(this.parentNode).style('cursor', 'pointer')
@@ -389,7 +389,7 @@ function render(){
             .attr('url', function (d) { return d.data.url })
 
         var leaf2 = d3.selectAll('.leaf2')
-            .style('fill', 'steelblue')
+            .style('fill', 'rgb(37,165,242')
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('opacity', 0.3)
                 d3.select(this.parentNode).style('cursor', 'pointer')
@@ -458,7 +458,7 @@ function render(){
             .attr('url', function (d) { return d.data.url })
 
         var leaf3 = d3.selectAll('.leaf3')
-            .style('fill', 'steelblue')
+            .style('fill', 'rgb(37,165,242')
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('opacity', 0.3)
                 d3.select(this.parentNode).style('cursor', 'pointer')
@@ -527,7 +527,7 @@ function render(){
             .attr('url', function (d) { return d.data.url })
 
         var leaf4 = d3.selectAll('.leaf4')
-            .style('fill', 'steelblue')
+            .style('fill', 'rgb(37,165,242')
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('opacity', 0.3)
                 d3.select(this.parentNode).style('cursor', 'pointer')
@@ -596,7 +596,7 @@ function render(){
             .attr('url', function (d) { return d.data.url })
 
         var leaf4 = d3.selectAll('.leaf5')
-            .style('fill', 'steelblue')
+            .style('fill', 'rgb(37,165,242')
             .on('mouseover', function (a) {
                 d3.select(this.parentNode).selectAll('.node').style('opacity', 0.3)
                 d3.select(this.parentNode).style('cursor', 'pointer')
