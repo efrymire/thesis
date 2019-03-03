@@ -50,6 +50,7 @@ h1 {
     text-align: left;
     word-break: normal;
     min-height: 300px;
+    overflow:hidden;
 }
 
 .type-it {
